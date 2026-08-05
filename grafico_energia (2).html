@@ -76,9 +76,23 @@
     margin-top:14px;line-height:1.7}
 
   @media(max-width:640px){
-    .canvas-holder{height:380px}
-    .lg{min-width:calc(50% - 5px)}
-    header{align-items:flex-start}
+    .wrap{padding:16px 12px 40px}
+    .brand{padding:16px;gap:8px;margin-bottom:18px}
+    .brand img{height:56px}
+    .brand .brand-txt .elab{font-size:15px}
+    .chart-panel{padding:12px 8px 10px;border-radius:12px}
+    .canvas-holder{height:340px}
+    header{flex-direction:column;align-items:stretch;gap:12px}
+    .title-block h1{font-size:18px}
+    .seg{width:100%}
+    .seg button{flex:1;padding:8px 4px;font-size:10px}
+    .lg{min-width:100%;padding:10px 12px}
+    .note{font-size:12px;padding:12px}
+    .src{font-size:9px}
+  }
+  @media(max-width:400px){
+    .canvas-holder{height:300px}
+    .seg button{font-size:9px;padding:7px 2px}
   }
 </style>
 </head>
@@ -182,7 +196,7 @@ const chart = new Chart(document.getElementById('chart'), {
         border:{color:'#d5dbe1'},
         ticks:{color:tick, font:{family:"'SF Mono',monospace",size:10},
           maxRotation:0, autoSkip:false,
-          callback:function(v){const l=this.getLabelForValue(v);return l.endsWith('-01')?l.slice(0,4):'';}}
+          callback:function(v){const l=this.getLabelForValue(v);if(!l.endsWith('-01'))return '';const yr=+l.slice(0,4);const w=window.innerWidth;if(w>=640)return l.slice(0,4);const step=w<400?3:2;return (yr%step===0)?"'"+l.slice(2,4):'';}}
       },
       yL:{
         position:'left', grid:{color:gridC, drawTicks:false},
@@ -236,6 +250,7 @@ document.querySelectorAll('#range button').forEach(b=>{
     chart.update();
   };
 });
+let _rt;window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>chart.update(),200);});
 </script>
 </body>
 </html>
