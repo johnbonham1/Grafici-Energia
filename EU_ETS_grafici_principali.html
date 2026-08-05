@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EU ETS 2005-2026 — Grafici principali</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#1F2A44;
+    --navy-soft:#3D4E76;
+    --gold:#C9A227;
+    --teal:#1B8A8A;
+    --bar-blue:#C9D6EC;
+    --grid:#E5E7EB;
+    --ink:#222222;
+    --muted:#6B7280;
+    --paper:#FFFFFF;
+    --bg:#F5F6F8;
+    --stroke:#E2E7EE;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:linear-gradient(160deg,#F6F8FB 0%,#EEF2F7 100%);
+    background-attachment:fixed;
+    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    max-width:1180px;
+    margin:32px auto 0;
+    background:var(--paper);
+    color:var(--ink);
+    padding:28px 32px 30px;
+    border:1px solid var(--stroke);
+    border-radius:16px;
+    box-shadow:0 6px 24px -8px rgba(20,30,45,.10),0 1px 3px rgba(20,30,45,.05);
+  }
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-bottom:22px;
+    color:#0E8BA3;
+    font-size:12px;
+    font-weight:700;
+    text-decoration:none;
+    letter-spacing:.02em;
+  }
+  .back-link:hover{text-decoration:underline;}
+  header .eyebrow{
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#0E8BA3;
+    margin:0 0 8px;
+  }
+  header h1{
+    margin:0;
+    font-size:26px;
+    font-weight:700;
+    line-height:1.25;
+  }
+  header p{
+    margin:10px 0 0;
+    color:var(--muted);
+    font-size:14px;
+    max-width:760px;
+  }
+  main{
+    max-width:1180px;
+    margin:0 auto;
+    padding:32px 24px 64px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:900px){
+    header{margin:20px 18px 0;padding:24px 22px;}
+    main{grid-template-columns:1fr;padding:24px 18px 48px;}
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid #E4E7EC;
+    border-radius:16px;
+    padding:20px 22px 16px;
+    box-shadow:0 3px 14px -6px rgba(20,30,45,.08);
+  }
+  .card h2{
+    font-size:15px;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 2px;
+  }
+  .card .sub{
+    font-size:12px;
+    color:var(--muted);
+    margin:0 0 14px;
+  }
+  .chart-wrap{
+    position:relative;
+    height:300px;
+  }
+  .card .note{
+    font-size:11px;
+    color:var(--muted);
+    margin:12px 0 0;
+    line-height:1.5;
+    border-top:1px solid #EEF0F3;
+    padding-top:10px;
+  }
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px 40px;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.6;
+    font-family:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="index.html" aria-label="Torna alla raccolta dei grafici">← Tutti i grafici</a>
+  <p class="eyebrow">MASE · DG AEIF · Approfondimento EU ETS</p>
+  <h1>EU ETS tra decarbonizzazione e competitività industriale</h1>
+  <p>Quattro grafici di sintesi: prezzo del carbonio ed emissioni, dinamica di PIL e valore aggiunto industriale, peso dell'industria sul PIL e tasso di riduzione delle emissioni. EU-27, 2005-2026.</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>Emissioni verificate e prezzo medio EUA</h2>
+    <p class="sub">EU-27, 2005-2026</p>
+    <div class="chart-wrap"><canvas id="chartPrezzoEmissioni"></canvas></div>
+    <p class="note">Barre: emissioni verificate installazioni fisse (MtCO₂eq, asse sx). Linea: prezzo medio annuo quote EUA (€/t, asse dx). Fonte: EEA/ETC-CM, EEX.</p>
+  </div>
+
+  <div class="card">
+    <h2>PIL e valore aggiunto industriale</h2>
+    <p class="sub">EU-27, 2005-2025</p>
+    <div class="chart-wrap"><canvas id="chartPilIndustria"></canvas></div>
+    <p class="note">PIL reale (asse sx) e valore aggiunto reale industria esclusa costruzione (asse dx), mila mld €. Le due scale rappresentano grandezze diverse: il confronto riguarda le dinamiche, non i livelli assoluti. Fonte: Eurostat.</p>
+  </div>
+
+  <div class="card">
+    <h2>Peso dell'industria sul PIL totale</h2>
+    <p class="sub">EU-27, 2005-2025</p>
+    <div class="chart-wrap"><canvas id="chartPeso"></canvas></div>
+    <p class="note">Valore aggiunto industria (esclusa costruzione) in percentuale del PIL totale. Fonte: elaborazione su dati Eurostat.</p>
+  </div>
+
+  <div class="card">
+    <h2>CAGR emissioni dal 2005</h2>
+    <p class="sub">Tasso di variazione annuo composto, EU-27</p>
+    <div class="chart-wrap"><canvas id="chartCagr"></canvas></div>
+    <p class="note">Tasso annuo composto tra il 2005 e l'anno indicato: (valore_anno/valore_2005)^(1/n)-1. Il 2006 non è mostrato come punto significativo (n=1, coincide con la variazione annuale).</p>
+  </div>
+
+</main>
+
+<footer>
+  Fonti: prezzo EUA — EEA/ETC-CM, EEX (2025-2026 provvisori); emissioni verificate — EEA EU ETS Data Viewer, Union Registry CE; PIL e valore aggiunto industriale — Eurostat (nama_10_gdp, nama_10_a10), EU27_2020, valori reali. Elaborazione MASE — DG AEIF.
+</footer>
+
+<script>
+Chart.register(
+  Chart.BarController, Chart.LineController,
+  Chart.CategoryScale, Chart.LinearScale,
+  Chart.BarElement, Chart.LineElement, Chart.PointElement,
+  Chart.Legend, Chart.Tooltip, Chart.Title, Chart.Filler
+);
+const NAVY = '#1F2A44';
+const GOLD = '#C9A227';
+const TEAL = '#1B8A8A';
+const BAR_BLUE = '#C9D6EC';
+const GRID = '#E5E7EB';
+const AXIS_TXT = '#374151';
+
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = AXIS_TXT;
+
+const years21 = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+const years26 = years21.concat([2026]);
+
+const prezzo26 = [21.82,17.27,0.65,20.02,13.16,14.34,12.94,7.37,4.33,5.91,7.63,5.24,5.76,15.5,24.72,24.36,54.15,80.18,83.6,64.76,73.45,75.66];
+const emiss = [2058.75,2057.53,2084.06,1958.6,1739.03,1784.25,1761.72,1710.8,1655.69,1588.39,1598.86,1575.8,1589.91,1526.67,1384.95,1224.8,1309.05,1285.71,1071.39,1009.11,992.73];
+const gdp = [10.52,10.89,11.23,11.3,10.82,11.05,11.26,11.17,11.17,11.35,11.61,11.84,12.17,12.42,12.65,11.95,12.71,13.16,13.22,13.38,13.57];
+const va = [1.9,1.98,2.05,2.02,1.78,1.93,2.0,1.97,1.94,1.99,2.06,2.11,2.18,2.23,2.25,2.11,2.28,2.31,2.27,2.28,2.31];
+const peso = [18.03,18.18,18.29,17.92,16.42,17.51,17.75,17.62,17.41,17.56,17.72,17.81,17.93,17.93,17.77,17.67,17.91,17.53,17.17,17.03,17.01];
+const cagr = [null,-0.06,0.61,-1.65,-4.13,-2.82,-2.56,-2.61,-2.69,-2.84,-2.5,-2.4,-2.13,-2.27,-2.79,-3.4,-2.79,-2.73,-3.56,-3.68,-3.58];
+
+const gridOpt = { color: GRID, drawTicks:false };
+const tickOpt = { color: AXIS_TXT, font:{size:10} };
+
+new Chart(document.getElementById('chartPrezzoEmissioni'), {
+  type: 'bar',
+  data: {
+    labels: years26,
+    datasets: [
+      {
+        type:'bar',
+        label:'Emissioni verificate (MtCO₂eq)',
+        data: emiss,
+        backgroundColor: BAR_BLUE,
+        yAxisID:'y',
+        order:2,
+        borderRadius:1
+      },
+      {
+        type:'line',
+        label:'Prezzo medio EUA (€/t)',
+        data: prezzo26,
+        borderColor: GOLD,
+        backgroundColor: GOLD,
+        yAxisID:'y1',
+        tension:0,
+        pointRadius:3,
+        borderWidth:2.5,
+        order:1
+      }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    interaction:{mode:'index', intersect:false},
+    plugins:{ legend:{ position:'bottom', labels:{boxWidth:12, padding:14} } },
+    scales:{
+      x:{ grid:{display:false}, ticks:tickOpt },
+      y:{ position:'left', beginAtZero:true, title:{display:true,text:'MtCO₂eq'}, grid:gridOpt, ticks:tickOpt },
+      y1:{ position:'right', beginAtZero:true, title:{display:true,text:'€/t'}, grid:{display:false}, ticks:tickOpt }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartPilIndustria'), {
+  type: 'line',
+  data: {
+    labels: years21,
+    datasets: [
+      {
+        label:'PIL EU-27 (mila mld €)',
+        data: gdp,
+        borderColor: NAVY,
+        backgroundColor: NAVY,
+        yAxisID:'y',
+        tension:0,
+        pointRadius:3,
+        borderWidth:2.5
+      },
+      {
+        label:'Valore aggiunto industria (mila mld €)',
+        data: va,
+        borderColor: TEAL,
+        backgroundColor: TEAL,
+        yAxisID:'y1',
+        tension:0,
+        pointRadius:3,
+        borderWidth:2.5
+      }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    interaction:{mode:'index', intersect:false},
+    plugins:{ legend:{ position:'bottom', labels:{boxWidth:12, padding:14} } },
+    scales:{
+      x:{ grid:{display:false}, ticks:tickOpt },
+      y:{ position:'left', title:{display:true,text:'PIL (mila mld €)'}, grid:gridOpt, ticks:tickOpt },
+      y1:{ position:'right', title:{display:true,text:'VA industria (mila mld €)'}, grid:{display:false}, ticks:tickOpt }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartPeso'), {
+  type: 'line',
+  data: {
+    labels: years21,
+    datasets: [
+      {
+        label:'Peso industria su PIL totale',
+        data: peso,
+        borderColor: TEAL,
+        backgroundColor: TEAL,
+        tension:0,
+        pointRadius:3,
+        borderWidth:2.5,
+        fill:false
+      }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{ position:'bottom', labels:{boxWidth:12, padding:14} } },
+    scales:{
+      x:{ grid:{display:false}, ticks:tickOpt },
+      y:{ min:15, max:19, title:{display:true,text:'%'}, grid:gridOpt, ticks:{...tickOpt, callback:v=>v+'%'} }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartCagr'), {
+  type: 'line',
+  data: {
+    labels: years21,
+    datasets: [
+      {
+        label:'CAGR emissioni dal 2005',
+        data: cagr,
+        borderColor: GOLD,
+        backgroundColor: GOLD,
+        tension:0,
+        pointRadius:3,
+        borderWidth:2.5,
+        spanGaps:true
+      }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{ position:'bottom', labels:{boxWidth:12, padding:14} } },
+    scales:{
+      x:{ grid:{display:false}, ticks:tickOpt },
+      y:{ min:-6, max:2, title:{display:true,text:'%'}, grid:gridOpt, ticks:{...tickOpt, callback:v=>v+'%'} }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
