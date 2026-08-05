@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EU ETS · Emissioni e CAGR</title>
+<title>EU ETS · PIL e industria</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root{
@@ -38,8 +38,8 @@
   <header>
     <div class="title-block">
       <div class="eyebrow">MASE · DG AEIF · Approfondimento EU ETS</div>
-      <h1>EU ETS · Emissioni e CAGR</h1>
-      <div class="sub">EU-27, 2005-2026 · emissioni verificate, prezzo EUA e tasso annuo composto</div>
+      <h1>EU ETS · PIL e industria</h1>
+      <div class="sub">EU-27, 2005-2025 · PIL reale, valore aggiunto industriale e peso dell'industria</div>
     </div>
     <div class="controls"><div class="seg" id="range"><button data-y="all" class="on">Tutto</button><button data-y="2010">2010</button><button data-y="2015">2015</button><button data-y="2020">2020</button><button data-y="2023">2023</button></div></div>
   </header>
@@ -51,20 +51,20 @@
 
   <main class="chart-stack">
     <section class="chart-panel">
-      <div class="panel-head"><h2>Emissioni verificate e prezzo medio EUA</h2><p>2005-2026 · doppio asse</p></div>
-      <div class="canvas-holder"><canvas id="chartEmissioni"></canvas></div>
-      <div class="legend" id="legendEmissioni"></div>
+      <div class="panel-head"><h2>PIL e valore aggiunto industriale</h2><p>2005-2025 · doppio asse</p></div>
+      <div class="canvas-holder"><canvas id="chartPil"></canvas></div>
+      <div class="legend" id="legendPil"></div>
     </section>
 
     <section class="chart-panel">
-      <div class="panel-head"><h2>CAGR emissioni dal 2005</h2><p>2005-2025 · tasso composto</p></div>
-      <div class="canvas-holder"><canvas id="chartCagr"></canvas></div>
-      <div class="legend" id="legendCagr"></div>
+      <div class="panel-head"><h2>Peso dell'industria sul PIL totale</h2><p>2005-2025 · quota %</p></div>
+      <div class="canvas-holder"><canvas id="chartPeso"></canvas></div>
+      <div class="legend" id="legendPeso"></div>
     </section>
   </main>
 
   <p class="note"><strong>Nota:</strong> usa i pulsanti rapidi o il cursore per restringere gli anni visualizzati. La legenda e' interattiva: seleziona una voce per mostrare o nascondere la serie.</p>
-  <div class="src">Fonti: EEA EU ETS Data Viewer, Union Registry CE, EEA/ETC-CM, EEX. Dati 2025-2026 provvisori dove applicabile. Elaborazione MASE - DG AEIF.</div>
+  <div class="src">Fonti: Eurostat nama_10_gdp e nama_10_a10, EU27_2020, valori reali. Elaborazione MASE - DG AEIF.</div>
 </div>
 <script>
 const DATA = {"years21":[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"years26":[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"prezzo26":[21.82,17.27,0.65,20.02,13.16,14.34,12.94,7.37,4.33,5.91,7.63,5.24,5.76,15.5,24.72,24.36,54.15,80.18,83.6,64.76,73.45,75.66],"emiss":[2058.75,2057.53,2084.06,1958.6,1739.03,1784.25,1761.72,1710.8,1655.69,1588.39,1598.86,1575.8,1589.91,1526.67,1384.95,1224.8,1309.05,1285.71,1071.39,1009.11,992.73],"gdp":[10.52,10.89,11.23,11.3,10.82,11.05,11.26,11.17,11.17,11.35,11.61,11.84,12.17,12.42,12.65,11.95,12.71,13.16,13.22,13.38,13.57],"va":[1.9,1.98,2.05,2.02,1.78,1.93,2,1.97,1.94,1.99,2.06,2.11,2.18,2.23,2.25,2.11,2.28,2.31,2.27,2.28,2.31],"peso":[18.03,18.18,18.29,17.92,16.42,17.51,17.75,17.62,17.41,17.56,17.72,17.81,17.93,17.93,17.77,17.67,17.91,17.53,17.17,17.03,17.01],"cagr":[null,-0.06,0.61,-1.65,-4.13,-2.82,-2.56,-2.61,-2.69,-2.84,-2.5,-2.4,-2.13,-2.27,-2.79,-3.4,-2.79,-2.73,-3.56,-3.68,-3.58]};
@@ -79,15 +79,13 @@ function lastValue(values){for(let i=values.length-1;i>=0;i--){if(values[i] !== 
 function fmt(v){return v === null ? 'n.d.' : new Intl.NumberFormat('it-IT',{maximumFractionDigits:2}).format(v);}
 function makeLegend(chart, id, items){const box=document.getElementById(id); const hidden={}; box.innerHTML=''; items.forEach((m,i)=>{hidden[m.key]=false; const el=document.createElement('button'); el.type='button'; el.className='lg'; el.innerHTML='<span class="dot" style="background:'+m.color+'"></span><span class="txt"><span class="nm">'+m.label+'</span><span class="un">'+m.note+'</span></span><span class="val">'+fmt(lastValue(m.data))+'<small>'+m.unit+'</small></span>'; el.addEventListener('click',()=>{hidden[m.key]=!hidden[m.key]; chart.getDatasetMeta(i).hidden=hidden[m.key]; el.classList.toggle('off', hidden[m.key]); chart.update();}); box.appendChild(el);});}
 
-const years26 = DATA.years26.map(String);
-const emissions26 = DATA.emiss.concat([null]);
-const cagr26 = DATA.cagr.concat([null]);
-const chartEmissioni = new Chart(document.getElementById('chartEmissioni'), {type:'bar', data:{labels:years26, datasets:[{type:'bar', label:'Emissioni verificate', data:emissions26, backgroundColor:C.bar, borderColor:C.barBorder, borderWidth:1, borderRadius:2, yAxisID:'yL', _unit:'MtCO2eq', order:2},{type:'line', label:'Prezzo medio EUA', data:DATA.prezzo26, borderColor:C.eua, backgroundColor:C.eua, pointRadius:3, pointHoverRadius:5, borderWidth:2.4, tension:.2, yAxisID:'yR', _unit:'€/t', order:1}]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, yL:{position:'left', beginAtZero:true, title:{display:true,text:'Emissioni MtCO2eq'}, grid:{color:gridC, drawTicks:false}, ticks:tickOpt}, yR:{position:'right', beginAtZero:true, title:{display:true,text:'EUA €/t'}, grid:{display:false}, ticks:tickOpt}}}});
-makeLegend(chartEmissioni, 'legendEmissioni', [{key:'emiss',label:'Emissioni verificate',note:'EU-27 · installazioni fisse',unit:'MtCO2eq',color:C.pun,data:emissions26},{key:'eua',label:'Prezzo medio EUA',note:'media annua quote ETS',unit:'€/t',color:C.eua,data:DATA.prezzo26}]);
-const chartCagr = new Chart(document.getElementById('chartCagr'), {type:'line', data:{labels:years26, datasets:[{label:'CAGR emissioni dal 2005', data:cagr26, borderColor:C.gas, backgroundColor:'rgba(224,72,61,.10)', fill:true, pointRadius:3, pointHoverRadius:5, borderWidth:2.4, tension:.22, _unit:'%'}]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, y:{title:{display:true,text:'Variazione annua composta %'}, grid:{color:gridC, drawTicks:false}, ticks:{...tickOpt, callback:v=>v+'%'}}}}});
-makeLegend(chartCagr, 'legendCagr', [{key:'cagr',label:'CAGR emissioni',note:'base 2005',unit:'%',color:C.gas,data:cagr26}]);
-charts.push(chartEmissioni, chartCagr);
-const pageYears = DATA.years26;
+const years21 = DATA.years21.map(String);
+const chartPil = new Chart(document.getElementById('chartPil'), {type:'line', data:{labels:years21, datasets:[{label:'PIL reale EU-27', data:DATA.gdp, borderColor:C.navy, backgroundColor:C.navy, pointRadius:3, pointHoverRadius:5, borderWidth:2.4, tension:.2, yAxisID:'yL', _unit:'mila mld €'},{label:'Valore aggiunto industria', data:DATA.va, borderColor:C.pun, backgroundColor:C.pun, pointRadius:3, pointHoverRadius:5, borderWidth:2.4, tension:.2, yAxisID:'yR', _unit:'mila mld €'}]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, yL:{position:'left', title:{display:true,text:'PIL reale · mila mld €'}, grid:{color:gridC, drawTicks:false}, ticks:tickOpt}, yR:{position:'right', title:{display:true,text:'VA industria · mila mld €'}, grid:{display:false}, ticks:tickOpt}}}});
+makeLegend(chartPil, 'legendPil', [{key:'gdp',label:'PIL reale EU-27',note:'Eurostat · valori reali',unit:'mila mld €',color:C.navy,data:DATA.gdp},{key:'va',label:'Valore aggiunto industria',note:'industria esclusa costruzione',unit:'mila mld €',color:C.pun,data:DATA.va}]);
+const chartPeso = new Chart(document.getElementById('chartPeso'), {type:'line', data:{labels:years21, datasets:[{label:'Peso industria sul PIL', data:DATA.peso, borderColor:C.term, backgroundColor:'rgba(124,92,214,.12)', fill:true, pointRadius:3, pointHoverRadius:5, borderWidth:2.4, tension:.2, _unit:'%'}]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, y:{title:{display:true,text:'Quota % sul PIL'}, grid:{color:gridC, drawTicks:false}, ticks:{...tickOpt, callback:v=>v+'%'}}}}});
+makeLegend(chartPeso, 'legendPeso', [{key:'peso',label:'Peso industria sul PIL',note:'VA industria / PIL totale',unit:'%',color:C.term,data:DATA.peso}]);
+charts.push(chartPil, chartPeso);
+const pageYears = DATA.years21;
 
 const YEARS = pageYears;
 const Y0 = YEARS[0], Y1 = YEARS[YEARS.length-1];
