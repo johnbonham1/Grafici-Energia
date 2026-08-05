@@ -83,7 +83,25 @@
   .src{font-family:var(--mono);font-size:10px;color:var(--ink-faint);
     margin-top:14px;line-height:1.75;padding-left:2px}
   .src b{color:var(--ink-dim);font-weight:600}
-  @media(max-width:640px){.canvas-holder{height:400px}.lg{min-width:calc(50% - 6px)}header{align-items:flex-start}}
+  @media(max-width:640px){
+    .wrap{padding:16px 12px 40px}
+    .brand{padding:18px 16px;gap:8px;margin-bottom:20px}
+    .brand img{height:60px}
+    .brand .brand-txt .elab{font-size:15px}
+    .chart-panel{padding:14px 8px 12px;border-radius:14px}
+    .canvas-holder{height:360px}
+    header{flex-direction:column;align-items:stretch;gap:12px}
+    .title-block h1{font-size:19px}
+    .seg{width:100%}
+    .seg button{flex:1;padding:8px 4px;font-size:10px}
+    .lg{min-width:100%;padding:12px 14px}
+    .note{font-size:12px;padding:12px}
+    .src{font-size:9px}
+  }
+  @media(max-width:400px){
+    .canvas-holder{height:320px}
+    .seg button{font-size:9px;padding:7px 2px}
+  }
 </style>
 </head>
 <body>
@@ -171,7 +189,7 @@ const chart = new Chart(document.getElementById('chart'), {
         grid:{display:false},
         border:{color:gridStrong},
         ticks:{color:tick, font:{family:"'SF Mono',monospace",size:10}, maxRotation:0, autoSkip:false,
-          callback:function(v){const l=this.getLabelForValue(v);return l.endsWith('-01-01')?l.slice(0,4):'';}}
+          callback:function(v){const l=this.getLabelForValue(v);if(!l.endsWith('-01-01'))return '';const yr=+l.slice(0,4);const w=window.innerWidth;if(w>=640)return l.slice(0,4);const step=w<400?2:1;return (yr%step===0)?"'"+l.slice(2,4):'';}}
       },
       y:{
         grid:{color:'#cfd6df', drawTicks:false, lineWidth:1},
@@ -218,6 +236,7 @@ document.querySelectorAll('#range button').forEach(b=>{
 });
 // default view: 2018
 applyRange('2018');
+let _rt;window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>chart.update(),200);});
 </script>
 </body>
 </html>
