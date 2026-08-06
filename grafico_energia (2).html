@@ -49,6 +49,10 @@
   .seg button:hover{color:var(--ink)}
   .seg button.on{background:var(--grid);color:var(--ink)}
 
+  .download-btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--panel);border:1px solid var(--stroke);border-radius:8px;padding:7px 11px;color:var(--ink-dim);font-size:12px;font-weight:650;transition:.15s;box-shadow:0 1px 2px rgba(20,30,45,.04)}
+  .download-btn:hover{color:var(--ink);border-color:var(--ink-faint);transform:translateY(-1px)}
+  .download-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
   .chart-panel{background:var(--panel);border:1px solid var(--stroke);
     border-radius:14px;padding:20px 20px 14px;position:relative}
   .canvas-holder{position:relative;height:460px}
@@ -138,6 +142,7 @@
       <div class="sub">Gen 2005 – Ago 2026 · media mensile</div>
     </div>
     <div class="controls">
+      <a class="download-btn" href="dossiers/dossier_mercati_elettrici.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
       <div class="seg" id="range">
         <button data-r="all" class="on">2005→</button>
         <button data-r="2018">2018→</button>
