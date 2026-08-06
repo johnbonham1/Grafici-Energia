@@ -24,6 +24,13 @@ Configurazione prevista:
 - deploy automatico a ogni modifica del branch collegato
 - branch collegato: `preprod`
 
+Backend pre-produzione:
+
+- API: `dashboard-aeif-api-preprod`
+- database: `dashboard-aeif-db-preprod`
+- cron PUN: `dashboard-aeif-pun-scraper-preprod`
+- sorgente PUN: variabile ambiente `PUN_SOURCE_URL`
+
 Per attivarlo su Render:
 
 1. Apri Render.
@@ -50,3 +57,4 @@ La root del branch `preprod` contiene la versione di pre-produzione.
 - `index.html`: home
 - `dossiers/`: PDF scaricabili
 - `assets/`: asset pubblici
+- `backend/`: API, database e job di aggiornamento dati
