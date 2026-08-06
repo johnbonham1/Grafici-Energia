@@ -4,54 +4,50 @@ Dashboard statica con grafici interattivi su mercati elettrici, ETS, industria, 
 
 ## Link
 
-Produzione:
+Produzione Render:
+
+https://dashboard-aeif.onrender.com/
+
+Pre-produzione Render:
+
+https://dashboard-aeif-preprod.onrender.com/
+
+Backup GitHub Pages:
 
 https://johnbonham1.github.io/Grafici-Energia/
 
-Pre-produzione:
+## Ambienti
 
-https://johnbonham1.github.io/Grafici-Energia/staging/
+- `main`: produzione
+- `preprod`: pre-produzione
+
+Ogni ambiente viene pubblicato da un servizio Render Static Site separato.
 
 ## Render
 
-Il repository contiene `render.yaml` per creare un servizio Render Static Site.
-
-Configurazione prevista:
+Configurazione produzione:
 
 - servizio: `dashboard-aeif`
+- branch collegato: `main`
 - build command: `echo "Static site ready"`
 - publish directory: `.`
-- deploy automatico a ogni modifica del branch collegato
-- preview automatiche per le pull request
 
-Per attivarlo su Render:
+Configurazione pre-produzione:
 
-1. Apri Render.
-2. Scegli New > Blueprint.
-3. Collega il repository `johnbonham1/Grafici-Energia`.
-4. Usa `render.yaml` come configurazione.
-5. Avvia il deploy.
-
-Il link GitHub Pages resta attivo finche il nuovo link Render non e verificato.
-
-## Struttura
-
-La root del repository contiene la versione pubblica di produzione.
-
-La cartella `staging/` contiene una copia navigabile del sito usata per verificare le modifiche prima della pubblicazione.
+- servizio: `dashboard-aeif-preprod`
+- branch collegato: `preprod`
+- build command: `echo "Static site ready"`
+- publish directory: `.`
 
 ## Regole operative
 
-1. Le modifiche in lavorazione si preparano dentro `staging/`.
-2. Il link pubblico in root non si modifica finche la versione staging non e approvata.
-3. Quando staging e approvato, i file da `staging/` vengono copiati nella root e pubblicati in produzione.
-4. I branch temporanei `agent/...` servono solo per singole PR e possono essere eliminati dopo il merge.
+1. Le modifiche in lavorazione si preparano sul branch `preprod`.
+2. Render pre-produzione pubblica automaticamente il branch `preprod`.
+3. Quando pre-produzione e approvata, si apre una PR da `preprod` verso `main`.
+4. Render produzione pubblica automaticamente il branch `main`.
 
 ## File principali
 
-- `index.html`: home di produzione
-- `staging/index.html`: home di pre-produzione
-- `dossiers/`: PDF scaricabili in produzione
-- `staging/dossiers/`: PDF scaricabili in pre-produzione
-- `assets/`: asset pubblici di produzione
-- `staging/assets/`: asset pubblici di pre-produzione
+- `index.html`: home
+- `dossiers/`: PDF scaricabili
+- `assets/`: asset pubblici
