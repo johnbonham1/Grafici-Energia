@@ -8,9 +8,7 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: dashboard-aeif-db
-          property: connectionString
+        sync: false
       - key: ENVIRONMENT
         value: production
       - key: PYTHON_VERSION
@@ -27,18 +25,10 @@ services:
     startCommand: python -m app.jobs.update_pun
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: dashboard-aeif-db
-          property: connectionString
+        sync: false
       - key: ENVIRONMENT
         value: production
       - key: PYTHON_VERSION
         value: 3.13.5
       - key: PUN_SOURCE_URL
         sync: false
-
-databases:
-  - name: dashboard-aeif-db
-    databaseName: dashboard_aeif
-    user: dashboard_aeif
-    plan: free

@@ -23,11 +23,13 @@ Ogni ambiente ha uno static site Render separato gia esistente. Il Blueprint Ren
 
 - static site: `dashboard-aeif` gia esistente, fuori dal Blueprint
 - API: `dashboard-aeif-api`
-- database: `dashboard-aeif-db`
+- database: configurato manualmente con `DATABASE_URL`
 - cron PUN: `dashboard-aeif-pun-scraper`
 - branch collegato: `main`
 
 Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine mostrano un messaggio di dati temporaneamente non disponibili.
+
+Sul piano free di Render e' disponibile un solo database Postgres attivo. Per questo il Blueprint produzione non crea un secondo database: usa `DATABASE_URL` come variabile manuale.
 
 ## Render Pre-Produzione
 
