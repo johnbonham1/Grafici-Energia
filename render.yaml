@@ -13,6 +13,8 @@ services:
           property: connectionString
       - key: ENVIRONMENT
         value: preprod
+      - key: PYTHON_VERSION
+        value: 3.13.5
       - key: CORS_ORIGINS
         value: https://dashboard-aeif-preprod.onrender.com
   - type: cron
@@ -29,6 +31,8 @@ services:
           property: connectionString
       - key: ENVIRONMENT
         value: preprod
+      - key: PYTHON_VERSION
+        value: 3.13.5
       - key: PUN_SOURCE_URL
         sync: false
 
