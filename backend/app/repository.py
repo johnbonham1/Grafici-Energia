@@ -3,7 +3,7 @@ from datetime import date
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.models import Dataset, Observation
+from app.models import Dataset, DatasetPayload, Observation
 
 
 def get_or_create_dataset(db: Session, *, key: str, name: str, unit: str, source: str | None = None) -> Dataset:
@@ -47,6 +47,31 @@ def upsert_observation(
     )
     db.add(observation)
     return observation
+
+
+def upsert_payload(
+    db: Session,
+    *,
+    key: str,
+    name: str,
+    source_file: str,
+    payload: dict | list,
+) -> DatasetPayload:
+    dataset_payload = db.scalar(select(DatasetPayload).where(DatasetPayload.key == key))
+    if dataset_payload:
+        dataset_payload.name = name
+        dataset_payload.source_file = source_file
+        dataset_payload.payload_json = payload
+        return dataset_payload
+
+    dataset_payload = DatasetPayload(
+        key=key,
+        name=name,
+        source_file=source_file,
+        payload_json=payload,
+    )
+    db.add(dataset_payload)
+    return dataset_payload
 
 
 def list_observations(
