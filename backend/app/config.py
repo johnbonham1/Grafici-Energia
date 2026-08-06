@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     environment: str = "local"
     database_url: str = "sqlite:///./dashboard_aeif.db"
     cors_origins: str = Field(
-        default="http://localhost:8000,http://localhost:5173,https://dashboard-aeif.onrender.com,https://dashboard-aeif-preprod.onrender.com,https://dashboard-aeif-preproduzione.onrender.com"
+        default="http://localhost:8000,http://localhost:5173,https://dashboard-aeif.onrender.com,https://johnbonham1.github.io,https://dashboard-aeif-preprod.onrender.com,https://dashboard-aeif-preproduzione.onrender.com"
     )
 
     @property

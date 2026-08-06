@@ -14,7 +14,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.13.5
       - key: CORS_ORIGINS
-        value: https://dashboard-aeif.onrender.com
+        value: https://dashboard-aeif.onrender.com,https://johnbonham1.github.io
 
   - type: cron
     runtime: python
