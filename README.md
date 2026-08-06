@@ -2,6 +2,11 @@
 
 Dashboard AEIF con grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.
 
+## Documentazione operativa
+
+- [Operativita ambienti e servizi](OPERATIONS.md)
+- [Checklist rilascio](RELEASE_CHECKLIST.md)
+
 ## Link
 
 Produzione Render:
@@ -52,3 +57,5 @@ Sul piano free di Render e' disponibile un solo database Postgres attivo. Per qu
 - `assets/`: asset pubblici e caricatore API
 - `dossiers/`: PDF scaricabili
 - `backend/`: API, database e job di aggiornamento dati
+- `OPERATIONS.md`: regole operative, ambienti e servizi Render
+- `RELEASE_CHECKLIST.md`: controlli da fare prima e dopo un rilascio
