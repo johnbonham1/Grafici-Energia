@@ -12,6 +12,28 @@ Pre-produzione:
 
 https://johnbonham1.github.io/Grafici-Energia/staging/
 
+## Render
+
+Il repository contiene `render.yaml` per creare un servizio Render Static Site.
+
+Configurazione prevista:
+
+- servizio: `dashboard-aeif`
+- build command: `echo "Static site ready"`
+- publish directory: `.`
+- deploy automatico a ogni modifica del branch collegato
+- preview automatiche per le pull request
+
+Per attivarlo su Render:
+
+1. Apri Render.
+2. Scegli New > Blueprint.
+3. Collega il repository `johnbonham1/Grafici-Energia`.
+4. Usa `render.yaml` come configurazione.
+5. Avvia il deploy.
+
+Il link GitHub Pages resta attivo finche il nuovo link Render non e verificato.
+
 ## Struttura
 
 La root del repository contiene la versione pubblica di produzione.
