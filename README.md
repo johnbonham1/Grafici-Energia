@@ -22,9 +22,9 @@ Ogni ambiente ha uno static site Render separato gia esistente. Il Blueprint Ren
 ## Render Produzione
 
 - static site: `dashboard-aeif` gia esistente, fuori dal Blueprint
-- API: `dashboard-aeif-api`
+- API: `dashboard-aeif-api-f497`
 - database: configurato manualmente con `DATABASE_URL`
-- cron PUN: `dashboard-aeif-pun-scraper`
+- cron PUN: `dashboard-aeif-pun-scraper-f497`
 - branch collegato: `main`
 
 Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine mostrano un messaggio di dati temporaneamente non disponibili.
