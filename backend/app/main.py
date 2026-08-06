@@ -1,13 +1,24 @@
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
+from app.database import init_db
 from app.routers import datasets, health
 
 
 settings = get_settings()
 
-app = FastAPI(title=settings.app_name)
+
+@asynccontextmanager
+async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+    init_db()
+    yield
+
+
+app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,7 +30,6 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(datasets.router, prefix="/api")
-
 
 @app.get("/")
 def root() -> dict[str, str]:
