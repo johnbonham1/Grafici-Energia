@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confronto internazionale · EU-27, USA e Giappone</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#ffffff; --panel:#ffffff; --grid:#e4e8ec; --grid-soft:#eef1f4;
+    --ink:#1a2230; --ink-dim:#5a6b7d; --ink-faint:#9aa8b6;
+    --eu:#3a6bc4; --us:#b23a2a; --jp:#1d8a5f; --pun:#0891a8;
+    --stroke:#d5dbe1; --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+  .brand{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px;padding:24px 22px;background:var(--panel);border:1px solid var(--stroke);border-radius:14px;text-align:center;box-shadow:0 4px 16px -6px rgba(20,30,45,.10),0 1px 3px rgba(20,30,45,.05);position:relative}
+  .brand .brand-mark{width:88px;height:88px;border-radius:18px;background:linear-gradient(135deg,rgba(58,107,196,.14),rgba(29,138,95,.14));border:1px solid var(--stroke);display:flex;align-items:center;justify-content:center;color:var(--eu)}
+  .brand .brand-mark svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .brand .brand-txt{display:flex;flex-direction:column;gap:5px;align-items:center}.brand .brand-txt .elab{font-size:20px;font-weight:750;color:var(--ink);letter-spacing:.01em;line-height:1.15}
+  .home-btn{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--panel);border:1px solid var(--stroke);border-radius:9px;padding:7px 12px;color:var(--ink-dim);font-size:12px;font-weight:600;transition:.15s;box-shadow:0 1px 2px rgba(20,30,45,.04);z-index:5}.home-btn:hover{color:var(--ink);border-color:var(--ink-faint);transform:translateX(-2px)}.home-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;border-bottom:1px solid var(--stroke);padding-bottom:18px;margin-bottom:22px}.title-block h1{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.2}.title-block .sub{font-family:var(--mono);font-size:11px;color:var(--ink-dim);margin-top:6px;letter-spacing:.02em;text-transform:uppercase}.eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--eu);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.seg{display:inline-flex;background:var(--panel);border:1px solid var(--stroke);border-radius:8px;overflow:hidden}.seg button{background:none;border:none;color:var(--ink-dim);font-family:var(--mono);font-size:11px;padding:7px 11px;cursor:pointer;transition:.15s;letter-spacing:.02em}.seg button:hover{color:var(--ink)}.seg button.on{background:var(--grid);color:var(--ink)}
+  .chart-stack{display:grid;grid-template-columns:1fr;gap:20px}.chart-panel{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:20px 20px 14px;position:relative}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:12px}.panel-head h2{font-size:15px;font-weight:700;color:var(--ink);line-height:1.2}.panel-head p{font-family:var(--mono);font-size:10px;color:var(--ink-dim);letter-spacing:.03em;text-transform:uppercase;text-align:right}.canvas-holder{position:relative;height:410px}
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.lg{display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--stroke);border-radius:10px;padding:9px 13px;cursor:pointer;transition:.15s;flex:1;min-width:180px;font:inherit;color:inherit;text-align:left}.lg:hover{border-color:var(--ink-faint)}.lg.off{opacity:.38}.lg .dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}.lg .txt{display:flex;flex-direction:column;gap:2px;min-width:0}.lg .nm{font-size:12.5px;font-weight:600;line-height:1.15}.lg .un{font-family:var(--mono);font-size:9.5px;color:var(--ink-dim);letter-spacing:.02em}.lg .val{margin-left:auto;font-family:var(--mono);font-size:14px;font-weight:600;text-align:right;white-space:nowrap}.lg .val small{display:block;font-size:8.5px;color:var(--ink-dim);font-weight:400}
+  .rangebox{margin:0 0 20px;padding:16px 18px 12px;background:var(--bg);border:1px solid var(--stroke);border-radius:12px}.rangebox .rhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.rangebox .rhead .rlabel{font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:.04em;text-transform:uppercase;font-weight:600}.rangebox .rhead .rval{font-family:var(--mono);font-size:13px;color:var(--ink);font-weight:700}.slider{position:relative;height:30px}.slider .track{position:absolute;top:12px;left:8px;right:8px;height:5px;border-radius:3px;background:#dbe1e9}.slider .fill{position:absolute;top:12px;height:5px;border-radius:3px;background:var(--pun)}.slider input[type=range]{position:absolute;top:2px;left:0;width:100%;margin:0;-webkit-appearance:none;appearance:none;background:none;pointer-events:none;height:26px}.slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:20px;height:20px;border-radius:50%;background:#fff;border:2.5px solid var(--pun);cursor:pointer;box-shadow:0 1px 4px rgba(20,30,45,.20)}.slider input[type=range]::-moz-range-thumb{pointer-events:auto;width:20px;height:20px;border-radius:50%;background:#fff;border:2.5px solid var(--pun);cursor:pointer;box-shadow:0 1px 4px rgba(20,30,45,.20)}
+  .note{margin-top:24px;font-size:12px;line-height:1.6;color:var(--ink-dim);border-left:2px solid var(--stroke);padding-left:14px}.note strong{color:var(--ink);font-weight:600}.src{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-top:14px;line-height:1.7}
+  @media(max-width:640px){.wrap{padding:16px 12px 40px}.brand{padding:16px;gap:8px;margin-bottom:18px}.brand .brand-mark{width:56px;height:56px;border-radius:13px}.brand .brand-mark svg{width:30px;height:30px}.brand .brand-txt .elab{font-size:15px}.home-btn{position:static;align-self:flex-start}.chart-panel{padding:12px 8px 10px;border-radius:12px}.canvas-holder{height:340px}header{flex-direction:column;align-items:stretch;gap:12px}.title-block h1{font-size:18px}.seg{width:100%}.seg button{flex:1;padding:8px 4px;font-size:10px}.lg{min-width:100%;padding:10px 12px}.panel-head{padding:0 4px}.rangebox{padding:14px 12px}.note{font-size:12px;padding-left:12px}.src{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <a class="home-btn" href="index.html" aria-label="Torna alla raccolta dei grafici"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+    <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l4-4 3 2 5-7"/><path d="M7 19v-4"/><path d="M14 19v-6"/><path d="M19 19V6"/></svg></div>
+    <div class="brand-txt"><div class="elab">Direzione generale competitivita ed efficienza energetica</div></div>
+  </div>
+
+  <header>
+    <div class="title-block">
+      <div class="eyebrow">MASE · DG AEIF · Confronto internazionale</div>
+      <h1>EU-27, Stati Uniti e Giappone</h1>
+      <div class="sub">Crescita economica, struttura industriale ed emissioni · 2005-2024</div>
+    </div>
+    <div class="controls">
+      <div class="seg" id="range"><button data-y="all" class="on">Tutto</button><button data-y="2010">2010</button><button data-y="2015">2015</button><button data-y="2020">2020</button><button data-y="2023">2023</button></div>
+    </div>
+  </header>
+
+  <div class="rangebox">
+    <div class="rhead"><span class="rlabel">Intervallo anni</span><span class="rval" id="rval"></span></div>
+    <div class="slider"><div class="track"></div><div class="fill" id="rfill"></div><input id="rmin" type="range"><input id="rmax" type="range"></div>
+  </div>
+
+  <main class="chart-stack">
+    <section class="chart-panel">
+      <div class="panel-head"><h2>PIL e valore aggiunto industriale</h2><p>trilioni $ PPP · 2005-2024</p></div>
+      <div class="canvas-holder"><canvas id="chartPil"></canvas></div>
+      <div class="legend" id="legendPil"></div>
+    </section>
+
+    <section class="chart-panel">
+      <div class="panel-head"><h2>Emissioni totali di gas serra</h2><p>MtCO2eq e indice 2005=100</p></div>
+      <div class="canvas-holder"><canvas id="chartGhg"></canvas></div>
+      <div class="legend" id="legendGhg"></div>
+    </section>
+
+    <section class="chart-panel">
+      <div class="panel-head"><h2>Intensita carbonica del PIL</h2><p>g CO2eq / $ PPP · 2005-2024</p></div>
+      <div class="canvas-holder"><canvas id="chartIntensity"></canvas></div>
+      <div class="legend" id="legendIntensity"></div>
+    </section>
+  </main>
+
+  <p class="note"><strong>Nota:</strong> usa i pulsanti rapidi o il cursore per restringere gli anni visualizzati. La legenda e' interattiva: seleziona una voce per mostrare o nascondere la serie.</p>
+  <div class="src">Fonti: IMF WEO April 2026, Eurostat, BEA/FRED, Cabinet Office Japan/ESRI, Our World in Data / Climate Watch. Elaborazione MASE - DG AEIF.</div>
+</div>
+<script>
+const DATA = {
+  years:[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+  euGdp:[12.87,13.53,14.23,14.37,13.60,14.22,14.64,14.69,14.85,15.37,16.00,16.57,17.22,17.96,18.62,17.59,19.11,20.41,21.41,22.25],
+  usGdp:[13.09,13.86,14.48,14.72,14.42,15.03,15.52,16.16,16.77,17.48,18.22,18.62,19.39,20.49,21.38,20.89,22.99,25.46,27.36,29.18],
+  jpGdp:[4.28,4.39,4.49,4.39,4.14,4.41,4.50,4.62,4.81,4.91,5.00,5.08,5.29,5.54,5.53,4.96,5.23,5.40,5.15,5.61],
+  euInd:[2.32,2.46,2.60,2.58,2.23,2.49,2.60,2.59,2.59,2.70,2.84,2.95,3.09,3.22,3.31,3.11,3.42,3.58,3.68,3.79],
+  usInd:[2.13,2.30,2.40,2.42,2.21,2.37,2.50,2.55,2.63,2.71,2.62,2.52,2.67,2.86,2.88,2.63,3.03,3.49,3.63,3.72],
+  jpInd:[0.98,1.02,1.07,1.07,0.89,1.05,1.03,1.03,1.05,1.09,1.11,1.13,1.21,1.30,1.29,1.14,1.23,1.28,1.19,1.25],
+  euGhg:[4125,4134,4078,3984,3675,3770,3666,3593,3502,3353,3406,3404,3429,3361,3209,2918,3098,3027,2764,2703],
+  usGhg:[6792,6721,6807,6613,6136,6307,6186,5962,6109,6181,6006,5852,5815,6005,5900,5310,5675,5728,5606,5594],
+  jpGhg:[1325,1301,1336,1263,1193,1244,1293,1333,1343,1290,1249,1228,1213,1166,1129,1063,1085,1055,1012,986],
+  euInt:[320.5,305.5,286.6,277.2,270.2,265.1,250.4,244.6,235.8,218.2,212.9,205.4,199.1,187.1,172.3,165.9,162.1,148.3,129.1,121.5],
+  usInt:[518.9,484.9,470.1,449.3,425.5,419.6,398.6,368.9,364.3,353.6,329.6,314.3,299.9,293.1,276.0,254.2,246.8,225.0,204.9,191.7],
+  jpInt:[309.6,296.4,297.6,287.7,288.2,282.1,287.3,288.5,279.2,262.7,249.8,241.7,229.3,210.5,204.2,214.3,207.5,195.4,196.5,175.8]
+};
+const C = {eu:'#3a6bc4', us:'#b23a2a', jp:'#1d8a5f', euA:'rgba(58,107,196,.18)', usA:'rgba(178,58,42,.18)', jpA:'rgba(29,138,95,.18)'};
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif";
+Chart.defaults.color = '#5a6b7d';
+const gridC = '#e4e8ec';
+const tickOpt = {color:'#5a6b7d', font:{size:10}};
+const nf = new Intl.NumberFormat('it-IT',{maximumFractionDigits:2});
+const nf1 = new Intl.NumberFormat('it-IT',{maximumFractionDigits:1});
+const idx = arr => arr.map(v => +(v / arr[0] * 100).toFixed(1));
+const common = {responsive:true, maintainAspectRatio:false, interaction:{mode:'index', intersect:false}, plugins:{legend:{display:false}, tooltip:{backgroundColor:'#fff', borderColor:'#d5dbe1', borderWidth:1, titleColor:'#1a2230', bodyColor:'#1a2230', padding:10, displayColors:true, callbacks:{label(ctx){const unit = ctx.dataset._unit || ''; const raw = ctx.raw; if(raw === null || raw === undefined) return ctx.dataset.label + ': n.d.'; const fmt = unit === 'indice' || unit === 'g CO2/$' ? nf1 : nf; return ctx.dataset.label + ': ' + fmt.format(raw) + (unit ? ' ' + unit : '');}}}}};
+const charts = [];
+function lastValue(values){for(let i=values.length-1;i>=0;i--){if(values[i] !== null && values[i] !== undefined) return values[i];} return null;}
+function fmt(v){return v === null ? 'n.d.' : nf.format(v);}
+function makeLegend(chart, id, items){const box=document.getElementById(id); const hidden={}; box.innerHTML=''; items.forEach((m,i)=>{hidden[m.key]=false; const el=document.createElement('button'); el.type='button'; el.className='lg'; el.innerHTML='<span class="dot" style="background:'+m.color+'"></span><span class="txt"><span class="nm">'+m.label+'</span><span class="un">'+m.note+'</span></span><span class="val">'+fmt(lastValue(m.data))+'<small>'+m.unit+'</small></span>'; el.addEventListener('click',()=>{hidden[m.key]=!hidden[m.key]; chart.getDatasetMeta(i).hidden=hidden[m.key]; el.classList.toggle('off', hidden[m.key]); chart.update();}); box.appendChild(el);});}
+
+const labels = DATA.years.map(String);
+const chartPil = new Chart(document.getElementById('chartPil'), {type:'line', data:{labels, datasets:[
+  {label:'Industria EU-27', data:DATA.euInd, fill:true, borderColor:'rgba(58,107,196,.45)', backgroundColor:C.euA, borderWidth:1.2, pointRadius:0, tension:.3, _unit:'trl $ PPP'},
+  {label:'Industria USA', data:DATA.usInd, fill:true, borderColor:'rgba(178,58,42,.45)', backgroundColor:C.usA, borderWidth:1.2, pointRadius:0, tension:.3, _unit:'trl $ PPP'},
+  {label:'Industria Giappone', data:DATA.jpInd, fill:true, borderColor:'rgba(29,138,95,.45)', backgroundColor:C.jpA, borderWidth:1.2, pointRadius:0, tension:.3, _unit:'trl $ PPP'},
+  {label:'PIL EU-27', data:DATA.euGdp, borderColor:C.eu, backgroundColor:C.eu, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.2, _unit:'trl $ PPP'},
+  {label:'PIL USA', data:DATA.usGdp, borderColor:C.us, backgroundColor:C.us, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.2, _unit:'trl $ PPP'},
+  {label:'PIL Giappone', data:DATA.jpGdp, borderColor:C.jp, backgroundColor:C.jp, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.2, _unit:'trl $ PPP'}
+]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, y:{min:0, title:{display:true,text:'Trilioni di $ PPP'}, grid:{color:gridC, drawTicks:false}, ticks:{...tickOpt, callback:v=>'$'+v+'T'}}}}});
+makeLegend(chartPil, 'legendPil', [
+  {key:'euInd',label:'Industria EU-27',note:'area · valore aggiunto',unit:'trl $ PPP',color:C.eu,data:DATA.euInd},
+  {key:'usInd',label:'Industria USA',note:'area · valore aggiunto',unit:'trl $ PPP',color:C.us,data:DATA.usInd},
+  {key:'jpInd',label:'Industria Giappone',note:'area · valore aggiunto',unit:'trl $ PPP',color:C.jp,data:DATA.jpInd},
+  {key:'euGdp',label:'PIL EU-27',note:'linea · PIL totale',unit:'trl $ PPP',color:C.eu,data:DATA.euGdp},
+  {key:'usGdp',label:'PIL USA',note:'linea · PIL totale',unit:'trl $ PPP',color:C.us,data:DATA.usGdp},
+  {key:'jpGdp',label:'PIL Giappone',note:'linea · PIL totale',unit:'trl $ PPP',color:C.jp,data:DATA.jpGdp}
+]);
+
+const chartGhg = new Chart(document.getElementById('chartGhg'), {type:'bar', data:{labels, datasets:[
+  {type:'bar', label:'EU-27', data:DATA.euGhg, backgroundColor:'rgba(58,107,196,.70)', yAxisID:'y', _unit:'MtCO2eq'},
+  {type:'bar', label:'USA', data:DATA.usGhg, backgroundColor:'rgba(178,58,42,.70)', yAxisID:'y', _unit:'MtCO2eq'},
+  {type:'bar', label:'Giappone', data:DATA.jpGhg, backgroundColor:'rgba(29,138,95,.70)', yAxisID:'y', _unit:'MtCO2eq'},
+  {type:'line', label:'Indice EU-27', data:idx(DATA.euGhg), borderColor:C.eu, backgroundColor:C.eu, borderWidth:2.2, borderDash:[7,4], pointRadius:3, yAxisID:'y2', _unit:'indice'},
+  {type:'line', label:'Indice USA', data:idx(DATA.usGhg), borderColor:C.us, backgroundColor:C.us, borderWidth:2.2, borderDash:[7,4], pointRadius:3, yAxisID:'y2', _unit:'indice'},
+  {type:'line', label:'Indice Giappone', data:idx(DATA.jpGhg), borderColor:C.jp, backgroundColor:C.jp, borderWidth:2.2, borderDash:[7,4], pointRadius:3, yAxisID:'y2', _unit:'indice'}
+]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, y:{position:'left', min:0, title:{display:true,text:'MtCO2eq'}, grid:{color:gridC, drawTicks:false}, ticks:{...tickOpt, callback:v=>v>=1000?nf1.format(v/1000)+'k':v}}, y2:{position:'right', min:60, max:115, title:{display:true,text:'Indice 2005 = 100'}, grid:{display:false}, ticks:tickOpt}}}});
+makeLegend(chartGhg, 'legendGhg', [
+  {key:'euGhg',label:'EU-27',note:'barre · valore assoluto',unit:'MtCO2eq',color:C.eu,data:DATA.euGhg},
+  {key:'usGhg',label:'USA',note:'barre · valore assoluto',unit:'MtCO2eq',color:C.us,data:DATA.usGhg},
+  {key:'jpGhg',label:'Giappone',note:'barre · valore assoluto',unit:'MtCO2eq',color:C.jp,data:DATA.jpGhg},
+  {key:'euIdx',label:'Indice EU-27',note:'linea · 2005=100',unit:'indice',color:C.eu,data:idx(DATA.euGhg)},
+  {key:'usIdx',label:'Indice USA',note:'linea · 2005=100',unit:'indice',color:C.us,data:idx(DATA.usGhg)},
+  {key:'jpIdx',label:'Indice Giappone',note:'linea · 2005=100',unit:'indice',color:C.jp,data:idx(DATA.jpGhg)}
+]);
+
+const chartIntensity = new Chart(document.getElementById('chartIntensity'), {type:'line', data:{labels, datasets:[
+  {label:'EU-27', data:DATA.euInt, borderColor:C.eu, backgroundColor:C.eu, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.25, _unit:'g CO2/$'},
+  {label:'USA', data:DATA.usInt, borderColor:C.us, backgroundColor:C.us, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.25, _unit:'g CO2/$'},
+  {label:'Giappone', data:DATA.jpInt, borderColor:C.jp, backgroundColor:C.jp, borderWidth:2.6, pointRadius:3, pointHoverRadius:5, tension:.25, _unit:'g CO2/$'}
+]}, options:{...common, scales:{x:{grid:{display:false}, ticks:tickOpt}, y:{min:0, title:{display:true,text:'g CO2eq per dollaro PPP'}, grid:{color:gridC, drawTicks:false}, ticks:tickOpt}}}});
+makeLegend(chartIntensity, 'legendIntensity', [
+  {key:'euInt',label:'EU-27',note:'emissioni / PIL',unit:'g CO2/$',color:C.eu,data:DATA.euInt},
+  {key:'usInt',label:'USA',note:'emissioni / PIL',unit:'g CO2/$',color:C.us,data:DATA.usInt},
+  {key:'jpInt',label:'Giappone',note:'emissioni / PIL',unit:'g CO2/$',color:C.jp,data:DATA.jpInt}
+]);
+charts.push(chartPil, chartGhg, chartIntensity);
+
+const YEARS = DATA.years;
+const Y0 = YEARS[0], Y1 = YEARS[YEARS.length-1];
+const rmin=document.getElementById('rmin'), rmax=document.getElementById('rmax'), rfill=document.getElementById('rfill'), rval=document.getElementById('rval');
+[rmin,rmax].forEach(s=>{s.min=Y0;s.max=Y1;s.step=1;}); rmin.value=Y0; rmax.value=Y1;
+function applyYears(a,b){charts.forEach(chart=>{const labels = chart.data.labels.map(Number); let min = labels.findIndex(y=>y>=a); let max = labels.length-1; for(let i=labels.length-1;i>=0;i--){if(labels[i]<=b){max=i;break;}} if(min<0) min=0; chart.options.scales.x.min=min; chart.options.scales.x.max=max; chart.update();});}
+function paintSlider(){const a=+rmin.value,b=+rmax.value; const denom=Y1-Y0 || 1; const left=((a-Y0)/denom)*100; const right=((b-Y0)/denom)*100; rfill.style.left='calc('+left+'% + 8px)'; rfill.style.width='calc('+(right-left)+'% - 16px)'; rval.textContent=a+' - '+b;}
+function onSlide(){let a=+rmin.value,b=+rmax.value; if(a>b){const source=this.id; if(source==='rmin') rmax.value=a; else rmin.value=b; a=+rmin.value; b=+rmax.value;} document.querySelectorAll('#range button').forEach(btn=>btn.classList.remove('on')); applyYears(a,b); paintSlider();}
+rmin.addEventListener('input',onSlide); rmax.addEventListener('input',onSlide);
+document.querySelectorAll('#range button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#range button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); const y=btn.dataset.y; if(y==='all'){rmin.value=Y0;rmax.value=Y1;} else {rmin.value=Math.max(Y0,+y); rmax.value=Y1;} applyYears(+rmin.value,+rmax.value); paintSlider();}));
+paintSlider();
+</script>
+</body>
+</html>
