@@ -31,6 +31,8 @@ Backend pre-produzione:
 - cron PUN: `dashboard-aeif-pun-scraper-preprod`
 - sorgente PUN: variabile ambiente `PUN_SOURCE_URL`
 - il Blueprint Render gestisce solo backend, database e cron; gli static site restano servizi separati gia esistenti
+- seed iniziale: il backend importa nel DB i dati gia presenti nel frontend
+- verifica dati: `/api/payloads`, `/api/payloads/daily_prices`, `/api/series/pun`
 
 Per attivarlo su Render:
 

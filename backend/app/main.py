@@ -5,8 +5,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.database import init_db
+from app.database import SessionLocal, init_db
 from app.routers import datasets, health
+from app.services.seed import seed_frontend_data
 
 
 settings = get_settings()
@@ -15,6 +16,8 @@ settings = get_settings()
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     init_db()
+    with SessionLocal() as db:
+        seed_frontend_data(db)
     yield
 
 

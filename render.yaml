@@ -16,7 +16,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.13.5
       - key: CORS_ORIGINS
-        value: https://dashboard-aeif-preprod.onrender.com
+        value: https://dashboard-aeif-preprod.onrender.com,https://dashboard-aeif-preproduzione.onrender.com
   - type: cron
     runtime: python
     name: dashboard-aeif-pun-scraper-preprod

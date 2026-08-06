@@ -18,6 +18,13 @@ class DatasetResponse(BaseModel):
     source: str | None = None
 
 
+class DatasetPayloadResponse(BaseModel):
+    key: str
+    name: str
+    source_file: str
+    payload: dict | list
+
+
 class ObservationResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
