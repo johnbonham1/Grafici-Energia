@@ -1,6 +1,6 @@
 # Grafici-Energia
 
-Dashboard statica con grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.
+Dashboard AEIF con grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.
 
 ## Link
 
@@ -10,44 +10,44 @@ https://dashboard-aeif.onrender.com/
 
 Pre-produzione Render:
 
-https://dashboard-aeif-preprod.onrender.com/
-
-Backup GitHub Pages:
-
-https://johnbonham1.github.io/Grafici-Energia/
+https://dashboard-aeif-preproduzione.onrender.com/
 
 ## Ambienti
 
 - `main`: produzione
 - `preprod`: pre-produzione
 
-Ogni ambiente viene pubblicato da un servizio Render Static Site separato.
+Ogni ambiente ha uno static site Render separato. Il backend, il database e il cron sono separati tra produzione e pre-produzione.
 
-## Render
+## Render Produzione
 
-Configurazione produzione:
-
-- servizio: `dashboard-aeif`
+- static site: `dashboard-aeif`
+- API: `dashboard-aeif-api`
+- database: `dashboard-aeif-db`
+- cron PUN: `dashboard-aeif-pun-scraper`
 - branch collegato: `main`
-- build command: `echo "Static site ready"`
-- publish directory: `.`
+- publish directory: `public`
 
-Configurazione pre-produzione:
+Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine mostrano un messaggio di dati temporaneamente non disponibili.
 
-- servizio: `dashboard-aeif-preprod`
+## Render Pre-Produzione
+
+- static site: `dashboard-aeif-preproduzione`
+- API: `dashboard-aeif-api-preprod`
+- database: `dashboard-aeif-db-preprod`
+- cron PUN: `dashboard-aeif-pun-scraper-preprod`
 - branch collegato: `preprod`
-- build command: `echo "Static site ready"`
-- publish directory: `.`
 
 ## Regole operative
 
-1. Le modifiche in lavorazione si preparano sul branch `preprod`.
-2. Render pre-produzione pubblica automaticamente il branch `preprod`.
-3. Quando pre-produzione e approvata, si apre una PR da `preprod` verso `main`.
-4. Render produzione pubblica automaticamente il branch `main`.
+1. Le modifiche in lavorazione si preparano su `preprod`.
+2. Render pre-produzione pubblica automaticamente `preprod`.
+3. Quando pre-produzione e' approvata, si apre una PR da `preprod` verso `main`.
+4. Render produzione pubblica automaticamente `main`.
 
-## File principali
+## File Principali
 
 - `index.html`: home
+- `assets/`: asset pubblici e caricatore API
 - `dossiers/`: PDF scaricabili
-- `assets/`: asset pubblici
+- `backend/`: API, database e job di aggiornamento dati

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Innovation Fund · Proventi per paese</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="assets/api-loader.js"></script>
 <style>
   :root{--bg:#ffffff;--panel:#ffffff;--grid:#e4e8ec;--ink:#1a2230;--ink-dim:#5a6b7d;--ink-faint:#9aa8b6;--eua:#c9a227;--pun:#0891a8;--gas:#e0483d;--term:#7c5cd6;--navy:#1f2a44;--green:#2f9b67;--stroke:#d5dbe1;--mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
   *{box-sizing:border-box;margin:0;padding:0}html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
@@ -59,8 +60,9 @@
   <div class="src">Fonte: elaborazione su dati disponibili nella Innovation Fund project portfolio dashboard della Commissione europea. Totale indicato: 15 761 402 419 euro.</div>
 </div>
 <script>
-const RAW = [{"label":"France","value":1949107389},{"label":"Spain","value":1806273395},{"label":"Belgium","value":1729130907},{"label":"Germany","value":1596043414},{"label":"Sweden","value":1468904567},{"label":"Norway","value":1280257790},{"label":"Netherlands","value":833467705},{"label":"Greece","value":741003327},{"label":"Finland","value":645870955},{"label":"Denmark","value":615732578},{"label":"Poland","value":608706986},{"label":"Italy","value":561389730},{"label":"Portugal","value":478257913},{"label":"Spain | Germany","value":200000000},{"label":"Bulgaria","value":189694949},{"label":"Austria","value":162655984},{"label":"Romania","value":146415990},{"label":"Croatia","value":137954180},{"label":"Iceland","value":118867988},{"label":"Germany | Denmark","value":109042000},{"label":"Denmark | France | Germany","value":69764122},{"label":"Hungary","value":49993901},{"label":"Ireland","value":43713896},{"label":"France | Netherlands","value":40000000},{"label":"Sweden | Portugal","value":40000000},{"label":"Estonia","value":33532000},{"label":"Lithuania","value":32194114},{"label":"Slovakia","value":21500000},{"label":"Czechia","value":20321974},{"label":"Luxembourg","value":12694904},{"label":"France | Spain","value":5000000},{"label":"Cyprus","value":4499877},{"label":"Latvia","value":4416000},{"label":"Sweden | Finland","value":2755885},{"label":"Slovenia","value":2238000}];
-const TOTAL_DECLARED = 15761402419;
+const FUND_PAYLOAD = window.requireAeifPayload('innovation_fund');
+const RAW = FUND_PAYLOAD.rows;
+const TOTAL_DECLARED = FUND_PAYLOAD.total_declared;
 const COLORS = ['#0891a8','#c9a227','#e0483d','#7c5cd6','#2f9b67','#1f2a44','#d66d2c','#4f8cc9','#8c6a4f','#c0528a','#637a2a','#9c7a12','#5a6b7d','#8ba6b0','#b86b61','#6b5fa8','#3b8b70','#466f9f'];
 const nf = new Intl.NumberFormat('it-IT');
 const pf = new Intl.NumberFormat('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1});
