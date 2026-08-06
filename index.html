@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard AEIF · Grafici energia</title>
-<meta name="description" content="Dashboard AEIF con grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
+<title>Dashboard AEIF</title>
+<meta name="description" content="Dashboard AEIF con grafici interattivi e dossier digitali su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
 <meta name="theme-color" content="#f6f8fb">
 <link rel="canonical" href="https://dashboard-aeif.onrender.com/">
 <link rel="icon" type="image/png" href="assets/mase-logo.png">
@@ -12,13 +12,13 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Dashboard AEIF">
 <meta property="og:title" content="Dashboard AEIF">
-<meta property="og:description" content="Grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
+<meta property="og:description" content="Grafici interattivi e dossier digitali su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
 <meta property="og:url" content="https://dashboard-aeif.onrender.com/">
 <meta property="og:image" content="https://dashboard-aeif.onrender.com/assets/mase-logo.png">
 <meta property="og:image:alt" content="Logo del Ministero dell'Ambiente e della Sicurezza Energetica">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dashboard AEIF">
-<meta name="twitter:description" content="Grafici interattivi su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
+<meta name="twitter:description" content="Grafici interattivi e dossier digitali su mercati elettrici, ETS, industria, Innovation Fund e confronti internazionali.">
 <meta name="twitter:image" content="https://dashboard-aeif.onrender.com/assets/mase-logo.png">
 <style>
   :root{
@@ -35,6 +35,7 @@
     --gold:#b88715;
     --green:#22845a;
     --violet:#7658ca;
+    --slate:#4f6075;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
     --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
   }
@@ -52,22 +53,22 @@
   }
 
   body{padding:28px}
-
   .shell{max-width:1180px;margin:0 auto}
 
   .topbar{
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
     gap:18px;
-    padding:18px 0 26px;
+    padding:18px 0 32px;
     border-bottom:1px solid var(--line);
     margin-bottom:28px;
+    text-align:center;
   }
 
-  .identity{display:flex;align-items:center;gap:18px;min-width:0}
-  .identity img{width:82px;height:auto;display:block;flex:0 0 auto}
-  .identity h1{font-size:31px;line-height:1.08;font-weight:780;letter-spacing:0}
+  .identity{display:flex;align-items:center;justify-content:center;gap:22px;min-width:0}
+  .identity img{width:118px;height:auto;display:block;flex:0 0 auto}
+  .identity h1{font-size:34px;line-height:1.08;font-weight:790;letter-spacing:0}
   .identity p{
     margin-top:8px;
     color:var(--muted);
@@ -78,88 +79,16 @@
     letter-spacing:.08em;
   }
 
-  .quicklinks{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-  .pill{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    min-height:38px;
-    padding:9px 13px;
-    border:1px solid var(--line-strong);
-    border-radius:8px;
-    background:#fff;
-    color:var(--ink);
-    text-decoration:none;
-    font-size:13px;
-    font-weight:680;
-    box-shadow:0 2px 9px rgba(20,30,45,.04);
-  }
-
-  .pill svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .pill.primary{background:#103b5d;color:#fff;border-color:#103b5d}
-
-  .overview{
-    display:grid;
-    grid-template-columns:1.35fr .65fr;
-    gap:18px;
-    margin-bottom:22px;
-  }
-
-  .panel{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    box-shadow:0 8px 26px -18px rgba(20,30,45,.28);
-  }
-
-  .intro{padding:26px}
-  .intro .eyebrow{
-    color:var(--blue);
-    font-family:var(--mono);
-    font-size:12px;
-    line-height:1.35;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    font-weight:760;
-    margin-bottom:12px;
-  }
-
-  .intro h2{font-size:25px;line-height:1.18;font-weight:760;letter-spacing:0;margin-bottom:10px}
-  .intro p{color:var(--muted);font-size:15px;line-height:1.65;max-width:760px}
-
-  .status{padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
-  .status-label{
-    font-family:var(--mono);
-    color:var(--muted);
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    font-weight:720;
-  }
-
-  .status-main{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:760}
-  .dot{width:11px;height:11px;border-radius:999px;background:var(--green);box-shadow:0 0 0 4px rgba(34,132,90,.13)}
-  .status p{color:var(--muted);font-size:13px;line-height:1.55}
-  code{font-family:var(--mono);font-size:.92em;color:var(--ink)}
-
-  .section{margin-top:24px}
+  .section{margin-top:26px}
   .section-head{
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:space-between;
     gap:18px;
     margin-bottom:12px;
   }
 
-  .section-head h2{font-size:17px;font-weight:760;letter-spacing:0}
-  .section-head span{
-    color:var(--muted);
-    font-family:var(--mono);
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-  }
-
+  .section-head h2{font-size:18px;font-weight:780;letter-spacing:0}
   .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 
   .card{
@@ -187,6 +116,7 @@
     box-shadow:0 12px 26px -18px rgba(20,30,45,.42);
   }
 
+  .card.dossier{background:linear-gradient(180deg,#fff,#fbfcff)}
   .icon{
     width:50px;
     height:50px;
@@ -217,7 +147,7 @@
     align-items:center;
     justify-content:space-between;
     gap:16px;
-    margin-top:28px;
+    margin-top:30px;
     padding:18px 0 8px;
     border-top:1px solid var(--line);
     color:var(--muted);
@@ -227,19 +157,17 @@
 
   footer .mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
 
-  @media(max-width:900px){
+  @media(max-width:820px){
     body{padding:20px}
-    .topbar{align-items:flex-start;flex-direction:column}
-    .quicklinks{justify-content:flex-start}
-    .overview{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+    .identity{flex-direction:column;gap:14px}
   }
 
-  @media(max-width:680px){
+  @media(max-width:520px){
     body{padding:16px}
-    .identity{align-items:flex-start}
-    .identity img{width:64px}
-    .identity h1{font-size:25px}
-    .grid{grid-template-columns:1fr}
+    .topbar{padding-top:10px}
+    .identity img{width:92px}
+    .identity h1{font-size:27px}
     .card{grid-template-columns:46px minmax(0,1fr) 18px;min-height:116px;padding:16px}
     footer{align-items:flex-start;flex-direction:column}
   }
@@ -255,44 +183,10 @@
         <p>Elaborazione dati · DG AEIF GLU</p>
       </div>
     </div>
-
-    <nav class="quicklinks" aria-label="Collegamenti rapidi">
-      <a class="pill primary" href="grafico_energia (2).html">
-        <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-        Apri dashboard
-      </a>
-      <a class="pill" href="dossiers/dossier_mercati_elettrici.pdf">
-        <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>
-        Dossier mercati
-      </a>
-      <a class="pill" href="dossiers/dossier_approfondimento_ets.pdf">
-        <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>
-        Dossier ETS
-      </a>
-    </nav>
   </header>
 
-  <section class="overview" aria-label="Quadro sintetico">
-    <div class="panel intro">
-      <div class="eyebrow">Mercati elettrici · ETS · Industria</div>
-      <h2>Grafici interattivi per lettura rapida e confronto delle principali grandezze energetiche.</h2>
-      <p>Le schede raccolgono serie storiche, indicatori ETS, proventi Innovation Fund e confronti internazionali. I dati sono serviti tramite API dedicata e aggiornabili dal backend.</p>
-    </div>
-
-    <aside class="panel status">
-      <div>
-        <div class="status-label">Ambiente</div>
-        <div class="status-main"><span class="dot"></span>Produzione</div>
-      </div>
-      <p>Frontend Render e GitHub Pages puntano all'API produzione <code>dashboard-aeif-api-f497</code>.</p>
-    </aside>
-  </section>
-
   <section class="section">
-    <div class="section-head">
-      <h2>Mercati elettrici</h2>
-      <span>Prezzi · Generazione</span>
-    </div>
+    <div class="section-head"><h2>Analisi dati</h2></div>
     <div class="grid">
       <a class="card" href="grafico_energia (2).html" style="--c:var(--teal);--soft:rgba(13,135,150,.10)">
         <div class="icon">
@@ -301,7 +195,7 @@
         <div>
           <h3>Mercato energetico italiano</h3>
           <p>Prezzo EUA, PUN, gas TTF e quota termoelettrica su serie mensili.</p>
-          <div class="meta">2005-2026 · cursore anni</div>
+          <div class="meta">Dashboard interattiva</div>
         </div>
         <span class="arrow">→</span>
       </a>
@@ -313,19 +207,11 @@
         <div>
           <h3>Prezzi giornalieri PUN e TTF</h3>
           <p>Dettaglio giornaliero del prezzo elettrico italiano e del gas europeo.</p>
-          <div class="meta">Giornaliero · €/MWh</div>
+          <div class="meta">Dashboard interattiva</div>
         </div>
         <span class="arrow">→</span>
       </a>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>EU ETS e industria</h2>
-      <span>Emissioni · PIL · V.A.</span>
-    </div>
-    <div class="grid">
       <a class="card" href="EU_ETS_grafici_principali.html" style="--c:var(--gold);--soft:rgba(184,135,21,.12)">
         <div class="icon">
           <svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16V9"/><path d="M12 16V7"/><path d="M16 16v-5"/></svg>
@@ -333,7 +219,7 @@
         <div>
           <h3>EU ETS · emissioni e CAGR</h3>
           <p>Emissioni verificate, prezzo medio EUA e tasso annuo composto.</p>
-          <div class="meta">Legenda interattiva</div>
+          <div class="meta">Dashboard interattiva</div>
         </div>
         <span class="arrow">→</span>
       </a>
@@ -345,19 +231,11 @@
         <div>
           <h3>EU ETS · PIL e industria</h3>
           <p>PIL reale, valore aggiunto industriale e peso dell'industria sul PIL.</p>
-          <div class="meta">Due grafici separati</div>
+          <div class="meta">Dashboard interattiva</div>
         </div>
         <span class="arrow">→</span>
       </a>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Approfondimenti</h2>
-      <span>Fondi · Confronti</span>
-    </div>
-    <div class="grid">
       <a class="card" href="innovation_fund_proventi.html" style="--c:var(--green);--soft:rgba(34,132,90,.11)">
         <div class="icon">
           <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M6 8l-3 6h6L6 8z"/><path d="M18 8l-3 6h6l-3-6z"/><path d="M8 21h8"/></svg>
@@ -365,7 +243,7 @@
         <div>
           <h3>Innovation Fund · proventi</h3>
           <p>Contributi UE per paese o territorio di localizzazione progetto.</p>
-          <div class="meta">Tutti · top 5</div>
+          <div class="meta">Dashboard interattiva</div>
         </div>
         <span class="arrow">→</span>
       </a>
@@ -377,7 +255,36 @@
         <div>
           <h3>EU-27, USA e Giappone</h3>
           <p>PIL, valore aggiunto industriale, emissioni GHG e intensita carbonica.</p>
-          <div class="meta">2005-2024 · confronto</div>
+          <div class="meta">Dashboard interattiva</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Approfondimenti</h2></div>
+    <div class="grid">
+      <a class="card dossier" href="dossier_mercati_elettrici.html" style="--c:var(--teal);--soft:rgba(13,135,150,.10)">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v18H6.8A2.8 2.8 0 0 1 4 18.2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
+        </div>
+        <div>
+          <h3>Dossier mercati elettrici</h3>
+          <p>Pagina di lettura del dossier sui mercati elettrici, con sezioni navigabili.</p>
+          <div class="meta">Approfondimento digitale</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="card dossier" href="dossiers/dossier_approfondimento_ets.pdf" style="--c:var(--slate);--soft:rgba(79,96,117,.11)">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 18h4"/></svg>
+        </div>
+        <div>
+          <h3>Dossier ETS</h3>
+          <p>Documento di approfondimento ETS disponibile in formato PDF.</p>
+          <div class="meta">PDF</div>
         </div>
         <span class="arrow">→</span>
       </a>
@@ -389,5 +296,6 @@
     <div class="mono">Elaborazione dati · DG AEIF GLU</div>
   </footer>
 </main>
+<script src="assets/site-chrome.js?v=20260807-env"></script>
 </body>
 </html>

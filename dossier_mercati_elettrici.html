@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier mercati elettrici · Dashboard AEIF</title>
+<meta name="description" content="Dossier digitale sui mercati elettrici: sistema elettrico, generazione, reti, domanda, operatori e modello di mercato italiano.">
+<meta name="theme-color" content="#f6f8fb">
+<link rel="canonical" href="https://dashboard-aeif.onrender.com/dossier_mercati_elettrici.html">
+<link rel="icon" type="image/png" href="assets/mase-logo.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Dashboard AEIF">
+<meta property="og:title" content="Dossier mercati elettrici">
+<meta property="og:description" content="Pagina esplorabile del dossier sui mercati elettrici, collegata alla Dashboard AEIF.">
+<meta property="og:url" content="https://dashboard-aeif.onrender.com/dossier_mercati_elettrici.html">
+<meta property="og:image" content="https://dashboard-aeif.onrender.com/assets/mase-logo.png">
+<style>
+  :root{
+    --bg:#f6f8fb;--panel:#fff;--ink:#151d2a;--muted:#617186;--line:#dfe6ee;
+    --line-strong:#cfd8e3;--blue:#3269c7;--teal:#0d8796;--gold:#b88715;
+    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%;background:linear-gradient(180deg,#fff,#f6f8fb 42%,#eef3f8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{padding:28px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .brand{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px;text-align:center;box-shadow:0 12px 34px -24px rgba(20,30,45,.35);margin-bottom:30px}
+  .brand img{width:118px;height:auto;margin-bottom:12px}
+  .brand .elab{display:block;font-size:23px;font-weight:800;letter-spacing:0}
+  .home-btn{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--panel);border:1px solid var(--line-strong);border-radius:9px;padding:7px 12px;color:var(--muted);font-size:12px;font-weight:650;transition:.15s;box-shadow:0 1px 2px rgba(20,30,45,.04)}
+  .home-btn:hover{color:var(--ink);transform:translateX(-2px)}
+  .home-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .hero{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:22px}
+  .eyebrow{font-family:var(--mono);font-size:12px;color:var(--blue);font-weight:780;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+  h1{font-size:38px;line-height:1.12;letter-spacing:0;margin-bottom:12px}
+  .lead{font-size:17px;line-height:1.65;color:var(--muted);max-width:880px}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:8px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);padding:10px 13px;font-weight:720;font-size:13px;box-shadow:0 2px 9px rgba(20,30,45,.04)}
+  .btn.primary{background:#103b5d;color:#fff;border-color:#103b5d}
+  .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px;align-items:start}
+  .toc{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 9px 28px -24px rgba(20,30,45,.35)}
+  .toc h2{font-size:13px;margin-bottom:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.10em;color:var(--muted)}
+  .toc a{display:block;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.45;padding:8px;border-radius:7px}
+  .toc a:hover{background:#f1f5f9;color:var(--blue)}
+  .content{display:grid;gap:14px}
+  section.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 8px 26px -22px rgba(20,30,45,.35)}
+  section.card h2{font-size:23px;line-height:1.2;margin-bottom:10px}
+  section.card h3{font-size:16px;line-height:1.3;margin:18px 0 8px}
+  section.card p{font-size:15px;line-height:1.72;color:var(--muted);margin-top:10px}
+  .fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+  .fact{border:1px solid var(--line);border-radius:9px;padding:14px;background:#fbfcfe}
+  .fact b{display:block;font-size:20px;margin-bottom:4px}
+  .fact span{display:block;color:var(--muted);font-size:12px;line-height:1.4}
+  footer{margin-top:24px;padding:18px 0 8px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px}
+  footer .mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+  @media(max-width:860px){body{padding:20px}.layout{grid-template-columns:1fr}.toc{position:static}.fact-grid{grid-template-columns:1fr}.brand .elab{font-size:19px}}
+  @media(max-width:560px){body{padding:14px}.brand{padding:58px 14px 20px}.brand img{width:92px}h1{font-size:28px}.lead{font-size:15px}section.card{padding:17px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="brand">
+    <a class="home-btn" href="index.html"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+    <img src="assets/mase-logo.png" alt="Ministero dell'Ambiente e della Sicurezza Energetica">
+    <span class="elab">Elaborazione dati · DG AEIF GLU</span>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Approfondimento · Mercati elettrici</div>
+    <h1>Dossier di approfondimento sui Mercati Elettrici</h1>
+    <p class="lead">Una pagina di consultazione rapida del dossier sui principali elementi del sistema elettrico e sul funzionamento del mercato elettrico italiano.</p>
+    <div class="actions">
+      <a class="btn primary" href="#sistema"><svg viewBox="0 0 24 24"><path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v18H6.8A2.8 2.8 0 0 1 4 18.2"/><path d="M8 7h8"/></svg>Leggi online</a>
+      <a class="btn" href="dossiers/dossier_mercati_elettrici.pdf" download><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>Scarica PDF</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Indice dossier">
+      <h2>Indice</h2>
+      <a href="#sistema">Sistema elettrico</a>
+      <a href="#reti">Reti elettriche</a>
+      <a href="#generazione">Generazione</a>
+      <a href="#carichi">Carichi e domanda</a>
+      <a href="#mercato">Mercato elettrico</a>
+      <a href="#operatori">Operatori e regolatori</a>
+      <a href="#prezzo">Formazione del prezzo</a>
+    </nav>
+
+    <div class="content">
+      <section class="card" id="sistema">
+        <h2>Il sistema elettrico</h2>
+        <p>Il sistema elettrico collega produzione, trasmissione, distribuzione e consumo. La sua peculiarita e' l'equilibrio istantaneo tra energia immessa e prelevata: per questo la rete deve integrare programmazione, dispacciamento e gestione in tempo reale.</p>
+        <div class="fact-grid">
+          <div class="fact"><b>3</b><span>componenti chiave: reti, generazione, carichi</span></div>
+          <div class="fact"><b>24/7</b><span>bilanciamento continuo tra domanda e offerta</span></div>
+          <div class="fact"><b>UE</b><span>mercati nazionali sempre piu' interconnessi</span></div>
+        </div>
+      </section>
+
+      <section class="card" id="reti">
+        <h2>Reti elettriche</h2>
+        <p>Le reti di trasmissione trasportano energia sulle lunghe distanze ad alta tensione, mentre le reti di distribuzione consegnano l'energia ai consumatori finali. In Italia la trasmissione nazionale e' gestita da Terna, mentre la distribuzione opera su scala territoriale.</p>
+        <p>La rete consente anche gli scambi transfrontalieri: le interconnessioni rendono possibile importare o esportare energia e contribuiscono alla sicurezza del sistema.</p>
+      </section>
+
+      <section class="card" id="generazione">
+        <h2>Generazione elettrica</h2>
+        <p>La generazione combina impianti termoelettrici, idroelettrici e fonti rinnovabili. Le tecnologie hanno costi marginali e profili di disponibilita diversi: questo influenza l'ordine di merito con cui gli impianti entrano nel mercato.</p>
+        <p>La crescita delle fonti rinnovabili aumenta il peso della produzione non programmabile e rende piu' importanti flessibilita, accumuli, reti e servizi di dispacciamento.</p>
+      </section>
+
+      <section class="card" id="carichi">
+        <h2>Carichi e domanda</h2>
+        <p>I carichi rappresentano i consumi elettrici di famiglie, imprese e servizi. La domanda varia per ora, giorno, stagione e ciclo economico, con picchi che il sistema deve coprire mantenendo stabilita e qualita del servizio.</p>
+        <p>La gestione della domanda, l'efficienza energetica e l'elettrificazione dei consumi finali sono variabili sempre piu' rilevanti per la pianificazione del sistema.</p>
+      </section>
+
+      <section class="card" id="mercato">
+        <h2>Il mercato elettrico</h2>
+        <p>Il passaggio dal monopolio al mercato ha introdotto concorrenza nella produzione e nella vendita, mantenendo regolate le infrastrutture di rete. Il mercato italiano e' organizzato attorno a sedi di negoziazione e meccanismi di programmazione che coordinano domanda, offerta e sicurezza del sistema.</p>
+        <p>La borsa elettrica consente agli operatori di presentare offerte di acquisto e vendita; i risultati orientano programmi di produzione e consumo e alimentano il prezzo di riferimento.</p>
+      </section>
+
+      <section class="card" id="operatori">
+        <h2>Operatori e regolatori</h2>
+        <p>Il funzionamento del mercato coinvolge produttori, venditori, trader, grandi consumatori, gestori di rete e soggetti istituzionali. GME organizza i mercati energetici, Terna gestisce trasmissione e dispacciamento, ARERA regola i settori energetici, mentre il Ministero definisce indirizzi e politiche di settore.</p>
+      </section>
+
+      <section class="card" id="prezzo">
+        <h2>Formazione del prezzo</h2>
+        <p>Nei mercati primari il prezzo riflette l'incontro tra domanda e offerta. Il meccanismo marginale fa si' che, in ciascuna zona e periodo rilevante, il prezzo sia determinato dall'offerta necessaria a soddisfare l'ultima unita di domanda accettata.</p>
+        <p>Per leggere le dinamiche di prezzo occorre quindi considerare mix di generazione, prezzo dei combustibili, costo della CO2, disponibilita degli impianti, congestioni di rete e condizioni meteo.</p>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div>Fonte: dossier di approfondimento sui Mercati Elettrici.</div>
+    <div class="mono">Elaborazione dati · DG AEIF GLU</div>
+  </footer>
+</main>
+<script src="assets/site-chrome.js?v=20260807-env"></script>
+</body>
+</html>
