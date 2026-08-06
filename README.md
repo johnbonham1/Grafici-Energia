@@ -17,22 +17,21 @@ https://dashboard-aeif-preproduzione.onrender.com/
 - `main`: produzione
 - `preprod`: pre-produzione
 
-Ogni ambiente ha uno static site Render separato. Il backend, il database e il cron sono separati tra produzione e pre-produzione.
+Ogni ambiente ha uno static site Render separato gia esistente. Il Blueprint Render gestisce solo backend, database e cron.
 
 ## Render Produzione
 
-- static site: `dashboard-aeif`
+- static site: `dashboard-aeif` gia esistente, fuori dal Blueprint
 - API: `dashboard-aeif-api`
 - database: `dashboard-aeif-db`
 - cron PUN: `dashboard-aeif-pun-scraper`
 - branch collegato: `main`
-- publish directory: `public`
 
 Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine mostrano un messaggio di dati temporaneamente non disponibili.
 
 ## Render Pre-Produzione
 
-- static site: `dashboard-aeif-preproduzione`
+- static site: `dashboard-aeif-preproduzione` gia esistente, fuori dal Blueprint
 - API: `dashboard-aeif-api-preprod`
 - database: `dashboard-aeif-db-preprod`
 - cron PUN: `dashboard-aeif-pun-scraper-preprod`
