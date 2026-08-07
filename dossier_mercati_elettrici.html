@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dossier mercati elettrici · Dashboard AEIF</title>
-<meta name="description" content="Versione digitale integrale del dossier sui mercati elettrici: pagine originali, grafici e testo completo consultabile.">
+<meta name="description" content="Dossier digitale sui mercati elettrici: sistema elettrico, generazione, reti, domanda, operatori e modello di mercato italiano.">
 <meta name="theme-color" content="#f6f8fb">
 <link rel="canonical" href="https://dashboard-aeif.onrender.com/dossier_mercati_elettrici.html">
 <link rel="icon" type="image/png" href="assets/mase-logo.png">
@@ -12,52 +12,52 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Dashboard AEIF">
 <meta property="og:title" content="Dossier mercati elettrici">
-<meta property="og:description" content="Versione digitale integrale del dossier sui mercati elettrici, con pagine originali e testo completo.">
+<meta property="og:description" content="Pagina esplorabile del dossier sui mercati elettrici, collegata alla Dashboard AEIF.">
 <meta property="og:url" content="https://dashboard-aeif.onrender.com/dossier_mercati_elettrici.html">
 <meta property="og:image" content="https://dashboard-aeif.onrender.com/assets/mase-logo.png">
 <style>
   :root{
     --bg:#f6f8fb;--panel:#fff;--ink:#151d2a;--muted:#617186;--line:#dfe6ee;
-    --line-strong:#cfd8e3;--blue:#3269c7;--navy:#103b5d;--soft:#eef4fa;
+    --line-strong:#cfd8e3;--blue:#3269c7;--teal:#0d8796;--gold:#b88715;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
     --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{min-height:100%;background:linear-gradient(180deg,#fff,#f6f8fb 42%,#eef3f8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  html,body{min-height:100%;background:linear-gradient(180deg,#fff,#f6f8fb 42%,#eef3f8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
   body{padding:28px}
-  .wrap{max-width:1240px;margin:0 auto}
-  .brand{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;text-align:center;box-shadow:0 12px 34px -24px rgba(20,30,45,.35);margin-bottom:28px}
-  .brand img{width:124px;height:auto;margin-bottom:12px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .brand{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px;text-align:center;box-shadow:0 12px 34px -24px rgba(20,30,45,.35);margin-bottom:30px}
+  .brand img{width:118px;height:auto;margin-bottom:12px}
   .brand .elab{display:block;font-size:23px;font-weight:800;letter-spacing:0}
   .home-btn{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--panel);border:1px solid var(--line-strong);border-radius:9px;padding:7px 12px;color:var(--muted);font-size:12px;font-weight:650;transition:.15s;box-shadow:0 1px 2px rgba(20,30,45,.04)}
   .home-btn:hover{color:var(--ink);transform:translateX(-2px)}
-  .home-btn svg,.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .home-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
   .hero{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:22px}
   .eyebrow{font-family:var(--mono);font-size:12px;color:var(--blue);font-weight:780;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
   h1{font-size:38px;line-height:1.12;letter-spacing:0;margin-bottom:12px}
-  .lead{font-size:17px;line-height:1.65;color:var(--muted);max-width:920px}
+  .lead{font-size:17px;line-height:1.65;color:var(--muted);max-width:880px}
   .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
   .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:8px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);padding:10px 13px;font-weight:720;font-size:13px;box-shadow:0 2px 9px rgba(20,30,45,.04)}
-  .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
-  .layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:22px;align-items:start}
-  .toc{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 9px 28px -24px rgba(20,30,45,.35);max-height:calc(100vh - 36px);overflow:auto}
-  .toc h2{font-size:12px;margin-bottom:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.10em;color:var(--muted)}
-  .toc a{display:block;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.45;padding:7px 8px;border-radius:7px}
+  .btn.primary{background:#103b5d;color:#fff;border-color:#103b5d}
+  .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px;align-items:start}
+  .toc{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 9px 28px -24px rgba(20,30,45,.35)}
+  .toc h2{font-size:13px;margin-bottom:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.10em;color:var(--muted)}
+  .toc a{display:block;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.45;padding:8px;border-radius:7px}
   .toc a:hover{background:#f1f5f9;color:var(--blue)}
-  .content{display:grid;gap:18px}
-  .note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;color:var(--muted);font-size:14px;line-height:1.6}
-  .page-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 8px 26px -22px rgba(20,30,45,.35);scroll-margin-top:20px}
-  .page-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  .page-head a{color:var(--blue);text-decoration:none;font-family:var(--sans);font-weight:720;letter-spacing:0;text-transform:none}
-  .page-img{display:block;width:100%;max-width:900px;height:auto;margin:0 auto;border:1px solid var(--line);border-radius:8px;background:#fff}
-  details.page-text{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;overflow:hidden}
-  details.page-text summary{cursor:pointer;list-style:none;padding:12px 14px;font-weight:760;color:var(--ink);border-bottom:1px solid var(--line);font-size:14px}
-  details.page-text summary::-webkit-details-marker{display:none}
-  details.page-text div{white-space:pre-wrap;padding:14px;font-size:13px;line-height:1.68;color:#334155}
+  .content{display:grid;gap:14px}
+  section.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 8px 26px -22px rgba(20,30,45,.35)}
+  section.card h2{font-size:23px;line-height:1.2;margin-bottom:10px}
+  section.card h3{font-size:16px;line-height:1.3;margin:18px 0 8px}
+  section.card p{font-size:15px;line-height:1.72;color:var(--muted);margin-top:10px}
+  .fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+  .fact{border:1px solid var(--line);border-radius:9px;padding:14px;background:#fbfcfe}
+  .fact b{display:block;font-size:20px;margin-bottom:4px}
+  .fact span{display:block;color:var(--muted);font-size:12px;line-height:1.4}
   footer{margin-top:24px;padding:18px 0 8px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px}
   footer .mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
-  @media(max-width:900px){body{padding:20px}.layout{grid-template-columns:1fr}.toc{position:static;max-height:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.toc h2{grid-column:1/-1}.brand .elab{font-size:19px}}
-  @media(max-width:560px){body{padding:14px}.brand{padding:58px 14px 20px}.brand img{width:96px}h1{font-size:28px}.lead{font-size:15px}.toc{grid-template-columns:repeat(2,minmax(0,1fr))}.page-card{padding:10px}details.page-text div{font-size:12px}}
+  @media(max-width:860px){body{padding:20px}.layout{grid-template-columns:1fr}.toc{position:static}.fact-grid{grid-template-columns:1fr}.brand .elab{font-size:19px}}
+  @media(max-width:560px){body{padding:14px}.brand{padding:58px 14px 20px}.brand img{width:92px}h1{font-size:28px}.lead{font-size:15px}section.card{padding:17px}}
 </style>
 </head>
 <body>
@@ -69,1080 +69,77 @@
   </div>
 
   <header class="hero">
-    <div class="eyebrow">Approfondimento digitale · Mercati elettrici</div>
+    <div class="eyebrow">Approfondimento · Mercati elettrici</div>
     <h1>Dossier di approfondimento sui Mercati Elettrici</h1>
-    <p class="lead">Versione digitale integrale: ogni pagina mantiene grafici, tabelle e impaginazione originali del PDF; sotto ciascuna pagina e' disponibile il testo completo estratto per consultazione e ricerca.</p>
+    <p class="lead">Una pagina di consultazione rapida del dossier sui principali elementi del sistema elettrico e sul funzionamento del mercato elettrico italiano.</p>
     <div class="actions">
-      <a class="btn primary" href="#pagina-01"><svg viewBox="0 0 24 24"><path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v18H6.8A2.8 2.8 0 0 1 4 18.2"/><path d="M8 7h8"/></svg>Leggi online</a>
+      <a class="btn primary" href="#sistema"><svg viewBox="0 0 24 24"><path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v18H6.8A2.8 2.8 0 0 1 4 18.2"/><path d="M8 7h8"/></svg>Leggi online</a>
       <a class="btn" href="dossiers/dossier_mercati_elettrici.pdf" download><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>Scarica PDF</a>
     </div>
   </header>
 
   <div class="layout">
-    <nav class="toc" id="indice" aria-label="Indice pagine dossier">
-      <h2>Pagine</h2>
-        <a href="#pagina-01">Pagina 1</a>
-        <a href="#pagina-02">Pagina 2</a>
-        <a href="#pagina-03">Pagina 3</a>
-        <a href="#pagina-04">Pagina 4</a>
-        <a href="#pagina-05">Pagina 5</a>
-        <a href="#pagina-06">Pagina 6</a>
-        <a href="#pagina-07">Pagina 7</a>
-        <a href="#pagina-08">Pagina 8</a>
-        <a href="#pagina-09">Pagina 9</a>
-        <a href="#pagina-10">Pagina 10</a>
-        <a href="#pagina-11">Pagina 11</a>
-        <a href="#pagina-12">Pagina 12</a>
-        <a href="#pagina-13">Pagina 13</a>
-        <a href="#pagina-14">Pagina 14</a>
-        <a href="#pagina-15">Pagina 15</a>
-        <a href="#pagina-16">Pagina 16</a>
-        <a href="#pagina-17">Pagina 17</a>
-        <a href="#pagina-18">Pagina 18</a>
-        <a href="#pagina-19">Pagina 19</a>
-        <a href="#pagina-20">Pagina 20</a>
-        <a href="#pagina-21">Pagina 21</a>
-        <a href="#pagina-22">Pagina 22</a>
-        <a href="#pagina-23">Pagina 23</a>
-        <a href="#pagina-24">Pagina 24</a>
-        <a href="#pagina-25">Pagina 25</a>
-        <a href="#pagina-26">Pagina 26</a>
+    <nav class="toc" aria-label="Indice dossier">
+      <h2>Indice</h2>
+      <a href="#sistema">Sistema elettrico</a>
+      <a href="#reti">Reti elettriche</a>
+      <a href="#generazione">Generazione</a>
+      <a href="#carichi">Carichi e domanda</a>
+      <a href="#mercato">Mercato elettrico</a>
+      <a href="#operatori">Operatori e regolatori</a>
+      <a href="#prezzo">Formazione del prezzo</a>
     </nav>
 
     <div class="content">
-      <div class="note">Il contenuto non e' riassunto: le immagini riproducono le pagine originali del dossier e la sezione testo riporta integralmente lo strato testuale estraibile dal PDF.</div>
-      <article class="page-card" id="pagina-01">
-        <div class="page-head">
-          <span>Pagina 1</span>
-          <a href="#indice">Indice</a>
+      <section class="card" id="sistema">
+        <h2>Il sistema elettrico</h2>
+        <p>Il sistema elettrico collega produzione, trasmissione, distribuzione e consumo. La sua peculiarita e' l'equilibrio istantaneo tra energia immessa e prelevata: per questo la rete deve integrare programmazione, dispacciamento e gestione in tempo reale.</p>
+        <div class="fact-grid">
+          <div class="fact"><b>3</b><span>componenti chiave: reti, generazione, carichi</span></div>
+          <div class="fact"><b>24/7</b><span>bilanciamento continuo tra domanda e offerta</span></div>
+          <div class="fact"><b>UE</b><span>mercati nazionali sempre piu' interconnessi</span></div>
         </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-01.jpg" alt="Pagina 1 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 1</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Dossier di approfondimento sui Mercati Elettrici
-Sommario
-1. Introduzione sulle principali componenti del sistema elettrico ....................................................... 2
-1.1 Le reti elettriche ......................................................................................................................... 2
-1.2 La generazione elettrica ............................................................................................................. 3
-1.3 I carichi elettrici .......................................................................................................................... 5
-1.4 Le grandi reti elettriche interconnesse ...................................................................................... 6
-2. Il mercato elettrico ........................................................................................................................... 7
-2.1 Dal monopolio al mercato .......................................................................................................... 7
-2.2 Evoluzione del mercato elettrico italiano................................................................................... 9
-2.3 Operatori di mercato .................................................................................................................. 9
-2.4 Soggetti italiani regolatori e di gestione................................................................................... 10
-2.5 Modello di mercato italiano a borsa facoltativa ...................................................................... 12
-2.6 Formazione del prezzo nei mercati primari ............................................................................. 13
-2.7 Vincoli di rete ........................................................................................................................... 15
-2.8 Mercato Elettrico a Pronti (MPE) ............................................................................................. 16
-2.9 Mercato del Giorno Prima (MGP) ............................................................................................ 18
-2.10 Mercato Infragiornaliero (MI) ................................................................................................ 19
-2.11 Mercato per il Servizio di Dispacciamento (MSD) .................................................................. 20
-2.12 Mercato dei Prodotti Giornalieri (MPEG) ............................................................................... 21
-2.13 Mercato a Termine dell’Energia (MTE) .................................................................................. 22
-2.14 Mercati dei servizi di pubblica utilità e sicurezza ................................................................... 22
-2.15 Integrazione del mercato elettrico italiano nel mercato europeo ......................................... 23
-2.16 Contratti retail, gestione del rischio e mercati finanziari ....................................................... 24
-1</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-02">
-        <div class="page-head">
-          <span>Pagina 2</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-02.jpg" alt="Pagina 2 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 2</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-1. Introduzione sulle principali componenti del sistema elettrico
-1.1 Le reti elettriche
-Il sistema elettrico italiano ed europeo si fonda su una infrastruttura di rete articolata su più livelli di
-tensione, funzionale al trasporto dell’energia dalla produzione ai consumi finali.
-La trasmissione è gestita in Italia da Terna e opera in altissima e alta tensione, con livelli di tensione
-da 150 a 400 kV. Questa architettura consente di trasferire grandi quantità di energia su lunghe
-distanze. La Rete di Trasmissione Nazionale italiana comprende circa 75.000 km di linee in alta e
-altissima tensione, circa 900 stazioni di trasformazione e smistamento e 30 linee di interconnessione
-con l’estero verso 7 Paesi: Francia/Corsica, Svizzera, Austria, Slovenia, Grecia, Malta e Montenegro.
-Di queste, 26 sono interconnessioni in corrente alternata con Francia, Svizzera, Austria, Slovenia e
-Malta, mentre 4 sono connessioni in corrente continua (attraverso cavi sottomarini) con Corsica,
-Grecia, Montenegro e Francia.
-La distribuzione svolge invece la funzione di portare l’energia verso gli utenti finali. La rete primaria
-di distribuzione opera in media tensione, tra 1 e 30 kV, con potenze trasportate nell’ordine di 1–10
-MW e copertura provinciale o cittadina. La rete secondaria opera in bassa tensione, a 230–400 V,
-con potenze comprese tra 10 e 1.000 kW e copertura locale. In Italia, la consistenza complessiva
-delle reti di distribuzione aggiornata al 2025 è pari a circa 880.000 km in bassa tensione, 400.600 km
-in media tensione. La distribuzione italiana resta un settore frammentato ma in progressiva
-concentrazione. I distributori erano circa 170 nel 2004, si sono ridotti a 140 nel 2012 e oggi sono
-circa 120. Tuttavia, e-distribuzione (gruppo Enel) è il principale operatore, seguito da alcune ex
-municipalizzate, tra cui ARETI (gruppo Acea). Accanto a questi soggetti operano distributori medio-
-piccoli, distributori connessi in media o bassa tensione e distributori isolati nelle isole minori non
-interconnesse alla rete nazionale. I distributori operano sulla base di concessioni rilasciate dal MASE.
-Figura 1 – Aziende distributrici in Italia
-2</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-03">
-        <div class="page-head">
-          <span>Pagina 3</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-03.jpg" alt="Pagina 3 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 3</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-1.2 La generazione elettrica
-Il sistema elettrico italiano è caratterizzato da una combinazione di generazione concentrata e
-generazione distribuita.
-La generazione concentrata comprende grandi impianti di produzione, generalmente connessi alla
-rete di trasmissione in alta tensione, alimentati da fonti fossili, idriche, geotermiche o nucleari. Si
-tratta di impianti di grande taglia, tipicamente compresa tra 100 e 1.000 MW, storicamente
-progettati per garantire la copertura del carico elettrico nazionale e la stabilità del sistema.
-• Gli impianti termoelettrici rappresentano ancora oggi una componente centrale del sistema
-elettrico europeo. Le principali tecnologie includono impianti a turbina a vapore, turbine a
-gas e cicli combinati alimentati prevalentemente a gas naturale. I cicli combinati a gas (CCGT)
-costituiscono la tecnologia termoelettrica più efficiente, con rendimenti compresi tra il 52%
-e il 65%, superiori rispetto agli impianti tradizionali.
-• L’idroelettrico continua a rappresentare una infrastruttura strategica per il sistema italiano
-sia per capacità installata sia per flessibilità operativa. Gli impianti idroelettrici possono
-essere ad acqua fluente, a bacino o a pompaggio. Questi ultimi svolgono un ruolo
-particolarmente rilevante per l’equilibrio del sistema, consentendo di accumulare energia e
-fornire servizi di regolazione e riserva.
-Gli impianti a maggiore efficienza e minore flessibilità tendono a operare come impianti “di base”,
-mentre gli impianti più flessibili vengono utilizzati per coprire i picchi di domanda e fornire servizi
-ancillari.
-Dal punto di vista economico, il costo di produzione dell’energia elettrica dipende dalla
-combinazione tra costi fissi di impianto e costi variabili legati alla produzione. Un indicatore
-economico fondamentale è il costo specifico medio annuo del MWh prodotto, esprimibile come:
-𝑎
-𝐶 = + 𝑏
-𝑀𝑊ℎ 𝐷
-𝑢
-dove:
-• 𝑎 rappresenta l’onere fisso annuo per MW installato, proporzionale ai costi di investimento,
-manutenzione e disponibilità dell’impianto;
-• 𝐷 rappresenta la durata annua di utilizzazione dell’impianto;
-𝑢
-• 𝑏 rappresenta il costo variabile specifico del MWh prodotto, legato principalmente al costo
-del combustibile, al rendimento dell’impianto e, per gli impianti termoelettrici, al costo delle
-quote ETS.
-Ne consegue che impianti caratterizzati da elevati costi fissi e bassi costi variabili, come impianti
-nucleari, idroelettrici o termoelettrici ad alta efficienza, risultano economicamente sostenibili solo
-3</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-04">
-        <div class="page-head">
-          <span>Pagina 4</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-04.jpg" alt="Pagina 4 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 4</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-se operano per un elevato numero di ore annue. Al contrario, impianti con minori costi di
-investimento ma costi variabili più elevati, come le turbine a gas, possono operare per periodi più
-limitati, purché in condizioni di elevata efficienza. Questa differente struttura dei costi è alla base
-dell’ordine di merito (“merit order”) che determina il funzionamento dei mercati elettrici europei.
-La generazione distribuita comprende impianti da fonte rinnovabile come fotovoltaici, eolici, mini-
-idro, da biomassa e impianti da fonte non rinnovabile come mini-turbine a gas o impianti di
-cogenerazione.
-Negli ultimi anni il sistema elettrico italiano ha registrato una forte crescita della generazione
-distribuita da fonti rinnovabili, principalmente fotovoltaico ed eolico.
-Figura 2 - Capacità rinnovabile in Italia, Domanda elettrica e quota FER
-La capacità installata complessiva in Italia è oggi pari a circa 130 GW, a fronte di una punta di carico
-di circa 55 GW. Nonostante l’elevata capacità installata, il sistema italiano continua a dipendere dalle
-importazioni elettriche dall’estero, che coprono circa il 10% dei consumi.
-4</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-05">
-        <div class="page-head">
-          <span>Pagina 5</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-05.jpg" alt="Pagina 5 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 5</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Figura 3 – Capacità di picco in Italia
-La crescita delle rinnovabili ha modificato profondamente la struttura del parco di generazione
-nazionale. A fine 2024 la capacità rinnovabile installata era pari a circa 76,6 GW, di cui circa 37 GW
-fotovoltaici, 21,5 GW idroelettrici e circa 13 GW eolici. Il fotovoltaico rappresenta la tecnologia con
-il maggiore tasso di crescita, con un incremento annuo (CAGR) superiore al 22% registrato nel 2024.
-Questa trasformazione è strettamente collegata agli obiettivi europei di decarbonizzazione e agli
-strumenti di pianificazione energetica nazionale, tra cui PNIEC (Piano Nazionale Integrato per
-l’Energia e il Clima) e PNRR.
-L’incremento della generazione rinnovabile non programmabile pone tuttavia nuove esigenze di
-sistema. La progressiva riduzione della generazione termoelettrica convenzionale richiede infatti
-maggiori investimenti in reti, accumuli, capacità di riserva e servizi di flessibilità, necessari per
-preservare sicurezza, adeguatezza e stabilità della rete elettrica nazionale.
-1.3 I carichi elettrici
-I carichi elettrici rappresentano l’insieme dei consumi di energia connessi alle reti di trasmissione e
-distribuzione in alta, media e bassa tensione. La domanda elettrica può essere analizzata sia in
-termini di energia consumata [Wh] sia in termini di potenza richiesta [W] nei momenti di punta,
-elemento centrale per la pianificazione e la sicurezza del sistema elettrico.
-L’andamento dei consumi nel tempo viene rappresentato attraverso curve di carico cronologiche e
-curve di durata del carico, strumenti fondamentali per valutare la struttura della domanda elettrica,
-la dimensione delle infrastrutture necessarie e il fabbisogno di capacità di generazione e riserva.
-5</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-06">
-        <div class="page-head">
-          <span>Pagina 6</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-06.jpg" alt="Pagina 6 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 6</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Figura 4 – Curva di carico disponibile sul sito di Terna
-Nel sistema elettrico si distingue tra domanda elettrica e fabbisogno elettrico. Quest’ultimo include,
-oltre ai consumi finali, anche le perdite di rete e i consumi necessari al funzionamento del sistema
-stesso. La previsione della domanda e del fabbisogno elettrico costituisce un elemento essenziale
-sia per la pianificazione di lungo periodo sia per la gestione operativa in tempo reale della rete
-elettrica.
-L’evoluzione dei carichi elettrici è oggi fortemente influenzata dai processi di elettrificazione dei
-consumi, in particolare nei settori della mobilità, del riscaldamento civile e dell’industria. Tale
-trasformazione comporta un progressivo aumento della domanda elettrica e una crescente
-necessità di flessibilità del sistema.
-1.4 Le grandi reti elettriche interconnesse
-L’interconnessione tra reti elettriche nazionali consente di condividere capacità di generazione,
-riserve e servizi di sistema, migliorando efficienza economica, sicurezza e continuità della fornitura
-elettrica. Le grandi reti interconnesse permettono inoltre di ridurre i costi di esercizio, ottimizzare
-l’utilizzo delle infrastrutture esistenti e aumentare la flessibilità del sistema in presenza di
-perturbazioni o squilibri tra domanda e offerta.
-In Europa il coordinamento delle reti di trasmissione è oggi affidato a ENTSO-E (European Network
-of Transmission System Operators for Electricity), organismo che riunisce i gestori dei TSO europei
-(Terna in Italia) e opera in coordinamento con la Commissione Europea e ACER (Agenzia per la
-cooperazione tra i regolatori nazionali dell’energia). ENTSO-E svolge un ruolo centrale nello sviluppo
-6</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-07">
-        <div class="page-head">
-          <span>Pagina 7</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-07.jpg" alt="Pagina 7 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 7</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-dei codici di rete europei, nella pianificazione infrastrutturale e nel coordinamento operativo del
-sistema elettrico continentale.
-La crescente integrazione dei mercati elettrici europei ha aumentato il ruolo strategico delle
-interconnessioni transfrontaliere, sia per l’efficienza economica del mercato sia per la sicurezza
-energetica. In questo contesto, la rete elettrica europea opera sempre più come un sistema
-integrato, nel quale eventi, prezzi e squilibri di un singolo Paese possono propagarsi rapidamente
-agli altri mercati nazionali.
-L’interconnessione costituisce inoltre un elemento fondamentale per l’integrazione delle fonti
-rinnovabili non programmabili, consentendo di compensare su scala geografica la variabilità della
-produzione e migliorare l’equilibrio complessivo del sistema elettrico.
-2. Il mercato elettrico
-2.1 Dal monopolio al mercato
-Lo sviluppo dei sistemi elettrici è avvenuto storicamente in regime di monopolio naturale, nella
-consapevolezza del ruolo strategico e sociale dell’energia elettrica. L’obiettivo originario era garantire
-continuità del servizio, copertura territoriale, affidabilità e minimizzazione dei costi attraverso una
-gestione centralizzata e verticalmente integrata della filiera elettrica.
-Nel modello monopolistico tradizionale un unico soggetto era responsabile dell’intera catena del
-valore elettrica. In Italia tale modello è stato rappresentato dal monopolio pubblico Enel dal 1962
-fino alla liberalizzazione del settore avviata negli anni Novanta.
-La filiera elettrica (catena del valore) si articola infatti in quattro segmenti principali:
-• Generazione: attività di produzione dell’energia elettrica tramite impianti termoelettrici,
-idroelettrici, nucleari o da fonti rinnovabili. È il segmento con il maggiore peso economico sul
-costo finale dell’energia in MWh venduto (60%), quello su cui agire per ridurre i costi in
-bolletta ed è oggi strutturalmente aperto alla concorrenza.
-• Trasmissione: attività di trasporto dell’energia sulle reti in alta e altissima tensione.
-Costituisce un monopolio naturale nazionale per l’elevata intensità di capitale e la presenza
-di costi infrastrutturali non recuperabili. In Europa il modello prevalente è quello del
-Transmission System Operator (TSO). In Italia oggi è Terna il TSO unico.
-• Distribuzione: attività di consegna dell’energia agli utenti finali tramite reti in media e bassa
-tensione. Anche la distribuzione rappresenta un monopolio naturale, generalmente
-organizzato su base territoriale o regionale.
-• Vendita: attività commerciale di approvvigionamento e vendita dell’energia ai clienti finali. È
-un segmento liberalizzato caratterizzato da bassa intensità di capitale e forte competitività.
-7</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-08">
-        <div class="page-head">
-          <span>Pagina 8</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-08.jpg" alt="Pagina 8 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 8</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Figura 5 – Catena del valore dell’energia elettrica
-Il modello monopolistico risultava inizialmente efficiente grazie alle elevate economie di scala nella
-generazione elettrica e alle economie di densità tipiche delle infrastrutture di rete. Con il tempo,
-tuttavia, la struttura verticalmente integrata ha mostrato limiti in termini di efficienza operativa,
-innovazione tecnologica e competitività, riducendo gli incentivi all’ottimizzazione dei costi e al
-miglioramento del servizio.
-La liberalizzazione del settore elettrico europeo ha quindi introdotto meccanismi concorrenziali nei
-segmenti contendibili della filiera, in particolare generazione e vendita, mantenendo invece in
-regime regolato le attività caratterizzate da monopolio naturale, come trasmissione e distribuzione.
-In questo contesto è stato introdotto il principio di unbundling, ossia la separazione tra attività
-regolate e attività commerciali, con l’obiettivo di garantire neutralità, concorrenza e accesso non
-discriminatorio alle infrastrutture di rete.
-La liberalizzazione ha rappresentato uno strumento fondamentale per aumentare l’efficienza
-complessiva del sistema elettrico, favorire gli investimenti e migliorare qualità e continuità del
-servizio, contribuendo nel tempo anche alla riduzione dei costi per i consumatori finali.
-Un esempio concreto del principio di unbundling è rappresentato dal gruppo Enel. Storicamente
-verticalmente integrato, il gruppo controllava produzione, trasmissione, distribuzione e vendita
-dell’energia elettrica. Con la liberalizzazione del settore, la rete di trasmissione nazionale è stata
-separata dal gruppo Enel, portando alla nascita di Terna quale gestore indipendente della Rete di
-Trasmissione Nazionale.
-Analoga separazione riguarda distribuzione e vendita: e-distribuzione gestisce le reti elettriche,
-mentre Enel Energia opera nella vendita ai clienti finali. Le normative europee e nazionali
-8</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-09">
-        <div class="page-head">
-          <span>Pagina 9</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-09.jpg" alt="Pagina 9 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 9</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-sull’unbundling impongono infatti separazione funzionale, gestionale e informativa tra attività
-regolate e attività commerciali.
-2.2 Evoluzione del mercato elettrico italiano
-Il mercato elettrico italiano ha attraversato negli ultimi decenni una profonda trasformazione,
-passando da un modello monopolistico verticalmente integrato ad un sistema liberalizzato e
-concorrenziale, in linea con il processo di integrazione dei mercati energetici europei.
-Il processo di liberalizzazione è stato avviato in recepimento della Direttiva europea 96/92/CE
-attraverso la Legge Delega n. 128/1998 e, soprattutto, con il Decreto Legislativo n. 79/1999 (“Decreto
-Bersani”), che ha definito l’attuale struttura del mercato elettrico italiano.
-Uno degli elementi centrali della liberalizzazione è stato il superamento della posizione dominante
-di Eenl nella generazione elettrica. Il Decreto Bersani ha infatti imposto che nessun operatore
-potesse produrre o importare oltre il 50% dell’energia elettrica nazionale, determinando la cessione
-di circa 15 GW di capacità produttiva Eenl attraverso la creazione delle cosiddette Gen.Co.
-Nel segmento della trasmissione, le attività di trasmissione e dispacciamento sono state riservate
-allo Stato e affidate in concessione ad un gestore unico della rete nazionale, inizialmente
-denominato GRTN e successivamente Terna.
-A Terna sono state attribuite le funzioni di gestione dei flussi energetici, sicurezza del sistema,
-sviluppo della rete e accesso non discriminatorio alle infrastrutture di trasmissione.
-Anche la distribuzione è rimasta un’attività regolata in concessione, soggetta a tariffe definite
-dall’Autorità e all’obbligo di connessione degli utenti alle reti.
-2.3 Operatori di mercato
-I principali operatori presenti nei mercati elettrici sono:
-• Produttori: soggetti che producono energia elettrica, essendo o meno proprietari degli
-impianti. Possono essere società indipendenti, aziende municipalizzate, enti pubblici o
-operatori verticalmente integrati. Il loro obiettivo economico è massimizzare il profitto, pari
-alla differenza tra ricavi derivanti dalla vendita di energia e costi di produzione.
-• Gestori/proprietari di rete: responsabili dello sviluppo e della manutenzione delle reti, della
-gestione dei flussi energetici, delle interconnessioni e dei servizi ausiliari necessari a garantire
-sicurezza, affidabilità ed efficienza del sistema elettrico. Devono inoltre assicurare accesso
-regolamentato e non discriminatorio alle infrastrutture di rete. In Europa prevale il modello
-TSO (Transmission System Operator) per la trasmissione e DSO (Distribution System
-Operator) per la distribuzione.
-9</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-10">
-        <div class="page-head">
-          <span>Pagina 10</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-10.jpg" alt="Pagina 10 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 10</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-• Consumatori: utenti finali che acquistano energia elettrica. Il loro obiettivo economico è
-massimizzare il profitto, pari alla differenza fra i benefici connessi all’uso di elettricità e i costi
-sostenuti per acquistarla. Possono essere:
-o clienti finali, se acquistano energia per uso proprio,
-o oppure trader, grossisti o rivenditori se acquistano energia per rivenderla sul mercato.
-• Enti di regolazione e controllo: autorità indipendenti responsabili della regolazione e
-supervisione del mercato elettrico. Svolgono funzioni di promozione della concorrenza,
-monitoraggio del mercato ed emanazione delle regole necessarie al corretto funzionamento
-del sistema.
-• NEMO (Nominated Electricity Market Operator): soggetto incaricato dell’organizzazione e
-gestione delle piattaforme di mercato elettrico su scala nazionale ed europea, con funzioni
-di coordinamento delle attività di negoziazione dell’energia. In Italia, il soggetto incaricato è
-il GME (Gestore dei Mercati Energetici).
-2.4 Soggetti italiani regolatori e di gestione
-Il mercato elettrico italiano è caratterizzato dalla presenza di una pluralità di soggetti istituzionali e
-operatori responsabili della regolazione, gestione tecnica e organizzazione dei mercati dell’energia
-elettrica.
-I principali soggetti regolatori e di gestione del mercato elettrico italiano sono:
-• MASE (Ministero dell’Ambiente e della Sicurezza Energetica): definisce gli indirizzi strategici
-e le politiche energetiche nazionali, inclusi gli obiettivi di decarbonizzazione, sicurezza
-energetica e sviluppo delle fonti rinnovabili.
-• ARERA (Autorità di Regolazione per Energia Reti e Ambiente): è l’autorità indipendente
-responsabile della regolazione dei settori elettrico, gas, idrico e ambientale. Definisce le
-regole tariffarie, le condizioni di accesso alle reti, gli standard di qualità del servizio e
-supervisiona il corretto funzionamento del mercato. ARERA è la National Regulatory
-Authority (NRA) italiana.
-• Terna – Transmission System Operator (TSO): gestisce la Rete di Trasmissione Nazionale,
-elabora il Piano di sviluppo della rete e delibera gli interventi di manutenzione. Gestisce i
-flussi di energia in condizioni di sicurezza ed efficienza economica secondo le regole di
-dispacciamento definite nel Codice di Rete e approvate da ARERA. Ha inoltre l’obbligo di
-connettere alla rete tutti i soggetti che ne facciano richiesta, nel rispetto delle specifiche
-tecniche e delle condizioni di accesso definite dalla regolazione.
-• GSE (Gestore dei Servizi Energetici): società interamente partecipata dal Ministero
-dell’Economia e delle Finanze, alla quale è attribuito il compito di promozione e sviluppo
-delle fonti rinnovabili e dell’efficienza energetica. Gestisce i principali meccanismi
-incentivanti nel settore energetico, tra cui il ritiro e collocamento sul mercato dell’energia
-10</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-11">
-        <div class="page-head">
-          <span>Pagina 11</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-11.jpg" alt="Pagina 11 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 11</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-prodotta da impianti rinnovabili, gli incentivi alla produzione da fonti rinnovabili, le garanzie
-d’origine dell’energia rinnovabile, e altri meccanismi di incentivazione. Svolge inoltre servizi
-di previsione e programmazione dell’energia elettrica per minimizzare gli sbilanciamenti,
-monitoraggio dello sviluppo delle energie rinnovabili ai fini degli obiettivi europei, attività
-informative e supporto tecnico alle istituzioni. È inoltre responsabile del collocamento delle
-quote italiane nel sistema di aste EU ETS (Auctioneer). Il GSE controlla inoltre al 100% le
-seguenti società:
-o RSE (Ricerca sul Sistema Energetico): sviluppa attività di studio e ricerca nel settore
-elettrico e energetico, con particolare riferimento ai progetti strategici nazionali.
-o Acquirente Unico (AU): istituita con il Decreto Bersani per garantire la fornitura di
-energia elettrica ai clienti del servizio di maggior tutela. Il regime di maggior tutela
-era il sistema previsto per i clienti domestici e le piccole imprese che, pur a seguito
-della liberalizzazione del mercato retail, non avevano scelto un venditore nel mercato
-libero. In questo regime, le condizioni economiche e contrattuali della fornitura erano
-definite da ARERA. Per garantire tale servizio, AU acquistava energia elettrica sui
-mercati all’ingrosso per poi cederla agli esercenti della maggior tutela a condizioni
-coerenti con i costi effettivi di approvvigionamento. Con il progressivo superamento
-del servizio di maggior tutela e il completamento della liberalizzazione del mercato
-retail, il ruolo di AU nell’approvvigionamento energetico si è progressivamente
-ridotto.
-o GME (Gestore dei Mercati Energetici): Nominated Electricity Market Operator
-(NEMO) italiano, organizza e gestisce i mercati di elettricità, gas e ambiente secondo
-criteri di neutralità, trasparenza, obiettività e concorrenza. In qualità di NEMO
-nazionale gestisce:
-▪ il Mercato a Pronti dell’Energia (MPE), comprendente:
-▪ Mercato del Giorno Prima (MGP)
-▪ Mercato Infragiornaliero (MI).
-▪ Mercato per il Servizio di Dispacciamento (MSD) .
-▪ Mercato dei prodotti giornalieri (MPE).
-▪ Mercato a Termine dell’Energia (MTE) E la Piattaforma Conti Energia a Termine
-(PCE) per la registrazione di contratti a termine.
-▪ La Bacheca PPA per la registrazione di contratti bilaterali di energia
-rinnovabile.
-▪ Mercato Locale della Flessibilità (MLF)1.
-1 Il Mercato Locale della Flessibilità (MLF) è un mercato recentemente introdotto in Italia, ancora in fase di sviluppo e
-sperimentazione, attraverso il quale i gestori delle reti di distribuzione possono approvvigionarsi di servizi di flessibilità
-localizzati per gestire congestioni, problemi di tensione o criticità operative sulle reti elettriche locali.
-11</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-12">
-        <div class="page-head">
-          <span>Pagina 12</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-12.jpg" alt="Pagina 12 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 12</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-L’interazione tra questi soggetti consente il funzionamento coordinato del mercato elettrico
-nazionale, combinando meccanismi concorrenziali, regolazione pubblica e gestione tecnica della
-sicurezza del sistema.
-2.5 Modello di mercato italiano a borsa facoltativa
-I mercati elettrici possono essere classificati secondo differenti criteri organizzativi, regolatori e
-operativi. Ogni Paese determina l’architettura del mercato in base alla forma del territorio, la
-concentrazione delle risorse energetiche prevalenti, aspetti storici, economici e politici.
-Una classificazione è, ad esempio, in base alla tipologia di contrattazioni esistenti:
-• Dispacciamento passante puro: solo contrattazione negoziale tramite contratti bilaterali tra
-produttori e consumatori.
-• Dispacciamento solo di merito: solo contrattazione competitiva in borsa.
-• Sistema a borsa facoltativa: coesistenza di contrattazione competitiva in borsa e
-contrattazione negoziale tramite contratti bilaterali. È il modello oggi adottato nella quasi
-totalità dei mercati elettrici, compresa l’Italia.
-Figura 6 – Sistema a borsa facoltativa
-Il modello italiano è quindi quello di Mercato a borsa facoltativa e si esplicita tramite un:
-• Mercato Elettrico a Pronti (MPE) che si svolge nella Borsa Elettrica (IPEX), organizzata e
-gestita dal GME.
-• Mercato a dispacciamento passante puro, chiamato Mercato a Termine, che si appoggia alla
-Piattaforma dei Conti Energia a Termine (PCE), organizzata e gestita dal GME.
-12</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-13">
-        <div class="page-head">
-          <span>Pagina 13</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-13.jpg" alt="Pagina 13 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 13</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-2.6 Formazione del prezzo nei mercati primari
-Nel mercato dei servizi primari, cioè il mercato in cui avviene la compravendita dell’energia destinata
-al consumo, gli operatori partecipano presentando offerte di vendita e di acquisto riferite a specifici
-intervalli temporali. Questa struttura consente ai produttori di rappresentare in modo più realistico
-i propri costi di produzione. Ad esempio, una centrale termoelettrica può offrire una prima quota di
-energia a un prezzo basso, corrispondente al funzionamento minimo dell’impianto, e ulteriori
-quantità a prezzi progressivamente più elevati in funzione dei maggiori costi operativi. In alcuni
-mercati europei sono inoltre consentite offerte a prezzo negativo2, fenomeno che si verifica
-soprattutto in presenza di elevata produzione rinnovabile e domanda molto bassa. In Italia offrire
-ad un prezzo negativo non è consentito.
-Le offerte di vendita dei produttori esprimono la disponibilità a vendere una determinata quantità
-di energia a un prezzo non inferiore a quello indicato, mentre le offerte di acquisto dei consumatori
-o trader indicano la disponibilità ad acquistare energia a un prezzo non superiore a quello proposto.
-Una volta raccolte tutte le offerte, il mercato applica il criterio del merito economico: le offerte di
-vendita vengono ordinate dal prezzo più basso al più alto, mentre quelle di acquisto dal prezzo più
-alto al più basso. L’intersezione tra le due curve aggregate determina il punto di equilibrio del
-mercato, cioè la quantità di energia scambiata e il relativo prezzo di equilibrio.
-Figura 7 – Curve di domanda ed offerta e punto di equilibrio
-In una prima rappresentazione teorica, il mercato viene risolto assumendo un cosiddetto “sistema a
-sbarra unica”, cioè trascurando completamente i limiti fisici della rete elettrica. In questo scenario
-ideale, tutta l’energia può circolare liberamente senza congestioni o vincoli di trasporto e il mercato
-mira a massimizzare il cosiddetto social welfare, ossia il benessere complessivo generato dallo
-scambio tra produttori e consumatori.
-2 Offrire ad un prezzo negativo può essere conveniente ad esempio quando spegnere un impianto costa di più che
-continuare a produrre oppure quando l’impianto riceve incentivi indipendenti dal prezzo di mercato.
-13</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-14">
-        <div class="page-head">
-          <span>Pagina 14</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-14.jpg" alt="Pagina 14 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 14</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Il prezzo che emerge dal mercato prende il nome di market clearing price o prezzo marginale del
-sistema. Tale prezzo coincide con quello dell’ultima offerta necessaria a soddisfare la domanda, detta
-offerta marginale. Tutti i produttori le cui offerte risultano accettate vengono remunerati a quel
-prezzo, indipendentemente dal prezzo originariamente offerto. Analogamente, tutti gli acquirenti
-pagano lo stesso prezzo di equilibrio.
-Nel concreto, ciò significa che se per soddisfare la domanda è necessario attivare anche una centrale
-a gas che offre energia a 150 €/MWh, allora tutte le unità accettate, incluse fonti rinnovabili o
-idroelettriche che avevano offerto a prezzi molto inferiori, verranno remunerate a 150 €/MWh. I
-produttori che avevano presentato offerte inferiori ottengono quindi una rendita inframarginale,
-cioè un margine positivo dato dalla differenza tra il prezzo di equilibrio e il proprio prezzo di offerta.
-Allo stesso modo, anche alcuni consumatori possono beneficiare di una rendita se erano disposti a
-pagare un prezzo superiore rispetto a quello finale determinato dal mercato. Le offerte non accettate
-prendono invece il nome di extramarginali.
-Supponiamo una domanda di 900 MWh per un certo quartorario (15 minuti).
-Le offerte di vendita sono queste:
-Tecnologia Quantità offerta Prezzo offerto Note
-(MWh) (€/MWh)
-Solare 300 0 costo marginale quasi nullo
-Eolico 150 0 costo marginale quasi nullo
-Idroelettrico 100 20 ipotizzo un costo/opportunity
-cost
-Termoelettrico 500 120 di cui 30 ETS + 90 fuel/altro
-Totale offerto: 1.050 MWh
-Domanda: 900 MWh
-Per coprire i 900 MWh servono:
-• 300 MWh solare
-• 150 MWh eolico
-• 100 MWh idro
-• 350 MWh gas
-Il gas è l’ultima tecnologia necessaria, quindi è marginale.
-In questo esempio semplificato, con una sola zona:
-14</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-15">
-        <div class="page-head">
-          <span>Pagina 15</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-15.jpg" alt="Pagina 15 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 15</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-prezzo marginale = 120 €/MWh
-Tutti gli impianti accettati vengono pagati 120 €/MWh.
-Tecnologia MWh Ricavo Ricavo Costo variabile Margine Margine
-accettati unitario totale unitario unitario totale
-Solare 300 120 36.000 € 0 120 36.000 €
-Eolico 150 120 18.000 € 0 120 18.000 €
-Idroelettrico 100 120 12.000 € 20 100 10.000 €
-Gas CCGT 350 120 42.000 € 120 0 0 €
-Cosa si vede:
-• il gas determina il prezzo.
-• le rinnovabili e l’idro vengono pagate al prezzo del gas.
-• il costo ETS del gas entra nel prezzo finale.
-Questo modello puramente economico, tuttavia, non tiene ancora conto della struttura reale della
-rete elettrica. Infatti, il punto di equilibrio teorico può generare flussi di energia incompatibili con i
-limiti fisici delle linee di trasmissione. Un esempio tipico è quello di una zona con molta produzione
-a basso costo che tenta di esportare grandi quantità di energia verso una zona con forte domanda:
-se la capacità della linea che collega le due aree non è sufficiente, si genera una congestione di rete.
-In questi casi, il risultato teorico del mercato non è fisicamente realizzabile e diventa necessario
-introdurre i vincoli di rete nella risoluzione del mercato stesso.
-2.7 Vincoli di rete
-Il modello teorico del mercato elettrico basato su un’unica “sbarra” nazionale non risulta
-concretamente applicabile nella realtà, poiché la rete di trasmissione presenta limiti fisici di
-trasporto tra le diverse aree del sistema. Le linee elettriche non possono infatti trasferire quantità
-illimitate di energia e, in presenza di flussi eccessivi, si generano congestioni che devono essere
-gestite per garantire sicurezza e stabilità della rete.
-Per questo motivo il mercato elettrico italiano è organizzato secondo un modello zonale. Il territorio
-nazionale viene suddiviso in zone di mercato collegate tra loro da capacità di transito limitata.
-Durante la risoluzione del mercato, l’algoritmo verifica se i programmi di immissione e prelievo
-determinano flussi compatibili con i limiti di trasporto tra le zone. Se tali limiti non vengono superati,
-15</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-16">
-        <div class="page-head">
-          <span>Pagina 16</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-16.jpg" alt="Pagina 16 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 16</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-il mercato può convergere verso un unico prezzo teorico; in presenza di congestioni, invece, il
-mercato viene separato automaticamente in più aree tramite il meccanismo di market splitting.
-Nel concreto, il market splitting consiste nella separazione economica delle diverse zone quando la
-capacità disponibile sulle linee non è sufficiente a trasferire tutta l’energia richiesta tra le aree del
-sistema. In tali situazioni si formano differenti prezzi zonali:
-• più elevati nelle zone importatrici, dove la domanda è superiore alla produzione disponibile.
-• Più bassi nelle zone esportatrici, caratterizzate da eccesso di produzione.
-Un esempio tipico si verifica quando nel Sud Italia o in Sicilia è disponibile una significativa quantità
-di produzione rinnovabile a basso costo, ma la capacità delle linee verso il Centro-Nord non è
-sufficiente a trasferire integralmente tale energia. In questo caso il Sud può registrare prezzi inferiori,
-mentre nelle zone importatrici del Nord il prezzo rimane più elevato perché è necessario attivare
-ulteriore produzione locale, spesso termoelettrica.
-Il modello italiano rappresenta una scelta diversa rispetto ad altri mercati europei, come quello
-tedesco, che operano invece con un’unica zona nazionale di mercato. Anche in Germania esistono
-forti congestioni interne, ad esempio tra la produzione eolica del Nord e la domanda industriale del
-Sud, ma tali vincoli non vengono riflessi direttamente nei prezzi del mercato day-ahead. Il mercato
-continua, infatti, a generare un unico prezzo nazionale e le congestioni vengono successivamente
-corrette dai gestori di rete tramite interventi ad esempio di redispatch. L’approccio italiano incorpora
-invece i vincoli fisici direttamente nel processo di formazione del prezzo, producendo segnali
-economici maggiormente coerenti con la reale disponibilità della rete e riducendo la necessità di
-interventi correttivi ex post da parte di Terna.
-Il market splitting svolge quindi una duplice funzione:
-• garantire il rispetto dei vincoli fisici della rete.
-• Fornire segnali economici coerenti con la scarsità di capacità di trasporto disponibile tra le
-diverse aree del sistema elettrico.
-2.8 Mercato Elettrico a Pronti (MPE)
-Il MPE è articolato in quattro sotto-mercati:
-• Mercato del Giorno Prima (MGP).
-• Mercato Infragiornaliero (MI).
-• Mercato per il Servizio di Dispacciamento (MSD).
-• Mercato dei Prodotti Giornalieri (MPEG).
-Nel Mercato Elettrico a Pronti (MPE) le negoziazioni avvengono attraverso la presentazione di offerte
-di acquisto e vendita di energia elettrica riferite a specifici punti di offerta e a determinati periodi
-16</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-17">
-        <div class="page-head">
-          <span>Pagina 17</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-17.jpg" alt="Pagina 17 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 17</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-rilevanti del mercato. Le offerte sono formulate come coppie quantità/prezzo espresse
-rispettivamente in MWh e €/MWh ed esprimono:
-• la disponibilità a vendere una quantità di energia ad un prezzo minimo.
-• Oppure, la disponibilità ad acquistare energia ad un prezzo massimo.
-Nel mercato italiano il periodo rilevante è oggi pari a 15 minuti, in linea con il processo di
-armonizzazione europea dei mercati elettrici e con la crescente esigenza di flessibilità derivante dalla
-diffusione delle fonti rinnovabili non programmabili.
-Le offerte possono essere:
-• semplici, costituite da una singola coppia quantità/prezzo.
-• Multiple, ottenute mediante il frazionamento della quantità complessiva offerta in più livelli
-di prezzo per il medesimo periodo rilevante e punto di offerta.
-Le offerte sono riferite ai cosiddetti punti di offerta, che rappresentano l’unità rispetto alla quale
-vengono definiti i programmi di immissione e prelievo dell’energia elettrica. Nel caso della
-generazione, i punti di offerta coincidono generalmente con le singole unità di produzione (es.
-centrale di Civitavecchia), mentre lato consumo possono corrispondere sia a singoli punti di prelievo
-sia ad aggregati di consumo.
-Il mercato italiano utilizza una rappresentazione zonale della rete elettrica. Il sistema nazionale è
-infatti suddiviso in zone di mercato, tra le quali esistono limiti fisici di transito dell’energia necessari
-a garantire la sicurezza della rete. Il GME utilizza un modello semplificato della rete che considera
-principalmente i vincoli di transito tra zone. Ogni zona rappresenta quindi un insieme di punti di
-offerta caratterizzato da specifici limiti di scambio con le aree confinanti. Le zone possono essere:
-• zone geografiche nazionali.
-• Zone virtuali estere.
-Figura 8 – Zone nazionali e virtuali estere
-17</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-18">
-        <div class="page-head">
-          <span>Pagina 18</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-18.jpg" alt="Pagina 18 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 18</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-2.9 Mercato del Giorno Prima (MGP)
-Il Mercato del Giorno Prima (MGP) rappresenta il principale mercato dell’energia elettrica italiana
-ed è la sede nella quale vengono definiti i programmi di immissione e prelievo per il giorno
-successivo. Sul MGP produttori, grossisti e clienti finali presentano offerte di vendita e acquisto
-dell’energia elettrica per ciascun periodo rilevante del giorno successivo.
-Questo mercato chiude generalmente entro le 12.00 del giorno prima.
-Storicamente, il mercato elettrico italiano ha adottato un modello ibrido: i produttori venivano
-remunerati al prezzo zonale della zona di immissione, mentre ai consumatori finali italiani veniva
-applicato un Prezzo Unico Nazionale (PUN), calcolato come media dei prezzi zonali ponderata sui
-consumi. In presenza di congestioni di rete, infatti, il mercato genera differenti prezzi zonali,
-generalmente più elevati nelle zone importatrici e inferiori in quelle esportatrici. Dal 1° gennaio 2025
-l’Italia è passata ad un modello pienamente zonale, eliminando il PUN come prezzo di acquisto
-effettivo e sostituendolo con il PUN Index GME, indice calcolato ex post sui prezzi zonali e utilizzato
-principalmente come benchmark di riferimento. Per evitare effetti distorsivi immediati sui clienti
-finali, ARERA ha introdotto un meccanismo transitorio di perequazione economica tra prezzo zonale
-e PUN Index GME, destinato ad essere progressivamente superato a partire dal 2026.
-Figura 9 – PUN Index GME del 18 maggio 2026
-Anche l’energia oggetto di contratti bilaterali OTC registrati sulla Piattaforma Conti Energia (PCE)
-partecipa a tale processo. Essi contribuiscono sia ad impegnare la capacità di trasporto disponibile
-sui transiti interzonali sia, nel precedente modello con PUN, ai volumi zonali utilizzati per il calcolo
-del Prezzo Unico Nazionale, determinato come media dei prezzi zonali ponderata sui consumi.
-18</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-19">
-        <div class="page-head">
-          <span>Pagina 19</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-19.jpg" alt="Pagina 19 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 19</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-2.10 Mercato Infragiornaliero (MI)
-Il Mercato Infragiornaliero (MI) consente agli operatori di modificare i programmi di immissione e
-prelievo definiti sul Mercato del Giorno Prima (MGP), adeguandoli a variazioni intervenute
-successivamente nella disponibilità degli impianti, nelle previsioni di consumo o nella produzione da
-fonti rinnovabili non programmabili.
-Il MI si svolge dopo la chiusura del MGP e prima della fase di dispacciamento in tempo reale,
-permettendo quindi una progressiva ottimizzazione dei programmi di produzione e consumo in
-prossimità della consegna fisica dell’energia. Il mercato assume particolare rilevanza in un sistema
-elettrico caratterizzato da una crescente penetrazione delle fonti rinnovabili intermittenti, la cui
-produzione effettiva può differire significativamente dalle previsioni formulate il giorno precedente.
-Nel mercato italiano il MI è articolato:
-• in sessioni d’asta discrete (MI-A), sessioni d’asta intraday discrete organizzate dal GME,
-• e nella piattaforma di negoziazione continua XBID integrata a livello europeo.
-Anche nel MI continua ad applicarsi il modello zonale del mercato elettrico italiano, con formazione
-dei prezzi nel rispetto dei limiti di transito tra zone e delle eventuali congestioni di rete. Gli esiti del
-MI aggiornano quindi i programmi risultanti dal MGP, riducendo gli sbilanciamenti che dovranno
-successivamente essere gestiti da Terna sul Mercato per il Servizio di Dispacciamento (MSD),
-quest’ultimo più costoso.
-Per dare un ordine di grandezza, nel Mercato del Giorno Prima, il 17 maggio 2026 sono stati
-scambiati tra i 20 GWh e i 30 GWh per ogni ora.
-Figura 10 – Potenza scambiata nel MGP il 17 maggio 2026
-19</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-20">
-        <div class="page-head">
-          <span>Pagina 20</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-20.jpg" alt="Pagina 20 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 20</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Mentre nel Mercato Infragiornaliero massimo 2,5 GWh in un’ora, pari al 10% del Mercato del Giorno
-Prima.
-Figura 11 – Potenza scambiata nel MI il 17 maggio 2026
-2.11 Mercato per il Servizio di Dispacciamento (MSD)
-Il Mercato per il Servizio di Dispacciamento (MSD) è il mercato attraverso il quale Terna, in qualità di
-gestore della rete di trasmissione nazionale e responsabile del dispacciamento, si approvvigiona
-delle risorse necessarie per garantire la sicurezza e l’equilibrio del sistema elettrico come ad
-esempio:
-• Regolazione della tensione e della frequenza.
-• Riavviamento dopo un blackout.
-• Bilanciamento.
-• Risoluzione delle congestioni.
-Generalmente questo mercato è più costoso rispetto ai MGP e MI in quanto il compratore è Terna e
-la sua domanda è vincolata alla necessità della gestione in sicurezza del sistema. A differenza del
-MGP e del MI, che hanno finalità prevalentemente commerciali, il MSD ha una funzione
-strettamente tecnico-operativa. Il suo obiettivo non è la semplice compravendita di energia, ma la
-gestione in sicurezza della rete elettrica nel rispetto dei vincoli fisici del sistema.
-Nel sistema elettrico, infatti, produzione e consumo devono essere mantenuti in equilibrio continuo
-e in tempo reale. I programmi definiti sul MGP e sul MI rappresentano necessariamente previsioni
-formulate con anticipo e possono quindi differire dai valori effettivi registrati durante l’esercizio reale
-della rete. La differenza tra energia programmata ed energia effettivamente immessa o prelevata
-prende il nome di sbilanciamento. Gli sbilanciamenti possono derivare, ad esempio, da variazioni
-20</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-21">
-        <div class="page-head">
-          <span>Pagina 21</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-21.jpg" alt="Pagina 21 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 21</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-impreviste della domanda elettrica, indisponibilità improvvise di impianti oppure errori previsionali
-nella produzione da fonti rinnovabili non programmabili come fotovoltaico ed eolico. Nel concreto,
-se un operatore aveva programmato di produrre 100 MWh da un impianto eolico ma, a causa di
-minore vento, produce solamente 70 MWh, il sistema registra uno sbilanciamento negativo di 30
-MWh che deve essere compensato in tempo reale tramite attivazione di altre risorse disponibili.
-Il MSD si articola in due componenti principali:
-• una fase ex-ante di programmazione (MSD ex-ante).
-• Il Mercato di Bilanciamento (MB), dedicato alla gestione operativa nel tempo reale.
-Nel MSD ex-ante Terna seleziona preventivamente le risorse necessarie per risolvere eventuali
-congestioni residue e creare adeguati margini di riserva, tenendo conto dei vincoli di rete, della
-configurazione degli impianti disponibili, delle previsioni di domanda, della variabilità delle fonti
-rinnovabili non programmabili.
-Il Mercato di Bilanciamento (MB) interviene invece in prossimità del tempo reale e consente a Terna
-di correggere gli sbilanciamenti effettivi del sistema mediante accettazione continua di offerte di
-incremento o riduzione della produzione e dei consumi. I relativi costi di bilanciamento vengono
-successivamente attribuiti agli operatori responsabili degli sbilanciamenti secondo le regole definite
-da ARERA.
-Sul MSD possono operare esclusivamente le unità abilitate al dispacciamento, ossia impianti e
-risorse tecnicamente idonei a fornire servizi di flessibilità e regolazione al sistema elettrico. A
-differenza del MGP, nel MSD le offerte accettate sono remunerate secondo logica pay-as-bid:
-ciascun operatore riceve quindi il prezzo effettivamente offerto e non un prezzo marginale unico di
-mercato.
-2.12 Mercato dei Prodotti Giornalieri (MPEG)
-Il Mercato dei Prodotti Giornalieri (MPEG) è un segmento del Mercato Elettrico a Pronti introdotto
-dal GME nel 2016 per consentire la negoziazione continua di prodotti energetici standardizzati con
-consegna fisica giornaliera.
-Nel concreto, il MPEG permette agli operatori di acquistare o vendere “blocchi” standardizzati di
-energia elettrica riferiti ad un intero profilo temporale della giornata, senza dover negoziare
-singolarmente ciascun quarto d’ora o ciascuna ora sul MGP o sul MI.
-I principali prodotti negoziati sono:
-• Baseload: energia consegnata in tutti i periodi rilevanti della giornata.
-• Peakload: energia consegnata solamente nelle ore di punta giornaliere, tipicamente nelle
-fasce di maggior domanda.
-21</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-22">
-        <div class="page-head">
-          <span>Pagina 22</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-22.jpg" alt="Pagina 22 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 22</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Il mercato funziona in negoziazione continua: gli operatori inseriscono proposte di acquisto e vendita
-che vengono abbinate automaticamente dal sistema quando risultano compatibili.
-Il mercato è utilizzato principalmente per ottimizzare portafogli energetici nel brevissimo termine,
-per coprire profili standardizzati di consumo o produzione, da trader e società di vendita per
-effettuare aggiustamenti rapidi sulle proprie posizioni energetiche.
-Le posizioni energetiche risultanti dalle negoziazioni sul MPEG vengono successivamente registrate
-sulla Piattaforma Conti Energia (PCE) e integrate nei programmi fisici del sistema elettrico.
-2.13 Mercato a Termine dell’Energia (MTE)
-Il Mercato a Termine dell’Energia (MTE) è il mercato attraverso il quale gli operatori negoziano
-contratti a termine di energia elettrica con obbligo di consegna fisica futura. A differenza del MGP e
-del MI, che riguardano orizzonti temporali molto brevi, il MTE consente di fissare quantità e prezzi
-dell’energia con scadenze mensili, trimestrali o annuali.
-Nel concreto, il MTE viene utilizzato principalmente per:
-• copertura del rischio prezzo (hedging).
-• Stabilizzazione dei costi di approvvigionamento.
-• Pianificazione economica di produttori, trader e società di vendita.
-Nel mercato italiano il MTE convive con la contrattazione bilaterale OTC. Gli operatori possono infatti:
-• negoziare direttamente contratti bilaterali fuori mercato;
-• Oppure, utilizzare il mercato MTE organizzato del GME.
-Per garantire la sicurezza del sistema elettrico, tutti i contratti a termine con consegna fisica devono
-essere integrati con la Piattaforma Conti Energia (PCE), gestita dal GME.
-La PCE costituisce la piattaforma attraverso la quale gli operatori registrano i quantitativi di energia
-sottesi ai contratti a termine conclusi bilateralmente, senza indicazione del relativo prezzo di
-scambio.
-Il sistema separa quindi la registrazione commerciale del contratto dalla programmazione fisica delle
-immissioni e dei prelievi.
-In questo modo anche i contratti conclusi fuori dalla borsa elettrica vengono incorporati nel sistema
-di programmazione della rete e concorrono alla determinazione dei flussi fisici e dell’utilizzo della
-capacità di trasporto disponibile.
-2.14 Mercati dei servizi di pubblica utilità e sicurezza
-I mercati giornalieri dell’energia non esauriscono il funzionamento del sistema elettrico. Oltre ai
-mercati dell’energia, Terna gestisce infatti una serie di meccanismi finalizzati a garantire sicurezza,
-22</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-23">
-        <div class="page-head">
-          <span>Pagina 23</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-23.jpg" alt="Pagina 23 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 23</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-adeguatezza e stabilità della rete elettrica nazionale, assicurando al contempo la corretta
-attribuzione dei relativi costi ai soggetti che li generano.
-In particolare, oltre all’approvvigionamento delle risorse sul Mercato per il Servizio di
-Dispacciamento (MSD), Terna gestisce:
-• le unità essenziali per la sicurezza della rete, ossia impianti ritenuti indispensabili per evitare
-congestioni o rischi di blackout in determinate aree del Paese, come ad esempio alcune
-centrali localizzate in Sicilia o Sardegna.
-• Il servizio di interrompibilità del carico, mediante il quale grandi consumatori industriali, ad
-esempio acciaierie o grandi impianti manifatturieri, si rendono disponibili a ridurre
-rapidamente i propri consumi in caso di emergenza del sistema elettrico.
-• Il capacity market, meccanismo attraverso cui viene remunerata la disponibilità futura di
-capacità produttiva, ad esempio per garantire copertura della domanda nei momenti di bassa
-produzione da fonti rinnovabili o durante i picchi di consumo.
-2.15 Integrazione del mercato elettrico italiano nel mercato europeo
-Negli ultimi anni il mercato elettrico italiano è stato progressivamente integrato nel mercato unico
-europeo dell’energia elettrica attraverso i meccanismi di market coupling sviluppati a livello UE. In
-concreto, ciò significa che il mercato italiano non opera più come un sistema isolato, ma come parte
-di un’unica piattaforma europea nella quale gli scambi di energia e l’utilizzo delle interconnessioni
-transfrontaliere vengono gestiti in modo coordinato tra i diversi Paesi membri.
-Nel mercato del giorno prima, l’Italia partecipa al Single Day-Ahead Coupling (SDAC), il sistema
-europeo che integra le aste day-ahead dei vari mercati nazionali. L’allocazione della capacità di
-trasporto tra Stati non avviene più tramite aste separate rispetto all’energia, ma direttamente
-all’interno del mercato elettrico attraverso il cosiddetto market coupling. L’algoritmo europeo
-Euphemia calcola simultaneamente prezzi, flussi di energia e utilizzo delle interconnessioni,
-indirizzando l’energia dalle aree a minor prezzo verso quelle a maggior prezzo fino al raggiungimento
-dei limiti fisici della rete. In pratica, un eccesso di produzione rinnovabile in Francia o Germania può
-contribuire a ridurre il prezzo dell’energia anche in Italia, compatibilmente con la capacità disponibile
-sulle linee di interconnessione.
-Anche il mercato infragiornaliero italiano è oggi integrato nel sistema europeo attraverso la
-piattaforma XBID con la partecipazione al Single Intraday Coupling (SIDC), che consente negoziazioni
-continue transfrontaliere fino a ridosso della consegna fisica dell’energia. Questo permette agli
-operatori di correggere in tempo quasi reale eventuali scostamenti tra programmi e produzione
-effettiva, aspetto particolarmente rilevante in un sistema caratterizzato da una crescente presenza
-di fonti rinnovabili intermittenti.
-23</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-24">
-        <div class="page-head">
-          <span>Pagina 24</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-24.jpg" alt="Pagina 24 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 24</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Parallelamente all’integrazione dei mercati day-ahead e intraday, l’Unione Europea sta sviluppando
-piattaforme comuni dedicate ai servizi di bilanciamento e di sicurezza del sistema elettrico. In questo
-contesto si inseriscono i progetti TERRE, MARI e PICASSO, finalizzati a integrare a livello europeo i
-mercati dei servizi ancillari gestiti dai diversi TSO nazionali, tra cui Terna.
-Nel concreto:
-• TERRE (Trans European Replacement Reserve Exchange) riguarda lo scambio europeo delle
-riserve di sostituzione (Replacement Reserve), ossia risorse attivabili tipicamente entro
-alcune decine di minuti per ripristinare le riserve del sistema;
-• MARI (Manually Activated Reserves Initiative) riguarda invece le riserve manualmente
-attivate (mFRR), utilizzate da Terna per correggere squilibri rilevanti del sistema tramite
-attivazione manuale di impianti o risorse flessibili;
-• PICASSO (Platform for the International Coordination of Automated Frequency Restoration
-and Stable System Operation) è dedicata alle riserve automatiche di regolazione della
-frequenza (aFRR), attivate automaticamente per mantenere in equilibrio frequenza e stabilità
-della rete elettrica europea.
-L’obiettivo comune di queste piattaforme è creare un mercato europeo integrato dei servizi di
-dispacciamento e bilanciamento, consentendo ai diversi operatori europei di mettere a disposizione
-flessibilità e riserve anche oltre i confini nazionali, aumentando efficienza, concorrenza e sicurezza
-del sistema elettrico continentale.
-2.16 Contratti retail, gestione del rischio e mercati finanziari
-Nel mercato retail dell’energia elettrica, i venditori (“buyer” o società di vendita) acquistano energia
-sui mercati all’ingrosso per poi rivenderla ai clienti finali attraverso differenti tipologie di contratti
-commerciali. Le due principali strutture contrattuali sono i contratti a prezzo fisso e i contratti
-indicizzati.
-Nel caso dei contratti a prezzo fisso, il cliente paga un prezzo stabile per un determinato periodo, ad
-esempio uno o due anni, indipendentemente dall’andamento futuro del mercato elettrico. In questo
-scenario il rischio di variazione del prezzo all’ingrosso ricade integralmente sul venditore: se il prezzo
-dell’energia aumenta, il buyer continua infatti a vendere al prezzo concordato con il cliente finale,
-rischiando una riduzione o addirittura un azzeramento del margine commerciale. Per questo motivo
-le società di vendita devono coprirsi preventivamente rispetto alla volatilità dei prezzi.
-Nei contratti indicizzati, invece, il prezzo pagato dal cliente segue l’andamento del mercato
-all’ingrosso, tipicamente attraverso formule indicizzate al PUN Index GME maggiorato di uno spread
-commerciale. In questo caso il rischio prezzo viene trasferito in larga parte al cliente finale: se il
-mercato sale, aumenta anche il costo della fornitura. Di conseguenza, il venditore mantiene
-un’esposizione economica molto più limitata rispetto ai contratti a prezzo fisso.
-24</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-25">
-        <div class="page-head">
-          <span>Pagina 25</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-25.jpg" alt="Pagina 25 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 25</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Per gestire il rischio associato ai contratti retail, i buyer utilizzano strumenti di copertura (“hedging”)
-riconducibili a due principali categorie: coperture fisiche e coperture finanziarie.
-Le coperture fisiche consistono nell’acquisto anticipato di energia attraverso:
-• contratti a termine sul Mercato a Termine dell’Energia (MTE).
-• Contratti bilaterali OTC con produttori o trader.
-• Power Purchase Agreement (PPA), utilizzati soprattutto per coperture di lungo periodo da
-fonti rinnovabili.
-In questi casi il venditore si assicura direttamente disponibilità fisica di energia a un prezzo definito,
-costruendo un portafoglio coerente con i volumi che dovrà successivamente vendere ai clienti finali.
-Accanto alle coperture fisiche esistono poi le coperture finanziarie, che non comportano
-necessariamente consegna fisica dell’energia ma consentono di stabilizzare economicamente il
-prezzo di approvvigionamento. Tra i principali strumenti rientrano:
-• Futures sull’energia.
-• Derivati finanziari indicizzati al PUN o ad altri benchmark elettrici.
-• Contracts for Difference (CfD).
-Nel concreto, attraverso tali strumenti il buyer continua ad acquistare energia sul mercato spot,
-compensando però le oscillazioni di prezzo tramite flussi finanziari generati dai derivati.
-Nella pratica operativa, le società di vendita utilizzano normalmente una combinazione delle due
-strategie. Una quota dei volumi viene coperta fisicamente mediante contratti a termine o OTC,
-mentre un’altra parte viene gestita tramite strumenti finanziari, così da bilanciare flessibilità
-operativa, liquidità e protezione dal rischio di volatilità del mercato elettrico.
-Figura 12 – Estratto del Piano Industriale Enel 2026-2028
-25</div>
-        </details>
-      </article>
-      <article class="page-card" id="pagina-26">
-        <div class="page-head">
-          <span>Pagina 26</span>
-          <a href="#indice">Indice</a>
-        </div>
-        <img class="page-img" src="dossiers/mercati_elettrici_pages/page-26.jpg" alt="Pagina 26 del dossier sui mercati elettrici" loading="lazy">
-        <details class="page-text" open>
-          <summary>Testo completo della pagina 26</summary>
-          <div>REDAZIONE AEIF 17.05.2026
-Ministero dell’Ambiente e della Sicurezza Energetica (MASE)
-Ad esempio, nel Piano Industriale 2026-2028, Enel prevede una progressiva riduzione del prezzo
-all’ingrosso dell’energia elettrica (PUN) grazie al Decreto Bollette, con una traiettoria che lo porta
-fino a circa 85 €/MWh nel medio periodo. Tuttavia, il confronto tra il PUN e il prezzo B2C evidenzia
-un elemento rilevante: i contratti a prezzo fisso offerti ai clienti finali tendono a incorporare un
-ritardo (lag) nella trasmissione delle variazioni di mercato. Questo implica che eventuali riduzioni del
-prezzo all’ingrosso, anche se significative, non si trasferiscono immediatamente ai consumatori, ma
-vengono assorbite nel tempo. In tale contesto, strumenti come il decreto bollette producono effetti
-più immediati sui prezzi indicizzati, mentre sui contratti a prezzo fisso l’impatto risulta posticipato e
-diluito nel tempo, contribuendo a stabilizzare i ricavi lato fornitore.
-26</div>
-        </details>
-      </article>
+      </section>
+
+      <section class="card" id="reti">
+        <h2>Reti elettriche</h2>
+        <p>Le reti di trasmissione trasportano energia sulle lunghe distanze ad alta tensione, mentre le reti di distribuzione consegnano l'energia ai consumatori finali. In Italia la trasmissione nazionale e' gestita da Terna, mentre la distribuzione opera su scala territoriale.</p>
+        <p>La rete consente anche gli scambi transfrontalieri: le interconnessioni rendono possibile importare o esportare energia e contribuiscono alla sicurezza del sistema.</p>
+      </section>
+
+      <section class="card" id="generazione">
+        <h2>Generazione elettrica</h2>
+        <p>La generazione combina impianti termoelettrici, idroelettrici e fonti rinnovabili. Le tecnologie hanno costi marginali e profili di disponibilita diversi: questo influenza l'ordine di merito con cui gli impianti entrano nel mercato.</p>
+        <p>La crescita delle fonti rinnovabili aumenta il peso della produzione non programmabile e rende piu' importanti flessibilita, accumuli, reti e servizi di dispacciamento.</p>
+      </section>
+
+      <section class="card" id="carichi">
+        <h2>Carichi e domanda</h2>
+        <p>I carichi rappresentano i consumi elettrici di famiglie, imprese e servizi. La domanda varia per ora, giorno, stagione e ciclo economico, con picchi che il sistema deve coprire mantenendo stabilita e qualita del servizio.</p>
+        <p>La gestione della domanda, l'efficienza energetica e l'elettrificazione dei consumi finali sono variabili sempre piu' rilevanti per la pianificazione del sistema.</p>
+      </section>
+
+      <section class="card" id="mercato">
+        <h2>Il mercato elettrico</h2>
+        <p>Il passaggio dal monopolio al mercato ha introdotto concorrenza nella produzione e nella vendita, mantenendo regolate le infrastrutture di rete. Il mercato italiano e' organizzato attorno a sedi di negoziazione e meccanismi di programmazione che coordinano domanda, offerta e sicurezza del sistema.</p>
+        <p>La borsa elettrica consente agli operatori di presentare offerte di acquisto e vendita; i risultati orientano programmi di produzione e consumo e alimentano il prezzo di riferimento.</p>
+      </section>
+
+      <section class="card" id="operatori">
+        <h2>Operatori e regolatori</h2>
+        <p>Il funzionamento del mercato coinvolge produttori, venditori, trader, grandi consumatori, gestori di rete e soggetti istituzionali. GME organizza i mercati energetici, Terna gestisce trasmissione e dispacciamento, ARERA regola i settori energetici, mentre il Ministero definisce indirizzi e politiche di settore.</p>
+      </section>
+
+      <section class="card" id="prezzo">
+        <h2>Formazione del prezzo</h2>
+        <p>Nei mercati primari il prezzo riflette l'incontro tra domanda e offerta. Il meccanismo marginale fa si' che, in ciascuna zona e periodo rilevante, il prezzo sia determinato dall'offerta necessaria a soddisfare l'ultima unita di domanda accettata.</p>
+        <p>Per leggere le dinamiche di prezzo occorre quindi considerare mix di generazione, prezzo dei combustibili, costo della CO2, disponibilita degli impianti, congestioni di rete e condizioni meteo.</p>
+      </section>
     </div>
   </div>
 
   <footer>
-    <div>Fonte: Dossier di approfondimento sui Mercati Elettrici.</div>
+    <div>Fonte: dossier di approfondimento sui Mercati Elettrici.</div>
     <div class="mono">Elaborazione dati · DG AEIF GLU</div>
   </footer>
 </main>
