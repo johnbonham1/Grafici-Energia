@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mercato energetico Italia · 2005–2026</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="assets/api-loader.js?v=20260807-f497"></script>
+<script src="assets/api-loader.js?v=20260810-live-monthly-pun"></script>
 <style>
   :root{
     --bg:#ffffff; --panel:#ffffff; --grid:#e4e8ec; --grid-soft:#eef1f4;
@@ -195,7 +195,20 @@
 </div>
 
 <script>
-const RAW = window.requireAeifPayload('energy_monthly');
+const PAYLOAD_RAW = window.requireAeifPayload('energy_monthly');
+function withLiveMonthlyPun(rows){
+  const live = window.loadAeifMonthlySeries ? window.loadAeifMonthlySeries('pun') : null;
+  if(!live || !Array.isArray(live.observations) || !live.observations.length) return rows;
+  const byDate = new Map(rows.map(row=>[row.date, {...row}]));
+  live.observations.forEach(obs=>{
+    const date = obs.observed_on;
+    const existing = byDate.get(date) || {date, eua:null, pun:null, gas:null, term:null};
+    existing.pun = Number(obs.value.toFixed(2));
+    byDate.set(date, existing);
+  });
+  return [...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date));
+}
+const RAW = withLiveMonthlyPun(PAYLOAD_RAW);
 const C = {eua:'#e08a00',pun:'#0891a8',gas:'#e0483d',term:'#7c5cd6',idro:'#2563c9'};
 const META = [
   {k:'eua', nm:'Quote ETS (EUA) ✓', un:'€/tCO₂ · media annua reale', axis:'yL', unit:'€/t'},

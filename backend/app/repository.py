@@ -1,17 +1,27 @@
+from collections import defaultdict
 from datetime import date
 
-from sqlalchemy import select
+from sqlalchemy import desc, func, select
 from sqlalchemy.orm import Session
 
-from app.models import Dataset, DatasetPayload, Observation
+from app.models import Dataset, DatasetPayload, Observation, ScrapeRun
 
 
-def get_or_create_dataset(db: Session, *, key: str, name: str, unit: str, source: str | None = None) -> Dataset:
+def get_or_create_dataset(
+    db: Session,
+    *,
+    key: str,
+    name: str,
+    unit: str,
+    source: str | None = None,
+    preserve_existing_source: bool = False,
+) -> Dataset:
     dataset = db.scalar(select(Dataset).where(Dataset.key == key))
     if dataset:
         dataset.name = name
         dataset.unit = unit
-        dataset.source = source
+        if not preserve_existing_source or not dataset.source:
+            dataset.source = source
         return dataset
 
     dataset = Dataset(key=key, name=name, unit=unit, source=source)
@@ -93,3 +103,48 @@ def list_observations(
 
     observations = list(db.scalars(query.order_by(Observation.observed_on)))
     return dataset, observations
+
+
+def latest_observation_date(db: Session, *, dataset_key: str) -> date | None:
+    return db.scalar(
+        select(func.max(Observation.observed_on))
+        .join(Dataset, Dataset.id == Observation.dataset_id)
+        .where(Dataset.key == dataset_key)
+    )
+
+
+def latest_scrape_run(db: Session, *, job_name: str) -> ScrapeRun | None:
+    return db.scalar(
+        select(ScrapeRun)
+        .where(ScrapeRun.job_name == job_name)
+        .order_by(desc(ScrapeRun.started_at), desc(ScrapeRun.id))
+        .limit(1)
+    )
+
+
+def list_monthly_averages(
+    db: Session,
+    *,
+    dataset_key: str,
+    start: date | None = None,
+    end: date | None = None,
+) -> tuple[Dataset | None, list[dict]]:
+    dataset, observations = list_observations(db, dataset_key=dataset_key, start=start, end=end)
+    if not dataset:
+        return None, []
+
+    groups: dict[date, list[float]] = defaultdict(list)
+    for observation in observations:
+        month = observation.observed_on.replace(day=1)
+        groups[month].append(observation.value)
+
+    monthly_observations = [
+        {
+            "observed_on": month,
+            "value": sum(values) / len(values),
+            "metadata_json": {"granularity": "monthly_average", "observations": len(values)},
+        }
+        for month, values in sorted(groups.items())
+        if values
+    ]
+    return dataset, monthly_observations

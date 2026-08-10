@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUN e TTF · prezzi giornalieri</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="assets/api-loader.js?v=20260807-f497"></script>
+<script src="assets/api-loader.js?v=20260810-pun-kpi"></script>
 <style>
   :root{
     --bg1:#f6f8fb; --bg2:#eef2f7;
@@ -138,6 +138,26 @@
   .slider input[type=range]::-moz-range-thumb{pointer-events:auto;width:20px;height:20px;
     border-radius:50%;background:#fff;border:2.5px solid var(--gas);cursor:pointer;
     box-shadow:0 1px 4px rgba(20,30,45,.20)}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+  .kpi-card{background:var(--panel);border:1px solid var(--stroke);border-radius:13px;
+    padding:15px 16px;box-shadow:0 3px 14px -8px rgba(20,30,45,.14)}
+  .kpi-card .kpi-label{font-family:var(--mono);font-size:9.5px;color:var(--ink-dim);
+    letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .kpi-card .kpi-value{font-size:24px;font-weight:760;color:var(--ink);line-height:1}
+  .kpi-card .kpi-value.good{color:#17835f}
+  .kpi-card .kpi-value.bad{color:var(--gas)}
+  .kpi-card .kpi-unit{font-family:var(--mono);font-size:10px;color:var(--ink-faint);margin-top:8px}
+  .data-updated{font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    margin-top:12px;text-align:right}
+
+  @media(max-width:760px){
+    .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:640px){
+    .kpi-grid{grid-template-columns:1fr;gap:10px}
+    .kpi-card .kpi-value{font-size:22px}
+    .data-updated{text-align:left}
+  }
 
 </style>
 </head>
@@ -157,7 +177,8 @@
     <div class="controls">
       <a class="download-btn" href="dossiers/dossier_mercati_elettrici.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
       <div class="seg" id="range">
-        <button data-r="2018" class="on">2018→</button>
+        <button data-r="last30" class="on">Ultimo mese</button>
+        <button data-r="2018">2018→</button>
         <button data-r="2021">2021→</button>
         <button data-r="2022">2022→</button>
         <button data-r="2024">2024→</button>
@@ -187,6 +208,8 @@
     </div>
   </div>
 
+  <div class="kpi-grid" id="punKpis" aria-label="Indicatori PUN Italia"></div>
+
   <div class="note">
     <strong>Stessa unità (€/MWh), asse unico</strong> — PUN e TTF sono direttamente confrontabili.
     Il picco della crisi gas è tra il 26 e il 29 agosto 2022: TTF a 339 €/MWh, PUN a 740 €/MWh.
@@ -196,10 +219,24 @@
     <b>✓ PUN</b> — GME, valore giornaliero MGP (dato disponibile dal 2005).<br>
     <b>✓ Gas TTF</b> — ICE, valore giornaliero front-month, dal 23 ottobre 2017 (inizio serie Investing/ICE disponibile).
   </div>
+  <div class="data-updated" id="dataUpdated"></div>
 </div>
 
 <script>
-const RAW = window.requireAeifPayload('daily_prices');
+const PAYLOAD_RAW = window.requireAeifPayload('daily_prices');
+function withLivePunRows(rows){
+  const live = window.loadAeifSeries ? window.loadAeifSeries('pun') : null;
+  if(!live || !Array.isArray(live.observations) || !live.observations.length) return rows;
+  const byDate = new Map(rows.map(row=>[row.date, {...row}]));
+  live.observations.forEach(obs=>{
+    const date = obs.observed_on;
+    const existing = byDate.get(date) || {date, pun:null, gas:null};
+    existing.pun = obs.value;
+    byDate.set(date, existing);
+  });
+  return [...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date));
+}
+const RAW = withLivePunRows(PAYLOAD_RAW);
 const COL = {pun:'#0e8ba3', gas:'#e0483d'};
 const SOFT = {pun:'rgba(14,139,163,.10)', gas:'rgba(224,72,61,.10)'};
 const META = [
@@ -218,6 +255,26 @@ function mkData(){
     tension:0, hidden:hidden[m.k], _key:m.k, _unit:m.unit, spanGaps:true,
     fill:true,
   }))};
+}
+function num(v){ return typeof v === 'number' && Number.isFinite(v); }
+function avg(rows, key){
+  const vals = rows.map(r=>r[key]).filter(num);
+  return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null;
+}
+function fmtEuro(v){ return num(v) ? v.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2}) : 'n.d.'; }
+function fmtPct(v){ return num(v) ? `${v>0?'+':''}${v.toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1})}%` : 'n.d.'; }
+function isoAddDays(iso, days){
+  const d = new Date(iso + 'T00:00:00');
+  d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0,10);
+}
+function isoAddYears(iso, years){
+  const d = new Date(iso + 'T00:00:00');
+  d.setFullYear(d.getFullYear() + years);
+  return d.toISOString().slice(0,10);
+}
+function rowsBetween(start, end){
+  return RAW.filter(r=>r.date >= start && r.date <= end);
 }
 const gridC='#e9edf2', gridStrong='#dbe1e9', tick='#5f7185';
 const chart = new Chart(document.getElementById('chart'), {
@@ -307,6 +364,35 @@ function formatDateLabel(index){
   const d=new Date(labels[index]+'T00:00:00');
   return d.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'});
 }
+function renderPunKpis(){
+  const punRows = RAW.filter(r=>num(r.pun)).sort((a,b)=>a.date.localeCompare(b.date));
+  const last = punRows[punRows.length - 1];
+  if(!last) return;
+  const lastDate = last.date;
+  const start30 = isoAddDays(lastDate, -29);
+  const avg30 = avg(rowsBetween(start30, lastDate), 'pun');
+  const prevStart = isoAddYears(start30, -1);
+  const prevEnd = isoAddYears(lastDate, -1);
+  const prevAvg30 = avg(rowsBetween(prevStart, prevEnd), 'pun');
+  const delta = num(avg30) && num(prevAvg30) && prevAvg30 !== 0 ? ((avg30 / prevAvg30) - 1) * 100 : null;
+  const ytdStart = `${lastDate.slice(0,4)}-01-01`;
+  const ytdAvg = avg(rowsBetween(ytdStart, lastDate), 'pun');
+  const lastIndex = labels.indexOf(lastDate);
+  const cards = [
+    {label:'Ultimo prezzo PUN', value:fmtEuro(last.pun), unit:`€/MWh · ${formatDateLabel(lastIndex)}`},
+    {label:'Media ultimi 30 giorni', value:fmtEuro(avg30), unit:'€/MWh'},
+    {label:'Scostamento vs anno prima', value:fmtPct(delta), unit:'media 30 giorni su stesso periodo', tone:num(delta) ? (delta > 0 ? 'bad' : 'good') : ''},
+    {label:'Media annuale YTD', value:fmtEuro(ytdAvg), unit:`€/MWh · ${lastDate.slice(0,4)}`},
+  ];
+  document.getElementById('punKpis').innerHTML = cards.map(card=>`
+    <div class="kpi-card">
+      <div class="kpi-label">${card.label}</div>
+      <div class="kpi-value ${card.tone || ''}">${card.value}</div>
+      <div class="kpi-unit">${card.unit}</div>
+    </div>
+  `).join('');
+  document.getElementById('dataUpdated').textContent = `Dati PUN aggiornati al ${formatDateLabel(lastIndex)}`;
+}
 function findIndexFromDate(date){
   const iso=date.toISOString().slice(0,10);
   const found=labels.findIndex(l=>l>=iso);
@@ -346,6 +432,9 @@ function setRange(a,b){
   paintSlider();
   applyIndexRange(+rmin.value,+rmax.value);
 }
+function setLastDays(days){
+  setRange(Math.max(0,lastIdx-days+1), lastIdx);
+}
 
 function panDays(dir){
   let a=+rmin.value, b=+rmax.value;
@@ -365,13 +454,15 @@ document.querySelectorAll('#range button').forEach(b=>{
     document.querySelectorAll('#range button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
     const r=b.dataset.r;
+    if(r==='last30')return setLastDays(30);
     if(r==='all')return setRange(0,lastIdx);
     const [a,c]=yearBounds(+r,Y1);
     setRange(a,c);
   };
 });
-document.querySelector('#range button[data-r="2018"]').classList.add('on');
-document.querySelector('#range button[data-r="2018"]').click();
+renderPunKpis();
+document.querySelector('#range button[data-r="last30"]').classList.add('on');
+document.querySelector('#range button[data-r="last30"]').click();
 let _rt;window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>{chart.update();paintSlider();},200);});
 </script>
 <script src="assets/site-chrome.js?v=20260807-env"></script>

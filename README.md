@@ -36,6 +36,15 @@ Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, 
 
 Sul piano free di Render e' disponibile un solo database Postgres attivo. Per questo il Blueprint produzione non crea un secondo database: usa `DATABASE_URL` come variabile manuale.
 
+## Aggiornamento PUN
+
+- sorgente PUN: PUN Index GME ufficiale; `PUN_SOURCE_URL` resta solo come fallback CSV manuale
+- frequenza cron: ogni giorno alle 11:30 UTC
+- logica aggiornamento: il job legge l'ultima data `pun` presente nel database e importa solo le date mancanti fino al giorno successivo a oggi, includendo il dato day-ahead pubblicato dal GME
+- verifica dati: `/api/series/pun`, `/api/series/pun/monthly`, `/api/pun/status`
+- pagina prezzi: il grafico PUN/TTF usa il payload storico per il TTF e sovrascrive/estende la serie PUN con i valori live letti dal database tramite API
+- pagina mercato energetico: il PUN mensile viene letto da `/api/series/pun/monthly`, che calcola la media mensile direttamente dalle osservazioni giornaliere nel database; in questo modo il job aggiorna una sola serie giornaliera e le viste aggregate restano coerenti automaticamente
+
 ## Render Pre-Produzione
 
 - static site: `dashboard-aeif-preproduzione` gia esistente, fuori dal Blueprint
