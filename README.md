@@ -29,10 +29,13 @@ Backend pre-produzione:
 - API: `dashboard-aeif-api-preprod`
 - database: `dashboard-aeif-db-preprod`
 - cron PUN: `dashboard-aeif-pun-scraper-preprod`
-- sorgente PUN: variabile ambiente `PUN_SOURCE_URL`
+- sorgente PUN: PUN Index GME ufficiale; `PUN_SOURCE_URL` resta solo come fallback CSV manuale
+- frequenza cron: ogni giorno alle 11:30 UTC
+- logica aggiornamento PUN: il job legge l'ultima data `pun` presente nel database e importa solo le date mancanti fino al giorno successivo a oggi, includendo il dato day-ahead pubblicato dal GME
 - il Blueprint Render gestisce solo backend, database e cron; gli static site restano servizi separati gia esistenti
 - seed iniziale: il backend importa nel DB i dati gia presenti nel frontend
-- verifica dati: `/api/payloads`, `/api/payloads/daily_prices`, `/api/series/pun`
+- verifica dati: `/api/payloads`, `/api/payloads/daily_prices`, `/api/series/pun`, `/api/pun/status`
+- pagina prezzi: il grafico PUN/TTF usa il payload storico per il TTF e sovrascrive/estende la serie PUN con i valori live letti dal database tramite API
 
 Per attivarlo su Render:
 
