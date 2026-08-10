@@ -6,8 +6,8 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Dataset, DatasetPayload
-from app.repository import list_observations
-from app.schemas import DatasetPayloadResponse, DatasetResponse, SeriesResponse
+from app.repository import latest_observation_date, latest_scrape_run, list_observations
+from app.schemas import DatasetPayloadResponse, DatasetResponse, DatasetStatusResponse, SeriesResponse
 
 
 router = APIRouter(tags=["datasets"])
@@ -68,3 +68,12 @@ def pun(
     if not dataset:
         raise HTTPException(status_code=404, detail="PUN dataset not available yet")
     return SeriesResponse(dataset=dataset, observations=observations)
+
+
+@router.get("/pun/status", response_model=DatasetStatusResponse)
+def pun_status(db: Session = Depends(get_db)) -> DatasetStatusResponse:
+    return DatasetStatusResponse(
+        dataset_key="pun",
+        latest_observed_on=latest_observation_date(db, dataset_key="pun"),
+        latest_job=latest_scrape_run(db, job_name="pun_daily_update"),
+    )
