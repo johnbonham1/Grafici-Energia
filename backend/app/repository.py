@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import date
 
 from sqlalchemy import desc, func, select
@@ -119,3 +120,31 @@ def latest_scrape_run(db: Session, *, job_name: str) -> ScrapeRun | None:
         .order_by(desc(ScrapeRun.started_at), desc(ScrapeRun.id))
         .limit(1)
     )
+
+
+def list_monthly_averages(
+    db: Session,
+    *,
+    dataset_key: str,
+    start: date | None = None,
+    end: date | None = None,
+) -> tuple[Dataset | None, list[dict]]:
+    dataset, observations = list_observations(db, dataset_key=dataset_key, start=start, end=end)
+    if not dataset:
+        return None, []
+
+    groups: dict[date, list[float]] = defaultdict(list)
+    for observation in observations:
+        month = observation.observed_on.replace(day=1)
+        groups[month].append(observation.value)
+
+    monthly_observations = [
+        {
+            "observed_on": month,
+            "value": sum(values) / len(values),
+            "metadata_json": {"granularity": "monthly_average", "observations": len(values)},
+        }
+        for month, values in sorted(groups.items())
+        if values
+    ]
+    return dataset, monthly_observations

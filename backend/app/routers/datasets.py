@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Dataset, DatasetPayload
-from app.repository import latest_observation_date, latest_scrape_run, list_observations
+from app.repository import latest_observation_date, latest_scrape_run, list_monthly_averages, list_observations
 from app.schemas import DatasetPayloadResponse, DatasetResponse, DatasetStatusResponse, SeriesResponse
 
 
@@ -53,6 +53,19 @@ def series(
     db: Session = Depends(get_db),
 ) -> SeriesResponse:
     dataset, observations = list_observations(db, dataset_key=dataset_key, start=start, end=end)
+    if not dataset:
+        raise HTTPException(status_code=404, detail="Dataset not found")
+    return SeriesResponse(dataset=dataset, observations=observations)
+
+
+@router.get("/series/{dataset_key}/monthly", response_model=SeriesResponse)
+def monthly_series(
+    dataset_key: str,
+    start: date | None = Query(default=None),
+    end: date | None = Query(default=None),
+    db: Session = Depends(get_db),
+) -> SeriesResponse:
+    dataset, observations = list_monthly_averages(db, dataset_key=dataset_key, start=start, end=end)
     if not dataset:
         raise HTTPException(status_code=404, detail="Dataset not found")
     return SeriesResponse(dataset=dataset, observations=observations)

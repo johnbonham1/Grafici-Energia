@@ -36,6 +36,7 @@ Backend pre-produzione:
 - seed iniziale: il backend importa nel DB i dati gia presenti nel frontend
 - verifica dati: `/api/payloads`, `/api/payloads/daily_prices`, `/api/series/pun`, `/api/pun/status`
 - pagina prezzi: il grafico PUN/TTF usa il payload storico per il TTF e sovrascrive/estende la serie PUN con i valori live letti dal database tramite API
+- pagina mercato energetico: il PUN mensile viene letto da `/api/series/pun/monthly`, che calcola la media mensile direttamente dalle osservazioni giornaliere nel database; in questo modo il job aggiorna una sola serie giornaliera e le viste aggregate restano coerenti automaticamente
 
 Per attivarlo su Render:
 
