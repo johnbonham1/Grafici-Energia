@@ -19,6 +19,19 @@
     }
   };
 
+  window.loadAeifSeries = function loadAeifSeries(key) {
+    if (!window.AEIF_API_BASE) return null;
+    try {
+      const request = new XMLHttpRequest();
+      request.open("GET", window.AEIF_API_BASE + "/api/series/" + encodeURIComponent(key), false);
+      request.send(null);
+      if (request.status < 200 || request.status >= 300) return null;
+      return JSON.parse(request.responseText);
+    } catch (_) {
+      return null;
+    }
+  };
+
   window.requireAeifPayload = function requireAeifPayload(key) {
     const payload = window.loadAeifPayload(key);
     if (payload) return payload;

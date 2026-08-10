@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUN e TTF · prezzi giornalieri</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="assets/api-loader.js"></script>
+<script src="assets/api-loader.js?v=20260810-live-pun"></script>
 <style>
   :root{
     --bg1:#f6f8fb; --bg2:#eef2f7;
@@ -199,7 +199,20 @@
 </div>
 
 <script>
-const RAW = window.requireAeifPayload('daily_prices');
+const PAYLOAD_RAW = window.requireAeifPayload('daily_prices');
+function withLivePunRows(rows){
+  const live = window.loadAeifSeries ? window.loadAeifSeries('pun') : null;
+  if(!live || !Array.isArray(live.observations) || !live.observations.length) return rows;
+  const byDate = new Map(rows.map(row=>[row.date, {...row}]));
+  live.observations.forEach(obs=>{
+    const date = obs.observed_on;
+    const existing = byDate.get(date) || {date, pun:null, gas:null};
+    existing.pun = obs.value;
+    byDate.set(date, existing);
+  });
+  return [...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date));
+}
+const RAW = withLivePunRows(PAYLOAD_RAW);
 const COL = {pun:'#0e8ba3', gas:'#e0483d'};
 const SOFT = {pun:'rgba(14,139,163,.10)', gas:'rgba(224,72,61,.10)'};
 const META = [
