@@ -47,3 +47,9 @@ class ScrapeRunResponse(BaseModel):
     rows_processed: int
     started_at: datetime
     finished_at: datetime | None = None
+
+
+class DatasetStatusResponse(BaseModel):
+    dataset_key: str
+    latest_observed_on: date | None = None
+    latest_job: ScrapeRunResponse | None = None
