@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mercato energetico Italia · 2005–2026</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="assets/api-loader.js?v=20260810-live-monthly-pun"></script>
+<script src="assets/api-loader.js?v=20260811-live-monthly-pun"></script>
 <style>
   :root{
     --bg:#ffffff; --panel:#ffffff; --grid:#e4e8ec; --grid-soft:#eef1f4;
@@ -201,7 +201,7 @@ function withLiveMonthlyPun(rows){
   if(!live || !Array.isArray(live.observations) || !live.observations.length) return rows;
   const byDate = new Map(rows.map(row=>[row.date, {...row}]));
   live.observations.forEach(obs=>{
-    const date = obs.observed_on;
+    const date = obs.observed_on.slice(0,7);
     const existing = byDate.get(date) || {date, eua:null, pun:null, gas:null, term:null};
     existing.pun = Number(obs.value.toFixed(2));
     byDate.set(date, existing);
