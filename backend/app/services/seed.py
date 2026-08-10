@@ -105,7 +105,6 @@ def seed_row_series(
             name=DATASET_META[dataset_key][0],
             unit=DATASET_META[dataset_key][1],
             source=DATASET_META[dataset_key][2],
-            preserve_existing_source=True,
         )
         for row_key, dataset_key in value_keys.items()
     }
@@ -137,7 +136,6 @@ def seed_ets(db: Session, data: dict[str, list[Any]]) -> int:
             name=DATASET_META[dataset_key][0],
             unit=DATASET_META[dataset_key][1],
             source=DATASET_META[dataset_key][2],
-            preserve_existing_source=True,
         )
         for year, value in zip(data[years_key], data[values_key], strict=False):
             if value is None:

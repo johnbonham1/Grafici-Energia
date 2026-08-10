@@ -11,22 +11,9 @@ Backend FastAPI per alimentare la dashboard con dati strutturati.
 
 ## Servizi previsti su Render
 
-- `dashboard-aeif-api`: Web Service FastAPI produzione
-- `dashboard-aeif-pun-scraper`: Cron Job giornaliero produzione
-- `dashboard-aeif-api-preprod`: Web Service FastAPI preproduzione
-- `dashboard-aeif-db-preprod`: database PostgreSQL free condiviso
-- `dashboard-aeif-pun-scraper-preprod`: Cron Job giornaliero preproduzione
-
-## Job PUN
-
-Il job `python -m app.jobs.update_pun` aggiorna il dataset `pun` in modo incrementale:
-
-- legge dal DB l'ultima data gia disponibile;
-- interroga il PUN Index GME ufficiale solo per le date mancanti, fino al giorno successivo a oggi;
-- inserisce o aggiorna le osservazioni senza duplicarle;
-- registra ogni esecuzione in `scrape_runs`.
-
-La variabile `PUN_SOURCE_URL` resta disponibile come fallback per importare un CSV manuale. Se e vuota, il job usa automaticamente l'endpoint GME della pagina `PUN Index GME`.
+- `dashboard-aeif-api-preprod`: Web Service FastAPI
+- `dashboard-aeif-db-preprod`: database PostgreSQL
+- `dashboard-aeif-pun-scraper-preprod`: Cron Job giornaliero
 
 ## Comandi locali
 

@@ -1,16 +1,15 @@
 import os
-from datetime import date, timedelta, timezone
+from datetime import timezone
 
 from app.database import SessionLocal, init_db
 from app.models import ScrapeRun, utcnow
-from app.repository import get_or_create_dataset, latest_observation_date, upsert_observation
-from app.services.pun import GME_PUN_PAGE_URL, fetch_gme_pun_range, fetch_pun_csv
+from app.repository import get_or_create_dataset, upsert_observation
+from app.services.pun import fetch_pun_csv
 
 
 def main() -> None:
     init_db()
     source_url = os.getenv("PUN_SOURCE_URL")
-    today = date.today()
 
     with SessionLocal() as db:
         run = ScrapeRun(job_name="pun_daily_update", status="running")
@@ -19,25 +18,21 @@ def main() -> None:
         db.refresh(run)
 
         try:
-            if source_url:
-                records = fetch_pun_csv(source_url)
-                source = source_url
-            else:
-                last_date = latest_observation_date(db, dataset_key="pun")
-                start = (last_date + timedelta(days=1)) if last_date else today
-                end = today + timedelta(days=1)
-                if start > end:
-                    records = []
-                else:
-                    records = fetch_gme_pun_range(start, end)
-                source = GME_PUN_PAGE_URL
+            if not source_url:
+                run.status = "skipped"
+                run.message = "PUN_SOURCE_URL not configured"
+                run.finished_at = utcnow().astimezone(timezone.utc)
+                db.commit()
+                print(run.message)
+                return
 
+            records = fetch_pun_csv(source_url)
             dataset = get_or_create_dataset(
                 db,
                 key="pun",
-                name="PUN Index GME",
+                name="Prezzo Unico Nazionale",
                 unit="EUR/MWh",
-                source=source,
+                source=source_url,
             )
             for record in records:
                 upsert_observation(
