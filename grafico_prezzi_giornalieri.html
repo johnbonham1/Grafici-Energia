@@ -149,6 +149,27 @@
   .kpi-card .kpi-unit{font-family:var(--mono);font-size:10px;color:var(--ink-faint);margin-top:8px}
   .data-updated{font-family:var(--mono);font-size:10px;color:var(--ink-faint);
     margin-top:12px;text-align:right}
+  .ask-box{margin-top:18px;background:var(--panel);border:1px solid var(--stroke);
+    border-radius:16px;padding:18px;box-shadow:0 4px 18px -10px rgba(20,30,45,.14)}
+  .ask-head{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+  .ask-kicker{font-family:var(--mono);font-size:9.5px;color:var(--pun);
+    letter-spacing:.13em;text-transform:uppercase;font-weight:800}
+  .ask-head strong{font-size:18px;color:var(--ink);letter-spacing:-.01em}
+  .ask-form{display:grid;grid-template-columns:1fr auto;gap:10px}
+  .ask-form input{width:100%;border:1px solid var(--stroke);border-radius:10px;
+    padding:12px 13px;font-size:14px;color:var(--ink);background:#fff;outline:none}
+  .ask-form input:focus{border-color:var(--pun);box-shadow:0 0 0 3px var(--pun-soft)}
+  .ask-form button,.ask-chip{border:1px solid #1f2a44;background:#1f2a44;color:#fff;
+    border-radius:10px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer;
+    transition:.15s;white-space:nowrap}
+  .ask-form button:hover,.ask-chip:hover{background:#2f3e5f;border-color:#2f3e5f;transform:translateY(-1px)}
+  .ask-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .ask-chip{background:#fff;color:var(--ink-dim);border-color:var(--stroke);
+    font-family:var(--mono);font-size:10px;padding:7px 10px}
+  .ask-chip:hover{background:var(--pun-soft);border-color:var(--pun);color:var(--ink)}
+  .ask-answer{margin-top:13px;border:1px solid var(--stroke);border-radius:12px;
+    padding:13px 14px;background:#f9fbfd;color:var(--ink-dim);font-size:13.5px;line-height:1.55}
+  .ask-answer strong{color:var(--ink)}
 
   @media(max-width:760px){
     .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -157,6 +178,7 @@
     .kpi-grid{grid-template-columns:1fr;gap:10px}
     .kpi-card .kpi-value{font-size:22px}
     .data-updated{text-align:left}
+    .ask-form{grid-template-columns:1fr}
   }
 
 </style>
@@ -209,6 +231,23 @@
   </div>
 
   <div class="kpi-grid" id="punKpis" aria-label="Indicatori PUN Italia"></div>
+  <section class="ask-box" aria-label="Assistente dati PUN">
+    <div class="ask-head">
+      <span class="ask-kicker">Assistente dati</span>
+      <strong>Chiedi ai dati PUN</strong>
+    </div>
+    <form class="ask-form" id="askForm">
+      <input id="askInput" type="text" autocomplete="off" value="calcola la media PUN degli ultimi 30 giorni" aria-label="Domanda sui dati PUN">
+      <button type="submit">Calcola</button>
+    </form>
+    <div class="ask-examples">
+      <button class="ask-chip" type="button" data-q="ultimo valore PUN disponibile">Ultimo valore</button>
+      <button class="ask-chip" type="button" data-q="media PUN ultimi 30 giorni">Media 30 giorni</button>
+      <button class="ask-chip" type="button" data-q="massimo PUN 2022">Massimo 2022</button>
+      <button class="ask-chip" type="button" data-q="confronta PUN ultimi 30 giorni con anno precedente">Confronto anno prima</button>
+    </div>
+    <div class="ask-answer" id="askAnswer">Scrivi una domanda semplice: media, minimo, massimo, ultimo valore o confronto con l'anno precedente.</div>
+  </section>
 
   <div class="note">
     <strong>Stessa unità (€/MWh), asse unico</strong> — PUN e TTF sono direttamente confrontabili.
@@ -463,6 +502,41 @@ document.querySelectorAll('#range button').forEach(b=>{
 renderPunKpis();
 document.querySelector('#range button[data-r="last30"]').classList.add('on');
 document.querySelector('#range button[data-r="last30"]').click();
+const askForm=document.getElementById('askForm');
+const askInput=document.getElementById('askInput');
+const askAnswer=document.getElementById('askAnswer');
+async function askData(question){
+  if(!window.AEIF_API_BASE){
+    askAnswer.innerHTML="<strong>API non configurata.</strong> Apri la pagina da Render preproduzione per usare l'assistente dati.";
+    return;
+  }
+  askAnswer.textContent='Calcolo in corso...';
+  try{
+    const resp=await fetch(`${window.AEIF_API_BASE}/api/ask-data`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question,dataset_key:'pun'})
+    });
+    const data=await resp.json();
+    if(!resp.ok)throw new Error(data.detail || 'Errore API');
+    askAnswer.innerHTML=data.error
+      ? `<strong>Non disponibile.</strong> ${data.answer}`
+      : data.answer;
+  }catch(err){
+    askAnswer.innerHTML='<strong>Dati temporaneamente non disponibili.</strong> Riprova tra poco.';
+  }
+}
+askForm.addEventListener('submit',event=>{
+  event.preventDefault();
+  const question=askInput.value.trim();
+  if(question)askData(question);
+});
+document.querySelectorAll('.ask-chip').forEach(button=>{
+  button.addEventListener('click',()=>{
+    askInput.value=button.dataset.q;
+    askData(button.dataset.q);
+  });
+});
 let _rt;window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>{chart.update();paintSlider();},200);});
 </script>
 <script src="assets/site-chrome.js?v=20260807-env"></script>

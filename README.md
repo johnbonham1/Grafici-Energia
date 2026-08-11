@@ -32,7 +32,7 @@ Ogni ambiente ha uno static site Render separato gia esistente. Il Blueprint Ren
 - cron PUN: `dashboard-aeif-pun-scraper-f497`
 - branch collegato: `main`
 
-Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine mostrano un messaggio di dati temporaneamente non disponibili.
+Il frontend produzione legge i dati dall'API produzione. Se l'API non risponde, le pagine usano prima la cache del browser e poi il fallback statico in `assets/fallback-payloads.json`.
 
 Sul piano free di Render e' disponibile un solo database Postgres attivo. Per questo il Blueprint produzione non crea un secondo database: usa `DATABASE_URL` come variabile manuale.
 
@@ -44,6 +44,7 @@ Sul piano free di Render e' disponibile un solo database Postgres attivo. Per qu
 - verifica dati: `/api/series/pun`, `/api/series/pun/monthly`, `/api/pun/status`
 - pagina prezzi: il grafico PUN/TTF usa il payload storico per il TTF e sovrascrive/estende la serie PUN con i valori live letti dal database tramite API
 - pagina mercato energetico: il PUN mensile viene letto da `/api/series/pun/monthly`, che calcola la media mensile direttamente dalle osservazioni giornaliere nel database; in questo modo il job aggiorna una sola serie giornaliera e le viste aggregate restano coerenti automaticamente
+- assistente dati: la pagina PUN/TTF include un box `Chiedi ai dati PUN` che interroga `/api/ask-data`; i calcoli sono sempre eseguiti dal backend sul database, mentre OpenAI serve solo, se configurato, per interpretare domande meno standard
 
 ## Render Pre-Produzione
 
@@ -52,6 +53,13 @@ Sul piano free di Render e' disponibile un solo database Postgres attivo. Per qu
 - database: `dashboard-aeif-db-preprod`
 - cron PUN: `dashboard-aeif-pun-scraper-preprod`
 - branch collegato: `preprod`
+
+## Assistente dati
+
+- `OPENAI_API_KEY`: chiave API OpenAI da inserire nei servizi API Render, senza committarla nel repository
+- `OPENAI_MODEL`: default `gpt-4.1-nano`
+
+Senza `OPENAI_API_KEY`, l'assistente resta comunque attivo per domande standard come media, minimo, massimo, ultimo valore e confronto con anno precedente. Nessun modello AI calcola direttamente i valori numerici.
 
 ## Regole operative
 

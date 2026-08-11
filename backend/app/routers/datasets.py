@@ -7,7 +7,8 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import Dataset, DatasetPayload
 from app.repository import latest_observation_date, latest_scrape_run, list_monthly_averages, list_observations
-from app.schemas import DatasetPayloadResponse, DatasetResponse, DatasetStatusResponse, SeriesResponse
+from app.schemas import AskDataRequest, AskDataResponse, DatasetPayloadResponse, DatasetResponse, DatasetStatusResponse, SeriesResponse
+from app.services.ask_data import answer_data_question
 
 
 router = APIRouter(tags=["datasets"])
@@ -90,3 +91,8 @@ def pun_status(db: Session = Depends(get_db)) -> DatasetStatusResponse:
         latest_observed_on=latest_observation_date(db, dataset_key="pun"),
         latest_job=latest_scrape_run(db, job_name="pun_daily_update"),
     )
+
+
+@router.post("/ask-data", response_model=AskDataResponse)
+def ask_data(request: AskDataRequest, db: Session = Depends(get_db)) -> AskDataResponse:
+    return answer_data_question(db, request)

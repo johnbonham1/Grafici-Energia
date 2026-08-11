@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     app_name: str = "Dashboard AEIF API"
     environment: str = "local"
     database_url: str = "sqlite:///./dashboard_aeif.db"
+    openai_api_key: str | None = None
+    openai_model: str = "gpt-4.1-nano"
     cors_origins: str = Field(
         default="http://localhost:8000,http://localhost:5173,https://dashboard-aeif.onrender.com,https://johnbonham1.github.io,https://dashboard-aeif-preprod.onrender.com,https://dashboard-aeif-preproduzione.onrender.com"
     )
