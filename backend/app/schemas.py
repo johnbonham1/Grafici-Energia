@@ -53,3 +53,20 @@ class DatasetStatusResponse(BaseModel):
     dataset_key: str
     latest_observed_on: date | None = None
     latest_job: ScrapeRunResponse | None = None
+
+
+class AskDataRequest(BaseModel):
+    question: str
+    dataset_key: str | None = None
+
+
+class AskDataResponse(BaseModel):
+    answer: str
+    dataset_key: str | None = None
+    metric: str | None = None
+    period: dict | None = None
+    value: float | None = None
+    unit: str | None = None
+    calculation: dict | None = None
+    used_ai: bool = False
+    error: str | None = None

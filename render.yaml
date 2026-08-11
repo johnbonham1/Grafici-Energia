@@ -17,6 +17,10 @@ services:
         value: 3.13.5
       - key: CORS_ORIGINS
         value: https://dashboard-aeif-preprod.onrender.com,https://dashboard-aeif-preproduzione.onrender.com
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-nano
   - type: cron
     runtime: python
     name: dashboard-aeif-pun-scraper-preprod

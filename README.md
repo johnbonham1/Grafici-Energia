@@ -37,6 +37,7 @@ Backend pre-produzione:
 - verifica dati: `/api/payloads`, `/api/payloads/daily_prices`, `/api/series/pun`, `/api/pun/status`
 - pagina prezzi: il grafico PUN/TTF usa il payload storico per il TTF e sovrascrive/estende la serie PUN con i valori live letti dal database tramite API
 - pagina mercato energetico: il PUN mensile viene letto da `/api/series/pun/monthly`, che calcola la media mensile direttamente dalle osservazioni giornaliere nel database; in questo modo il job aggiorna una sola serie giornaliera e le viste aggregate restano coerenti automaticamente
+- assistente dati: la pagina PUN/TTF include un box `Chiedi ai dati PUN` che interroga `/api/ask-data`; i calcoli sono sempre eseguiti dal backend sul database, mentre OpenAI serve solo, se configurato, per interpretare domande meno standard
 
 Per attivarlo su Render:
 
@@ -45,6 +46,13 @@ Per attivarlo su Render:
 3. Collega il repository `johnbonham1/Grafici-Energia`.
 4. Usa `render.yaml` come configurazione.
 5. Avvia il deploy.
+
+Variabili opzionali per l'assistente dati:
+
+- `OPENAI_API_KEY`: chiave API OpenAI da inserire solo nel servizio API pre-produzione `dashboard-aeif-api-preprod`
+- `OPENAI_MODEL`: default `gpt-4.1-nano`
+
+Senza `OPENAI_API_KEY`, l'assistente resta comunque attivo per domande standard come media, minimo, massimo, ultimo valore e confronto con anno precedente. Nessun modello AI calcola direttamente i valori numerici.
 
 Il servizio di produzione resta collegato al branch `main`.
 
