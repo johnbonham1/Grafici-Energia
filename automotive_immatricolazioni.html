@@ -16,7 +16,7 @@
     --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{min-height:100%;background:linear-gradient(160deg,#fff 0%,var(--bg) 42%,#eef3f8 100%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  html,body{min-height:100%;background:linear-gradient(160deg,#fff 0%,var(--bg) 42%,#eef3f8 100%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:1180px;margin:0 auto;padding:32px 22px 64px}
   .brand{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px;padding:24px 22px;background:var(--panel);border:1px solid var(--stroke);border-radius:14px;text-align:center;box-shadow:0 4px 16px -6px rgba(20,30,45,.10),0 1px 3px rgba(20,30,45,.05)}
   .brand img{height:88px;width:auto;display:block}.brand .elab{font-size:20px;font-weight:750;color:var(--ink);letter-spacing:.01em;line-height:1.15}
@@ -25,7 +25,7 @@
   header{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--stroke);padding-bottom:18px;margin-bottom:22px}
   .eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:700}
   h1{font-size:25px;font-weight:760;letter-spacing:-.02em;line-height:1.15}.sub{font-family:var(--mono);font-size:11px;color:var(--ink-dim);margin-top:8px;letter-spacing:.03em;text-transform:uppercase}
-  .source-pill{display:inline-flex;align-items:center;gap:8px;color:var(--ink-dim);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--stroke);border-radius:999px;background:#fff;padding:8px 11px;text-decoration:none}
+  .source-pill{display:inline-flex;align-items:center;gap:8px;max-width:100%;color:var(--ink-dim);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--stroke);border-radius:999px;background:#fff;padding:8px 11px;text-decoration:none;white-space:normal;line-height:1.35}
   .source-pill:hover{border-color:var(--blue);color:var(--ink)}
   .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
   .kpi{background:#fff;border:1px solid var(--stroke);border-radius:13px;padding:15px 16px;box-shadow:0 3px 14px -8px rgba(20,30,45,.14)}
@@ -36,8 +36,8 @@
   .lg{display:flex;align-items:center;gap:9px;border:1px solid var(--stroke);border-radius:10px;background:#fff;padding:9px 10px;cursor:pointer;text-align:left;color:inherit;font:inherit;transition:.15s}.lg:hover{border-color:var(--c)}.lg.off{opacity:.42}.dot{width:11px;height:11px;border-radius:3px;background:var(--c);flex:0 0 auto}.lg .txt{min-width:0;display:flex;flex-direction:column;gap:2px}.lg .nm{font-size:12px;font-weight:700;line-height:1.15}.lg .val{font-family:var(--mono);font-size:10px;color:var(--ink-dim)}
   .callouts{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.callout{border:1px solid var(--stroke);border-radius:11px;padding:12px 14px;background:#fbfcfe;flex:1;min-width:220px}.callout b{display:block;color:var(--ink);font-size:13px;margin-bottom:4px}.callout span{font-size:12px;color:var(--ink-dim);line-height:1.45}
   .note{margin-top:22px;font-size:12.5px;line-height:1.65;color:var(--ink-dim);background:#fff;border:1px solid var(--stroke);border-radius:12px;padding:14px 16px}.note strong{color:var(--ink)}.src{font-family:var(--mono);font-size:10px;color:var(--ink-faint);margin-top:14px;line-height:1.75}
-  @media(max-width:850px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:16px}.canvas-holder{height:290px}.line-holder{height:360px}}
-  @media(max-width:560px){.wrap{padding:16px 12px 42px}.brand{padding:16px;margin-bottom:18px}.brand img{height:58px}.brand .elab{font-size:15px}.home-btn{position:static;align-self:flex-start}.kpis{grid-template-columns:1fr}.legend{grid-template-columns:1fr}h1{font-size:20px}.panel-head{flex-direction:column}.panel-head p{text-align:left}.line-holder{height:330px}}
+  @media(max-width:850px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:16px}.canvas-holder{height:290px}.line-holder{height:360px}.source-pill{width:100%;justify-content:center;text-align:center;border-radius:10px}}
+  @media(max-width:560px){.wrap{padding:16px 12px 42px}.brand{padding:16px;margin-bottom:18px}.brand img{height:58px}.brand .elab{font-size:15px}.home-btn{position:static;align-self:flex-start}.kpis{grid-template-columns:1fr;gap:10px}.kpi{padding:13px 14px}.kpi .value{font-size:22px}.legend{grid-template-columns:1fr}h1{font-size:20px}.sub{font-size:9.5px;line-height:1.45}.panel{padding:14px 10px;border-radius:13px}.panel-head{flex-direction:column;margin-bottom:8px;padding:0 2px}.panel-head h2{font-size:15px}.panel-head p{text-align:left;font-size:9px}.canvas-holder{height:250px}.line-holder{height:320px}.callouts{gap:9px}.callout{min-width:100%;padding:11px 12px}.note{font-size:12px;padding:12px}.src{font-size:9px}}
 </style>
 </head>
 <body>
@@ -144,7 +144,7 @@ new Chart(document.getElementById('bevLine'), {
     responsive:true, maintainAspectRatio:false, interaction:{mode:'index', intersect:false},
     plugins:{legend:{display:false}, tooltip:{backgroundColor:'#151d2a', titleColor:'#fff', bodyColor:'#edf3f9', padding:11, cornerRadius:10, callbacks:{title:c=>labelMonth(c[0].label), label:c=>' '+nf.format(c.parsed.y)+' immatricolazioni BEV'}}},
     scales:{
-      x:{grid:{display:false}, border:{color:'#d4dde7'}, ticks:{color:'#607286', font:{family:"'SF Mono',monospace",size:10}, maxRotation:0, autoSkip:false, callback:function(v){const raw=this.getLabelForValue(v); const [y,m]=raw.split('-'); const mi=+m-1; return mi===0 ? [months[mi], y] : months[mi];}}},
+      x:{grid:{display:false}, border:{color:'#d4dde7'}, ticks:{color:'#607286', font:{family:"'SF Mono',monospace",size:10}, maxRotation:0, autoSkip:false, callback:function(v){const raw=this.getLabelForValue(v); const [y,m]=raw.split('-'); const mi=+m-1; if(window.innerWidth<560 && mi%2===1) return ''; return mi===0 ? [months[mi], y] : months[mi];}}},
       y:{beginAtZero:true, grid:{color:'#e5ebf1', drawTicks:false}, border:{color:'#d4dde7'}, title:{display:true,text:'Immatricolazioni BEV',color:'#607286',font:{family:"'SF Mono',monospace",size:10,weight:'700'}}, ticks:{color:'#607286', font:{family:"'SF Mono',monospace",size:10}, callback:v=>nf.format(v)}}
     }
   },
