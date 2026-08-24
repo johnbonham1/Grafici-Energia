@@ -1,5 +1,7 @@
 (function () {
   const API_BY_HOST = {
+    "dashboard-aeif.onrender.com": "https://dashboard-aeif-api-f497.onrender.com",
+    "johnbonham1.github.io": "https://dashboard-aeif-api-f497.onrender.com",
     "dashboard-aeif-preprod.onrender.com": "https://dashboard-aeif-api-preprod.onrender.com",
     "dashboard-aeif-preproduzione.onrender.com": "https://dashboard-aeif-api-preprod.onrender.com",
   };
