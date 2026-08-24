@@ -1,6 +1,6 @@
 (function () {
-  const VERSION = "v2026.08.07";
-  const DEPLOY_DATE = "07/08/2026";
+  const VERSION = "v2026.08.24";
+  const DEPLOY_DATE = "24/08/2026";
   const host = window.location.hostname || "";
   const params = new URLSearchParams(window.location.search);
   const isPreprod = /preprod|preproduzione/i.test(host) || params.get("env") === "preprod";
