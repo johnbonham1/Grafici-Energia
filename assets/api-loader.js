@@ -7,44 +7,79 @@
   };
 
   window.AEIF_API_BASE = window.AEIF_API_BASE || API_BY_HOST[window.location.hostname] || "";
+  const CACHE_PREFIX = "aeif-data-cache-v2:";
+  let fallbackPayloads = null;
 
-  window.loadAeifPayload = function loadAeifPayload(key) {
-    if (!window.AEIF_API_BASE) return null;
+  function readCache(key) {
     try {
-      const request = new XMLHttpRequest();
-      request.open("GET", window.AEIF_API_BASE + "/api/payloads/" + encodeURIComponent(key), false);
-      request.send(null);
-      if (request.status < 200 || request.status >= 300) return null;
-      return JSON.parse(request.responseText).payload;
+      const raw = window.localStorage && window.localStorage.getItem(CACHE_PREFIX + key);
+      return raw ? JSON.parse(raw).value : null;
     } catch (_) {
       return null;
     }
+  }
+
+  function writeCache(key, value) {
+    try {
+      if (window.localStorage && value) {
+        window.localStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ value, savedAt: Date.now() }));
+      }
+    } catch (_) {}
+  }
+
+  function requestJson(url) {
+    try {
+      const request = new XMLHttpRequest();
+      request.open("GET", url, false);
+      request.send(null);
+      if (request.status < 200 || request.status >= 300) return null;
+      return JSON.parse(request.responseText);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function loadFallbackPayload(key) {
+    if (!fallbackPayloads) {
+      fallbackPayloads = requestJson("assets/fallback-payloads.json") || {};
+    }
+    return fallbackPayloads[key] || null;
+  }
+
+  window.loadAeifPayload = function loadAeifPayload(key) {
+    const cacheKey = "payload:" + key;
+    if (window.AEIF_API_BASE) {
+      const response = requestJson(window.AEIF_API_BASE + "/api/payloads/" + encodeURIComponent(key));
+      if (response && response.payload) {
+        writeCache(cacheKey, response.payload);
+        return response.payload;
+      }
+    }
+    return readCache(cacheKey) || loadFallbackPayload(key);
   };
 
   window.loadAeifSeries = function loadAeifSeries(key) {
-    if (!window.AEIF_API_BASE) return null;
-    try {
-      const request = new XMLHttpRequest();
-      request.open("GET", window.AEIF_API_BASE + "/api/series/" + encodeURIComponent(key), false);
-      request.send(null);
-      if (request.status < 200 || request.status >= 300) return null;
-      return JSON.parse(request.responseText);
-    } catch (_) {
-      return null;
+    const cacheKey = "series:" + key;
+    if (window.AEIF_API_BASE) {
+      const response = requestJson(window.AEIF_API_BASE + "/api/series/" + encodeURIComponent(key));
+      if (response) {
+        writeCache(cacheKey, response);
+        return response;
+      }
     }
+    return readCache(cacheKey);
   };
 
   window.loadAeifMonthlySeries = function loadAeifMonthlySeries(key) {
-    if (!window.AEIF_API_BASE) return null;
-    try {
-      const request = new XMLHttpRequest();
-      request.open("GET", window.AEIF_API_BASE + "/api/series/" + encodeURIComponent(key) + "/monthly", false);
-      request.send(null);
-      if (request.status < 200 || request.status >= 300) return null;
-      return JSON.parse(request.responseText);
-    } catch (_) {
-      return null;
+    const cacheKey = "series-monthly:" + key;
+    if (window.AEIF_API_BASE) {
+      const response = requestJson(window.AEIF_API_BASE + "/api/series/" + encodeURIComponent(key) + "/monthly");
+      if (response) {
+        writeCache(cacheKey, response);
+        return response;
+      }
     }
+    return readCache(cacheKey);
   };
 
   window.requireAeifPayload = function requireAeifPayload(key) {
