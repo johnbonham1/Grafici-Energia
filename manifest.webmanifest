@@ -1,0 +1,18 @@
+{
+  "name": "Dashboard AEIF",
+  "short_name": "AEIF",
+  "description": "Dashboard AEIF per grafici interattivi e dossier energetici.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#f6f8fb",
+  "icons": [
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

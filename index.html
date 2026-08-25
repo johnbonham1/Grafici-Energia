@@ -6,8 +6,13 @@
 <title>Dashboard AEIF</title>
 <meta name="description" content="Dashboard AEIF con grafici interattivi e dossier digitali su mercati elettrici, ETS, automotive, industria, Innovation Fund e confronti internazionali.">
 <meta name="theme-color" content="#f6f8fb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dashboard AEIF">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="canonical" href="https://dashboard-aeif.onrender.com/">
 <link rel="icon" type="image/png" href="assets/mase-logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Dashboard AEIF">
@@ -212,7 +217,7 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card dossier" href="dossiers/dossier_mercati_elettrici.pdf" style="--c:var(--teal);--soft:rgba(13,135,150,.10)">
+      <a class="card dossier" href="dossier_pdf.html?dossier=mercati" style="--c:var(--teal);--soft:rgba(13,135,150,.10)">
         <div class="icon">
           <svg viewBox="0 0 24 24"><path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v18H6.8A2.8 2.8 0 0 1 4 18.2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
         </div>
@@ -294,7 +299,7 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card dossier" href="dossiers/dossier_approfondimento_ets.pdf" style="--c:var(--slate);--soft:rgba(79,96,117,.11)">
+      <a class="card dossier" href="dossier_pdf.html?dossier=ets" style="--c:var(--slate);--soft:rgba(79,96,117,.11)">
         <div class="icon">
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 18h4"/></svg>
         </div>
@@ -313,6 +318,6 @@
     <div class="mono">Elaborazione dati · DG AEIF GLU</div>
   </footer>
 </main>
-<script src="assets/site-chrome.js?v=20260807-env"></script>
+<script src="assets/site-chrome.js?v=20260825-pwa"></script>
 </body>
 </html>
