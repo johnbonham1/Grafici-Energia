@@ -59,7 +59,7 @@
     ensureMeta("apple-mobile-web-app-title", "Dashboard AEIF");
     ensureMeta("apple-mobile-web-app-status-bar-style", "default");
     ensureLink("apple-touch-icon", "assets/apple-touch-icon.png");
-    ensureLink("manifest", "manifest.webmanifest");
+    ensureLink("manifest", "manifest.json");
 
     if (isPreprod) {
       document.body.classList.add("has-aeif-preprod-ribbon");
