@@ -29,6 +29,8 @@ jobs:
         run: |
           mkdir -p _site
           cp ./*.html _site/
+          cp ./manifest.json _site/
+          cp ./manifest.webmanifest _site/
           cp .nojekyll _site/
           cp -R assets _site/assets
           cp -R dossiers _site/dossiers
