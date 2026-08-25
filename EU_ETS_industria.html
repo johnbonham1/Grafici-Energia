@@ -41,7 +41,7 @@
       <div class="eyebrow">MASE · DG AEIF · Approfondimento EU ETS</div>
       <h1>EU ETS · PIL e industria</h1>
     </div>
-    <div class="controls"><a class="download-btn" href="dossiers/dossier_approfondimento_ets.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
+    <div class="controls"><a class="download-btn" href="dossier_pdf.html?dossier=ets"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
       <div class="seg" id="range"><button data-y="all" class="on">Tutto</button><button data-y="2010">2010</button><button data-y="2015">2015</button><button data-y="2020">2020</button><button data-y="2023">2023</button></div></div>
   </header>
 
@@ -100,6 +100,6 @@ rmin.addEventListener('input',onSlide); rmax.addEventListener('input',onSlide);
 document.querySelectorAll('#range button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#range button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); const y=btn.dataset.y; if(y==='all'){rmin.value=Y0;rmax.value=Y1;} else {rmin.value=Math.max(Y0,+y); rmax.value=Y1;} applyYears(+rmin.value,+rmax.value); paintSlider();}));
 paintSlider();
 </script>
-<script src="assets/site-chrome.js?v=20260807-env"></script>
+<script src="assets/site-chrome.js?v=20260825-pwa"></script>
 </body>
 </html>

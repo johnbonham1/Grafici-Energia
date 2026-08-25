@@ -147,7 +147,7 @@
       <h1>Mercato energetico italiano</h1>
     </div>
     <div class="controls">
-      <a class="download-btn" href="dossiers/dossier_mercati_elettrici.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
+      <a class="download-btn" href="dossier_pdf.html?dossier=mercati"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Scarica dossier</span></a>
       <div class="seg" id="range">
         <button data-r="all" class="on">2005→</button>
         <button data-r="2018">2018→</button>
@@ -377,6 +377,6 @@ document.querySelectorAll('#range button').forEach(b=>{
 paintSlider();
 let _rt;window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>{chart.update();paintSlider();},200);});
 </script>
-<script src="assets/site-chrome.js?v=20260807-env"></script>
+<script src="assets/site-chrome.js?v=20260825-pwa"></script>
 </body>
 </html>
