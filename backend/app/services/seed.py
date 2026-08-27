@@ -9,6 +9,9 @@ from app.repository import get_or_create_dataset, upsert_observation, upsert_pay
 
 
 SEED_FILE = Path(__file__).resolve().parents[1] / "seed_data" / "frontend_payloads.json"
+SUPPLEMENTAL_SEED_FILES = [
+    Path(__file__).resolve().parents[1] / "seed_data" / "ets_cap_2005_2050.json",
+]
 
 
 DATASET_META = {
@@ -42,7 +45,11 @@ def seed_frontend_data(db: Session) -> int:
         return 0
 
     seed = json.loads(SEED_FILE.read_text(encoding="utf-8"))
-    payloads = seed["payloads"]
+    payloads = list(seed["payloads"])
+    for supplemental_file in SUPPLEMENTAL_SEED_FILES:
+        if supplemental_file.exists():
+            supplemental = json.loads(supplemental_file.read_text(encoding="utf-8"))
+            payloads.extend(supplemental["payloads"])
     for item in payloads:
         upsert_payload(
             db,
