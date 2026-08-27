@@ -1,22 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cap ETS 2005-2050</title>
 <meta name="description" content="Traiettoria del cap EU ETS dal 2005 al 2050, scenari, ripartizione delle quote e impatto per l'Italia.">
 <link rel="icon" type="image/png" href="assets/mase-logo.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{--bg:#F5F7F5;--surface:#FFF;--surface-2:#EDF1EE;--ink:#16211E;--muted:#5D6C67;--faint:#8A9792;--line:#DBE2DD;--c1:#00918A;--c2:#B4720E;--gr:#9AA5A0;}
-@media (prefers-color-scheme: dark){:root:not([data-theme=light]){--bg:#0F1413;--surface:#161C1A;--surface-2:#1E2624;--ink:#E7EDEA;--muted:#9AA8A3;--faint:#728079;--line:#2A3330;--c1:#3FBFB2;--c2:#D79A3C;--gr:#7C8884;}}
-:root[data-theme=dark]{--bg:#0F1413;--surface:#161C1A;--surface-2:#1E2624;--ink:#E7EDEA;--muted:#9AA8A3;--faint:#728079;--line:#2A3330;--c1:#3FBFB2;--c2:#D79A3C;--gr:#7C8884;}
+:root{--bg:#fff;--surface:#fff;--surface-2:#f5f7f9;--ink:#1a2230;--muted:#5a6b7d;--faint:#9aa8b6;--line:#d5dbe1;--c1:#0891a8;--c2:#c08a19;--gr:#8d9aa8;--navy:#1f2a44;--accent:#0891a8;--accent-soft:#e8f5f7;--mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14.5px;line-height:1.55}
-.wrap{max-width:1120px;margin:0 auto;padding:24px 18px 60px}
-h1{font-size:22px;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
-.sub{color:var(--muted);font-size:13.5px;margin:0 0 18px;max-width:78ch}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-button{font:inherit;font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);cursor:pointer}
-button.on{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+body{font-size:14.5px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px;padding:24px 22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-align:center;box-shadow:0 4px 16px -6px rgba(20,30,45,.10),0 1px 3px rgba(20,30,45,.05);position:relative}
+.brand img{height:88px;width:auto;display:block}.brand-txt{font-size:20px;font-weight:750;letter-spacing:.01em;line-height:1.15}
+.home-btn{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:7px 12px;color:var(--muted);font-size:12px;font-weight:600;transition:.15s;box-shadow:0 1px 2px rgba(20,30,45,.04);z-index:5}
+.home-btn:hover{color:var(--ink);border-color:var(--faint);transform:translateX(-2px)}.home-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;color:var(--c2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+h1{font-size:22px;margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.sub{color:var(--muted);font-size:13px;margin:7px 0 0;max-width:82ch}
+.head-badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--surface-2);white-space:nowrap}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 4px 16px -8px rgba(20,30,45,.10),0 1px 3px rgba(20,30,45,.04)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+button{font:inherit;font-family:var(--mono);font-size:11px;padding:7px 11px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.15s}
+button:hover{color:var(--ink);border-color:var(--faint)}
+button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 button.s1.on{background:var(--c1);border-color:var(--c1);color:#fff}
 button.s2.on,button.s3.on{background:var(--c2);border-color:var(--c2);color:#fff}
 button:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
@@ -25,11 +34,11 @@ button:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
 svg{display:block;width:100%;height:auto;touch-action:none}
 .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:12.5px;box-shadow:0 6px 20px rgba(0,0,0,.12);min-width:210px;max-width:290px;opacity:0;transition:opacity .12s}
 .tip.on{opacity:1}
-.tip .yr{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:15px;margin-bottom:5px}
+.tip .yr{font-family:var(--mono);font-weight:600;font-size:15px;margin-bottom:5px}
 .tip .row{display:flex;justify-content:space-between;gap:12px}
-.tip .row span:last-child{font-family:"IBM Plex Mono",monospace}
+.tip .row span:last-child{font-family:var(--mono)}
 .tip .nt{margin-top:7px;padding-top:7px;border-top:1px solid var(--line);color:var(--muted);font-size:11.8px;line-height:1.45}
-.tip .lrf{color:var(--faint);font-size:11.5px;margin-top:4px;font-family:"IBM Plex Mono",monospace}
+.tip .lrf{color:var(--faint);font-size:11.5px;margin-top:4px;font-family:var(--mono)}
 .dot{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:6px;vertical-align:1px}
 details{margin-top:16px}
 summary{cursor:pointer;color:var(--muted);font-size:13px}
@@ -38,18 +47,39 @@ th,td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--line)}
 th:first-child,td:first-child{text-align:left}
 td:last-child,th:last-child{text-align:left;color:var(--muted);font-size:11.8px}
 thead th{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
-td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
 tr.disc td{background:color-mix(in srgb,var(--c2) 9%,transparent)}
 .foot{color:var(--faint);font-size:11.5px;margin-top:14px;max-width:90ch}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .kpi{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
 .kpi .k-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:600}
-.kpi .k-val{font-family:"IBM Plex Mono",monospace;font-size:21px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi .k-val{font-family:var(--mono);font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .kpi .k-sub{font-size:12px;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:12px;padding:0 14px;background:var(--surface)}
+summary{padding:12px 0;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em}
+@media(max-width:700px){
+  .wrap{padding:16px 12px 40px}.brand{padding:16px;gap:8px;margin-bottom:18px}.brand img{height:56px}.brand-txt{font-size:15px}.home-btn{position:static;align-self:flex-start}
+  .page-head{display:block}.head-badge{display:inline-block;margin-top:12px}.card{padding:14px 10px;border-radius:12px}.bar button{flex:1;min-width:120px}.sep{display:none}
+  h1{font-size:19px}.sub{font-size:12.5px}.tip{min-width:180px;max-width:240px}.kpis{grid-template-columns:repeat(2,1fr)}
+  table{font-size:11.5px}th,td{padding:5px 6px}
+}
 </style>
+</head>
+<body>
 <div class="wrap">
-<h1>Il cap ETS dal 2005 al 2050</h1>
-<p class="sub">Passa il mouse sul grafico per vedere anno, valori, fattore lineare applicato e cosa è successo. I rombi arancioni segnano le discontinuità: i punti in cui il cap non si ottiene sottraendo il fattore lineare all'anno precedente. La curva porta tutto ciò che la direttiva aggiunge alla quantità dell'Unione: i rifiuti dell'articolo 12a, e la banda chiara sopra la linea sono i 250 Mt di removals dell'articolo 9c, che l'articolo 9c(7) esclude espressamente dal fattore lineare.</p>
+<div class="brand">
+  <a class="home-btn" href="index.html" aria-label="Torna alla raccolta dei grafici"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+  <img src="assets/mase-logo.png" alt="MASE">
+  <div class="brand-txt">Elaborazione dati · DG AEIF GLU</div>
+</div>
+<header class="page-head">
+  <div>
+    <div class="eyebrow">MASE · DG AEIF · Approfondimento EU ETS</div>
+    <h1>EU ETS · Cap 2005–2050</h1>
+    <p class="sub">Traiettoria del cap, scenari dal 2031, ripartizione delle quote e impatto per l'Italia. Passa sul grafico per consultare valori, fattore lineare e discontinuità normative.</p>
+  </div>
+  <div class="head-badge">Scenari e quadro normativo</div>
+</header>
 <div class="card">
   <div class="bar">
     <button id="z1" class="on">2005–2050</button><button id="z2">2020–2050</button>
@@ -593,8 +623,9 @@ function table(){
 }
 ["z1","z2"].forEach((id,i)=>$(id).onclick=()=>{S.zoom=i?2020:2005;$("z1").classList.toggle("on",!i);$("z2").classList.toggle("on",!!i);draw();});
 [["t1","s1"],["t2","s2"],["t3","s3"]].forEach(([id,k])=>$(id).onclick=()=>{S[k]=!S[k];$(id).classList.toggle("on",S[k]);draw();table();});
-if(window.matchMedia) window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 draw();table();
 </script>
 
 <script src="assets/site-chrome.js?v=20260827-cap-ets"></script>
+</body>
+</html>
