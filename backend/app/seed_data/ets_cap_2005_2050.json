@@ -1,0 +1,3996 @@
+{
+  "payloads": [
+    {
+      "key": "ets_cap_2005_2050",
+      "name": "Cap EU ETS 2005-2050",
+      "source_file": "cap_ets_2005_2050.html",
+      "payload": {
+        "composition": [
+          {
+            "y": 2024,
+            "t": 1386.1,
+            "v": [
+              678.1,
+              0,
+              561.5,
+              41.6,
+              62.4,
+              42.5,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2025,
+            "t": 1298.1,
+            "v": [
+              624.6,
+              0,
+              483.7,
+              38.9,
+              58.4,
+              92.5,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2026,
+            "t": 1183.2,
+            "v": [
+              577.7,
+              0,
+              469.2,
+              35.5,
+              53.2,
+              47.6,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2027,
+            "t": 1095.3,
+            "v": [
+              534.2,
+              0,
+              427.1,
+              32.9,
+              49.3,
+              51.9,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2028,
+            "t": 1005.3,
+            "v": [
+              336.4,
+              144.2,
+              376.5,
+              30.2,
+              45.2,
+              57,
+              0,
+              0,
+              15.2,
+              0.6
+            ]
+          },
+          {
+            "y": 2029,
+            "t": 915.3,
+            "v": [
+              305.7,
+              131,
+              323.4,
+              27.5,
+              41.2,
+              71.9,
+              0,
+              0,
+              14,
+              0.6
+            ]
+          },
+          {
+            "y": 2030,
+            "t": 825.4,
+            "v": [
+              275.1,
+              117.9,
+              257.5,
+              24.8,
+              37.1,
+              99.8,
+              0,
+              0,
+              12.7,
+              0.5
+            ]
+          },
+          {
+            "y": 2031,
+            "t": 763.8,
+            "v": [
+              261.1,
+              111.9,
+              233.9,
+              30.4,
+              19,
+              30.4,
+              60.8,
+              4,
+              11.7,
+              0.5
+            ]
+          },
+          {
+            "y": 2032,
+            "t": 702.1,
+            "v": [
+              246.1,
+              105.5,
+              202.1,
+              27.7,
+              17.3,
+              27.7,
+              55.5,
+              8.9,
+              10.8,
+              0.4
+            ]
+          },
+          {
+            "y": 2033,
+            "t": 639.8,
+            "v": [
+              229.3,
+              98.3,
+              172.2,
+              25.1,
+              15.7,
+              25.1,
+              50.1,
+              13.8,
+              9.8,
+              0.4
+            ]
+          },
+          {
+            "y": 2034,
+            "t": 576.7,
+            "v": [
+              211.6,
+              90.7,
+              143.1,
+              22.3,
+              14,
+              22.4,
+              44.7,
+              18.7,
+              8.9,
+              0.4
+            ]
+          },
+          {
+            "y": 2035,
+            "t": 504.4,
+            "v": [
+              182.3,
+              78.1,
+              123.2,
+              19.3,
+              12,
+              19.3,
+              38.6,
+              23.6,
+              7.8,
+              0.3
+            ]
+          },
+          {
+            "y": 2036,
+            "t": 473.7,
+            "v": [
+              125.9,
+              54,
+              114.4,
+              17.9,
+              11.2,
+              17.9,
+              35.7,
+              28.4,
+              6.4,
+              62.1
+            ]
+          },
+          {
+            "y": 2037,
+            "t": 443.1,
+            "v": [
+              115.8,
+              49.6,
+              105.2,
+              16.4,
+              10.3,
+              16.4,
+              32.9,
+              33.3,
+              5.9,
+              57.2
+            ]
+          },
+          {
+            "y": 2038,
+            "t": 412.4,
+            "v": [
+              111.8,
+              47.9,
+              87.3,
+              15,
+              9.4,
+              15,
+              30.1,
+              38.2,
+              5.4,
+              52.2
+            ]
+          },
+          {
+            "y": 2039,
+            "t": 381.7,
+            "v": [
+              101.1,
+              43.3,
+              79,
+              13.6,
+              8.5,
+              13.6,
+              27.2,
+              43.1,
+              4.9,
+              47.3
+            ]
+          },
+          {
+            "y": 2040,
+            "t": 351.1,
+            "v": [
+              90.4,
+              38.7,
+              70.7,
+              12.2,
+              7.6,
+              12.2,
+              24.4,
+              48,
+              4.4,
+              42.4
+            ]
+          },
+          {
+            "y": 2041,
+            "t": 269.5,
+            "v": [
+              140,
+              60,
+              69.5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2042,
+            "t": 234.2,
+            "v": [
+              121.6,
+              52.1,
+              60.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2043,
+            "t": 198.8,
+            "v": [
+              103.2,
+              44.2,
+              51.3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2044,
+            "t": 163.4,
+            "v": [
+              84.9,
+              36.4,
+              42.2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2045,
+            "t": 128,
+            "v": [
+              66.5,
+              28.5,
+              33,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2046,
+            "t": 92.7,
+            "v": [
+              48.1,
+              20.6,
+              23.9,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2047,
+            "t": 57.3,
+            "v": [
+              29.8,
+              12.8,
+              14.8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2048,
+            "t": 21.9,
+            "v": [
+              11.4,
+              4.9,
+              5.7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2049,
+            "t": 0,
+            "v": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "y": 2050,
+            "t": 0,
+            "v": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "compositionLegend": [
+          {
+            "n": "Aste degli Stati membri, netto",
+            "c": "#00918A"
+          },
+          {
+            "n": "Risorse proprie UE",
+            "c": "#3D63B8"
+          },
+          {
+            "n": "Assegnazione gratuita all'industria",
+            "c": "#B4720E"
+          },
+          {
+            "n": "Buffer · art. 10a(5a)",
+            "c": "#4C6FD4"
+          },
+          {
+            "n": "Fondo modernizzazione · art. 10d",
+            "c": "#6E9B2E"
+          },
+          {
+            "n": "Fondo innovazione e Fondo sociale",
+            "c": "#C64BA6"
+          },
+          {
+            "n": "Banca decarbonizzazione · art. 10cc",
+            "c": "#D14B3C"
+          },
+          {
+            "n": "Removals permanenti · art. 9c",
+            "c": "#1E93AE"
+          },
+          {
+            "n": "Riserve marittime · 3gaa, 3gab, 3ga(4)",
+            "c": "#8B6BD6"
+          },
+          {
+            "n": "Crediti internazionali e registro",
+            "c": "#8A9490"
+          }
+        ],
+        "italyAuctions": [
+          {
+            "y": 2024,
+            "g": 72.6,
+            "n": 72.6,
+            "c": 82
+          },
+          {
+            "y": 2025,
+            "g": 66.8,
+            "n": 66.8,
+            "c": 76.8
+          },
+          {
+            "y": 2026,
+            "g": 61.8,
+            "n": 61.8,
+            "c": 70
+          },
+          {
+            "y": 2027,
+            "g": 57.2,
+            "n": 57.2,
+            "c": 64.8
+          },
+          {
+            "y": 2028,
+            "g": 51.4,
+            "n": 36,
+            "c": 59.5
+          },
+          {
+            "y": 2029,
+            "g": 46.7,
+            "n": 32.7,
+            "c": 54.2
+          },
+          {
+            "y": 2030,
+            "g": 42.1,
+            "n": 29.4,
+            "c": 48.8
+          },
+          {
+            "y": 2031,
+            "g": 39.9,
+            "n": 27.9,
+            "c": 43.5
+          },
+          {
+            "y": 2032,
+            "g": 37.6,
+            "n": 26.3,
+            "c": 38.2
+          },
+          {
+            "y": 2033,
+            "g": 35.1,
+            "n": 24.5,
+            "c": 32.9
+          },
+          {
+            "y": 2034,
+            "g": 32.4,
+            "n": 22.6,
+            "c": 27.5
+          },
+          {
+            "y": 2035,
+            "g": 27.9,
+            "n": 19.5,
+            "c": 22.2
+          },
+          {
+            "y": 2036,
+            "g": 19.2,
+            "n": 13.5,
+            "c": 16.9
+          },
+          {
+            "y": 2037,
+            "g": 17.7,
+            "n": 12.4,
+            "c": 11.6
+          },
+          {
+            "y": 2038,
+            "g": 17.1,
+            "n": 12,
+            "c": 6.2
+          },
+          {
+            "y": 2039,
+            "g": 15.5,
+            "n": 10.8,
+            "c": 0.9
+          },
+          {
+            "y": 2040,
+            "g": 13.8,
+            "n": 9.7,
+            "c": 0
+          },
+          {
+            "y": 2041,
+            "g": 21.4,
+            "n": 15,
+            "c": 0
+          },
+          {
+            "y": 2042,
+            "g": 18.6,
+            "n": 13,
+            "c": 0
+          },
+          {
+            "y": 2043,
+            "g": 15.8,
+            "n": 11,
+            "c": 0
+          },
+          {
+            "y": 2044,
+            "g": 13,
+            "n": 9.1,
+            "c": 0
+          },
+          {
+            "y": 2045,
+            "g": 10.2,
+            "n": 7.1,
+            "c": 0
+          },
+          {
+            "y": 2046,
+            "g": 7.4,
+            "n": 5.1,
+            "c": 0
+          },
+          {
+            "y": 2047,
+            "g": 4.5,
+            "n": 3.2,
+            "c": 0
+          },
+          {
+            "y": 2048,
+            "g": 1.7,
+            "n": 1.2,
+            "c": 0
+          },
+          {
+            "y": 2049,
+            "g": 0,
+            "n": 0,
+            "c": 0
+          },
+          {
+            "y": 2050,
+            "g": 0,
+            "n": 0,
+            "c": 0
+          }
+        ],
+        "calculator": {
+          "2024": {
+            "q9": 1386.1,
+            "rem": 0,
+            "Q": 1386.1,
+            "ded": 0,
+            "base": 1386.1,
+            "auc": 790,
+            "fa": 596,
+            "sav": 0,
+            "cbam": 100,
+            "msg": 678.1,
+            "orv": 0,
+            "sub": 87.924,
+            "w": 0,
+            "cur": 1386.1,
+            "prev": null,
+            "zero": false,
+            "items": [
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 62.4,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 41.6,
+                "s": "testo",
+                "f": "fino al 3% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 678.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 34.5,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 0,0 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 561.5,
+                "s": "testo",
+                "f": "43% della base meno 0,0 risparmiati dal fattore CBAM (100%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2025": {
+            "q9": 1298.1,
+            "rem": 0,
+            "Q": 1298.1,
+            "ded": 0,
+            "base": 1298.1,
+            "auc": 739.9,
+            "fa": 558.2,
+            "sav": 0,
+            "cbam": 100,
+            "msg": 624.6,
+            "orv": 0,
+            "sub": 87.924,
+            "w": 0,
+            "cur": 1298.1,
+            "prev": 1386.1,
+            "zero": false,
+            "items": [
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 58.4,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 38.9,
+                "s": "testo",
+                "f": "fino al 3% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 18,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 624.6,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 34.5,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 0,0 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Fondo sociale per il clima",
+                "a": "10a(8b)",
+                "v": 40,
+                "s": "testo",
+                "f": "40 Mt dalla gratuita, all'asta nel 2025",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 483.7,
+                "s": "testo",
+                "f": "43% della base meno 0,0 risparmiati dal fattore CBAM (100%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2026": {
+            "q9": 1183.2,
+            "rem": 0,
+            "Q": 1183.2,
+            "ded": 0,
+            "base": 1183.2,
+            "auc": 674.4,
+            "fa": 508.8,
+            "sav": 5.1,
+            "cbam": 97.5,
+            "msg": 577.7,
+            "orv": 0,
+            "sub": 87.924,
+            "w": 0,
+            "cur": 1183.2,
+            "prev": 1298.1,
+            "zero": false,
+            "items": [
+              {
+                "n": "Gas non-CO₂ marittimo e navi offshore",
+                "a": "9, 4°–5° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 53.2,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 35.5,
+                "s": "testo",
+                "f": "fino al 3% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 577.7,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 39.6,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 5,1 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 469.2,
+                "s": "testo",
+                "f": "43% della base meno 5,1 risparmiati dal fattore CBAM (98%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2027": {
+            "q9": 1095.3,
+            "rem": 0,
+            "Q": 1095.3,
+            "ded": 0,
+            "base": 1095.3,
+            "auc": 624.3,
+            "fa": 471,
+            "sav": 9.4,
+            "cbam": 95,
+            "msg": 534.2,
+            "orv": 0,
+            "sub": 87.924,
+            "w": 0,
+            "cur": 1095.3,
+            "prev": 1183.2,
+            "zero": false,
+            "items": [
+              {
+                "n": "Gas non-CO₂ marittimo e navi offshore",
+                "a": "9, 4°–5° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 49.3,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 32.9,
+                "s": "testo",
+                "f": "fino al 3% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 534.2,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 43.9,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 9,4 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 427.1,
+                "s": "testo",
+                "f": "43% della base meno 9,4 risparmiati dal fattore CBAM (95%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2028": {
+            "q9": 1005.3,
+            "rem": 0,
+            "Q": 1005.3,
+            "ded": 15.8,
+            "base": 989.5,
+            "auc": 564,
+            "fa": 425.5,
+            "sav": 14.5,
+            "cbam": 91.5,
+            "msg": 480.5,
+            "orv": 144.2,
+            "sub": 89.969,
+            "w": 0,
+            "cur": 1005.3,
+            "prev": 1095.3,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 14.3,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.6,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0.1,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 45.2,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dal buffer",
+                "a": "10cc(1)·10a(5b)",
+                "v": 30.2,
+                "s": "ricostruito",
+                "f": "il buffer di quest'anno non serve alla gratuita e va al Booster",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dalla riserva nuovi entranti",
+                "a": "10cc(1)·10a(7)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "servono 133,3 Mt l'anno: 103,2 vengono da uno stock accumulato, fuori dalla quantità dell'anno",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 144.2,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 336.4,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 49,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 14,5 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 376.5,
+                "s": "testo",
+                "f": "43% della base meno 14,5 risparmiati dal fattore CBAM (92%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2029": {
+            "q9": 915.3,
+            "rem": 0,
+            "Q": 915.3,
+            "ded": 14.5,
+            "base": 900.8,
+            "auc": 513.5,
+            "fa": 387.4,
+            "sav": 29.4,
+            "cbam": 81,
+            "msg": 436.8,
+            "orv": 131,
+            "sub": 89.969,
+            "w": 0,
+            "cur": 915.3,
+            "prev": 1005.3,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 13,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.6,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0.1,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 41.2,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dal buffer",
+                "a": "10cc(1)·10a(5b)",
+                "v": 27.5,
+                "s": "ricostruito",
+                "f": "il buffer di quest'anno non serve alla gratuita e va al Booster",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dalla riserva nuovi entranti",
+                "a": "10cc(1)·10a(7)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "servono 133,3 Mt l'anno: 105,9 vengono da uno stock accumulato, fuori dalla quantità dell'anno",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 131,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 305.7,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 63.9,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 29,4 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 323.4,
+                "s": "testo",
+                "f": "43% della base meno 29,4 risparmiati dal fattore CBAM (81%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2030": {
+            "q9": 825.4,
+            "rem": 0,
+            "Q": 825.4,
+            "ded": 13.2,
+            "base": 812.2,
+            "auc": 463,
+            "fa": 349.3,
+            "sav": 57.3,
+            "cbam": 59,
+            "msg": 393,
+            "orv": 117.9,
+            "sub": 89.969,
+            "w": 0,
+            "cur": 825.4,
+            "prev": 915.3,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 11.7,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.5,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0.1,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 37.1,
+                "s": "testo",
+                "f": "2%+2,5% della quantità totale",
+                "g": "auc"
+              },
+              {
+                "n": "Quota dei fondi a carico delle aste",
+                "a": "10a(8) · 10a(8b)",
+                "v": 8,
+                "s": "testo",
+                "f": "80 Mt su dieci anni + 10 Mt nel 2025",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dal buffer",
+                "a": "10cc(1)·10a(5b)",
+                "v": 24.8,
+                "s": "ricostruito",
+                "f": "il buffer di quest'anno non serve alla gratuita e va al Booster",
+                "g": "auc"
+              },
+              {
+                "n": "Investment Booster · dalla riserva nuovi entranti",
+                "a": "10cc(1)·10a(7)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "servono 133,3 Mt l'anno: 108,6 vengono da uno stock accumulato, fuori dalla quantità dell'anno",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 117.9,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 275.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10a(8)",
+                "v": 91.8,
+                "s": "ricostruito",
+                "f": "345 Mt su dieci anni + 57,3 risparmiati dal fattore CBAM",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 257.5,
+                "s": "testo",
+                "f": "43% della base meno 57,3 risparmiati dal fattore CBAM (59%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2031": {
+            "q9": 759.9,
+            "rem": 3.8,
+            "Q": 763.8,
+            "ded": 77,
+            "base": 686.8,
+            "auc": 391.5,
+            "fa": 295.3,
+            "sav": 61.4,
+            "cbam": 48,
+            "msg": 373,
+            "orv": 111.9,
+            "sub": 75.656,
+            "w": 10.2,
+            "cur": 735.4,
+            "prev": 825.4,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 10.8,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 4,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 60.8,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.5,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 15.2,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 3.8,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 30.4,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 111.9,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 261.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 30.4,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 233.9,
+                "s": "testo",
+                "f": "43% della base meno 61,4 risparmiati dal fattore CBAM (48%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2032": {
+            "q9": 693.6,
+            "rem": 8.5,
+            "Q": 702.1,
+            "ded": 75.6,
+            "base": 626.5,
+            "auc": 357.1,
+            "fa": 269.4,
+            "sav": 67.4,
+            "cbam": 37.5,
+            "msg": 351.6,
+            "orv": 105.5,
+            "sub": 75.656,
+            "w": 19.5,
+            "cur": 645.4,
+            "prev": 749.7,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 9.9,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 8.9,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 55.5,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.4,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 13.9,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 3.5,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 27.7,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 105.5,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 246.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 27.7,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 202.1,
+                "s": "testo",
+                "f": "43% della base meno 67,4 risparmiati dal fattore CBAM (38%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2033": {
+            "q9": 626.5,
+            "rem": 13.2,
+            "Q": 639.8,
+            "ded": 74.1,
+            "base": 565.6,
+            "auc": 322.4,
+            "fa": 243.2,
+            "sav": 71,
+            "cbam": 27,
+            "msg": 327.6,
+            "orv": 98.3,
+            "sub": 75.656,
+            "w": 28.1,
+            "cur": 555.5,
+            "prev": 674.1,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 8.9,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 13.8,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 50.1,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.4,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 12.5,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 3.1,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 25.1,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 98.3,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 229.3,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 25.1,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 172.2,
+                "s": "testo",
+                "f": "43% della base meno 71,0 risparmiati dal fattore CBAM (27%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2034": {
+            "q9": 558.7,
+            "rem": 17.9,
+            "Q": 576.7,
+            "ded": 72.6,
+            "base": 504.1,
+            "auc": 287.4,
+            "fa": 216.8,
+            "sav": 73.7,
+            "cbam": 15,
+            "msg": 302.3,
+            "orv": 90.7,
+            "sub": 75.656,
+            "w": 36,
+            "cur": 465.5,
+            "prev": 598.4,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 7.9,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 18.7,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 44.7,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.4,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 11.2,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 2.8,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 22.3,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 90.7,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 211.6,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 22.4,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 143.1,
+                "s": "testo",
+                "f": "43% della base meno 73,7 risparmiati dal fattore CBAM (15%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2035": {
+            "q9": 481.8,
+            "rem": 22.6,
+            "Q": 504.4,
+            "ded": 70.2,
+            "base": 434.3,
+            "auc": 247.5,
+            "fa": 186.7,
+            "sav": 63.5,
+            "cbam": 15,
+            "msg": 260.4,
+            "orv": 78.1,
+            "sub": 76.988,
+            "w": 36,
+            "cur": 375.5,
+            "prev": 522.7,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 6.8,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Paesi meno sviluppati e SIDS",
+                "a": "3gab",
+                "v": 0.9,
+                "s": "testo",
+                "f": "0,9 Mt l'anno fino al 2035",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 23.6,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 38.6,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.3,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 9.6,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 2.4,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 19.3,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 78.1,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 182.3,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 19.3,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 123.2,
+                "s": "testo",
+                "f": "43% della base meno 63,5 risparmiati dal fattore CBAM (15%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2036": {
+            "q9": 446.4,
+            "rem": 27.4,
+            "Q": 473.7,
+            "ded": 70.8,
+            "base": 402.9,
+            "auc": 229.7,
+            "fa": 173.3,
+            "sav": 58.9,
+            "cbam": 15,
+            "msg": 179.9,
+            "orv": 54,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 285.6,
+            "prev": 445.8,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 6.3,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 28.4,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 35.7,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.3,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Crediti internazionali",
+                "a": "9b(1)",
+                "v": 61.8,
+                "s": "ricostruito",
+                "f": "fino a 260 Mt sul 2036–2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 8.9,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 2.2,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 17.9,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 54,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 125.9,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 17.9,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 114.4,
+                "s": "testo",
+                "f": "43% della base meno 58,9 risparmiati dal fattore CBAM (15%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2037": {
+            "q9": 411,
+            "rem": 32.1,
+            "Q": 443.1,
+            "ded": 72.3,
+            "base": 370.7,
+            "auc": 211.3,
+            "fa": 159.4,
+            "sav": 54.2,
+            "cbam": 15,
+            "msg": 165.4,
+            "orv": 49.6,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 195.6,
+            "prev": 410.4,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 5.8,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 33.3,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 32.9,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.3,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Crediti internazionali",
+                "a": "9b(1)",
+                "v": 56.9,
+                "s": "ricostruito",
+                "f": "fino a 260 Mt sul 2036–2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 8.2,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 2.1,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 16.4,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 49.6,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 115.8,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 16.4,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 105.2,
+                "s": "testo",
+                "f": "43% della base meno 54,2 risparmiati dal fattore CBAM (15%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2038": {
+            "q9": 375.6,
+            "rem": 36.8,
+            "Q": 412.4,
+            "ded": 73.9,
+            "base": 338.5,
+            "auc": 193,
+            "fa": 145.6,
+            "sav": 58.2,
+            "cbam": 0,
+            "msg": 159.7,
+            "orv": 47.9,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 105.6,
+            "prev": 375,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 5.3,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 38.2,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 30.1,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.2,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Crediti internazionali",
+                "a": "9b(1)",
+                "v": 52,
+                "s": "ricostruito",
+                "f": "fino a 260 Mt sul 2036–2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 7.5,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 1.9,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 15,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 47.9,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 111.8,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 15,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 87.3,
+                "s": "testo",
+                "f": "43% della base meno 58,2 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2039": {
+            "q9": 340.3,
+            "rem": 41.5,
+            "Q": 381.7,
+            "ded": 75.4,
+            "base": 306.3,
+            "auc": 174.6,
+            "fa": 131.7,
+            "sav": 52.7,
+            "cbam": 0,
+            "msg": 144.4,
+            "orv": 43.3,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 15.7,
+            "prev": 339.6,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 4.8,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 43.1,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 27.2,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.2,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Crediti internazionali",
+                "a": "9b(1)",
+                "v": 47.1,
+                "s": "ricostruito",
+                "f": "fino a 260 Mt sul 2036–2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 6.8,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 1.7,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 13.6,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 43.3,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 101.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 13.6,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 79,
+                "s": "testo",
+                "f": "43% della base meno 52,7 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2040": {
+            "q9": 304.9,
+            "rem": 46.2,
+            "Q": 351.1,
+            "ded": 76.9,
+            "base": 274.1,
+            "auc": 156.3,
+            "fa": 117.9,
+            "sav": 47.1,
+            "cbam": 0,
+            "msg": 129.2,
+            "orv": 38.7,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 304.3,
+            "zero": false,
+            "items": [
+              {
+                "n": "Carburanti marittimi sostenibili",
+                "a": "3gaa(1)",
+                "v": 4.3,
+                "s": "ricostruito",
+                "f": "max 110 Mt sul 2028–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Acquisto di removals",
+                "a": "9c(1)+(2)",
+                "v": 48,
+                "s": "ricostruito",
+                "f": "rampa a 48 Mt nel 2040, totale 260",
+                "g": "ded"
+              },
+              {
+                "n": "Banca decarbonizzazione, fase II",
+                "a": "10cc(2)",
+                "v": 24.4,
+                "s": "ricostruito",
+                "f": "400 Mt sul 2031–2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Registro e gestione del sistema",
+                "a": "19(1a)",
+                "v": 0.2,
+                "s": "ricostruito",
+                "f": "max 5 Mt fino al 2040, pro quota",
+                "g": "ded"
+              },
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Amministrazione del marittimo",
+                "a": "3ga(4)",
+                "v": 0,
+                "s": "ricostruito",
+                "f": "max 0,5 Mt fino al 2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Crediti internazionali",
+                "a": "9b(1)",
+                "v": 42.2,
+                "s": "ricostruito",
+                "f": "fino a 260 Mt sul 2036–2040 · non elencata all'art. 10(1)",
+                "g": "amb"
+              },
+              {
+                "n": "Fondo modernizzazione",
+                "a": "10d(1)",
+                "v": 6.1,
+                "s": "testo",
+                "f": "2% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Finestra basso reddito → art. 10ce",
+                "a": "10d(1), 2° tr.",
+                "v": 1.5,
+                "s": "testo",
+                "f": "0,5% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Buffer anti-correzione",
+                "a": "10a(5a)",
+                "v": 12.2,
+                "s": "testo",
+                "f": "4% della quantità art. 9, solo 2031–2040",
+                "g": "auc"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 38.7,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 90.4,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Fondo innovazione",
+                "a": "10cb(2)",
+                "v": 12.2,
+                "s": "ricostruito",
+                "f": "200 Mt sul 2031–2040 dai risparmi CBAM · il resto dei risparmi va alle aste",
+                "g": "fa"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 70.7,
+                "s": "testo",
+                "f": "43% della base meno 47,1 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2041": {
+            "q9": 269.5,
+            "rem": 0,
+            "Q": 269.5,
+            "ded": 0,
+            "base": 269.5,
+            "auc": 153.6,
+            "fa": 115.9,
+            "sav": 46.4,
+            "cbam": 0,
+            "msg": 200,
+            "orv": 60,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 268.9,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 60,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 140,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 69.5,
+                "s": "testo",
+                "f": "43% della base meno 46,4 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2042": {
+            "q9": 234.2,
+            "rem": 0,
+            "Q": 234.2,
+            "ded": 0,
+            "base": 234.2,
+            "auc": 133.5,
+            "fa": 100.7,
+            "sav": 40.3,
+            "cbam": 0,
+            "msg": 173.7,
+            "orv": 52.1,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 233.5,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 52.1,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 121.6,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 60.4,
+                "s": "testo",
+                "f": "43% della base meno 40,3 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2043": {
+            "q9": 198.8,
+            "rem": 0,
+            "Q": 198.8,
+            "ded": 0,
+            "base": 198.8,
+            "auc": 113.3,
+            "fa": 85.5,
+            "sav": 34.2,
+            "cbam": 0,
+            "msg": 147.5,
+            "orv": 44.2,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 198.2,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 44.2,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 103.2,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 51.3,
+                "s": "testo",
+                "f": "43% della base meno 34,2 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2044": {
+            "q9": 163.4,
+            "rem": 0,
+            "Q": 163.4,
+            "ded": 0,
+            "base": 163.4,
+            "auc": 93.1,
+            "fa": 70.3,
+            "sav": 28.1,
+            "cbam": 0,
+            "msg": 121.2,
+            "orv": 36.4,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 162.8,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 36.4,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 84.9,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 42.2,
+                "s": "testo",
+                "f": "43% della base meno 28,1 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2045": {
+            "q9": 128,
+            "rem": 0,
+            "Q": 128,
+            "ded": 0,
+            "base": 128,
+            "auc": 73,
+            "fa": 55.1,
+            "sav": 22,
+            "cbam": 0,
+            "msg": 95,
+            "orv": 28.5,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 127.4,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 28.5,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 66.5,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 33,
+                "s": "testo",
+                "f": "43% della base meno 22,0 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2046": {
+            "q9": 92.7,
+            "rem": 0,
+            "Q": 92.7,
+            "ded": 0,
+            "base": 92.7,
+            "auc": 52.8,
+            "fa": 39.8,
+            "sav": 15.9,
+            "cbam": 0,
+            "msg": 68.8,
+            "orv": 20.6,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 92,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 20.6,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 48.1,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 23.9,
+                "s": "testo",
+                "f": "43% della base meno 15,9 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2047": {
+            "q9": 57.3,
+            "rem": 0,
+            "Q": 57.3,
+            "ded": 0,
+            "base": 57.3,
+            "auc": 32.7,
+            "fa": 24.6,
+            "sav": 9.9,
+            "cbam": 0,
+            "msg": 42.5,
+            "orv": 12.8,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 56.7,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 12.8,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 29.8,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 14.8,
+                "s": "testo",
+                "f": "43% della base meno 9,9 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2048": {
+            "q9": 21.9,
+            "rem": 0,
+            "Q": 21.9,
+            "ded": 0,
+            "base": 21.9,
+            "auc": 12.5,
+            "fa": 9.4,
+            "sav": 3.8,
+            "cbam": 0,
+            "msg": 16.3,
+            "orv": 4.9,
+            "sub": 35.373,
+            "w": 36,
+            "cur": 0,
+            "prev": 21.3,
+            "zero": false,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Risorse proprie UE",
+                "a": "dec. risorse proprie",
+                "v": 4.9,
+                "s": "fuori direttiva",
+                "f": "30% dei proventi ETS1 dal 2028 · COM(2025) 574",
+                "g": "auc"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 11.4,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 5.7,
+                "s": "testo",
+                "f": "43% della base meno 3,8 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2049": {
+            "q9": 0,
+            "rem": 0,
+            "Q": 0,
+            "ded": 0,
+            "base": 0,
+            "auc": 0,
+            "fa": 0,
+            "sav": 0,
+            "cbam": 0,
+            "msg": 0,
+            "orv": 0,
+            "sub": 35.373,
+            "w": 0,
+            "cur": 0,
+            "prev": 0,
+            "zero": true,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 0,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 0,
+                "s": "testo",
+                "f": "43% della base meno 0,0 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          },
+          "2050": {
+            "q9": 0,
+            "rem": 0,
+            "Q": 0,
+            "ded": 0,
+            "base": 0,
+            "auc": 0,
+            "fa": 0,
+            "sav": 0,
+            "cbam": 0,
+            "msg": 0,
+            "orv": 0,
+            "sub": 35.373,
+            "w": 0,
+            "cur": 0,
+            "prev": 0,
+            "zero": true,
+            "items": [
+              {
+                "n": "Navi 400–5.000 GT",
+                "a": "9, 6° c.",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato dal testo",
+                "g": "ded"
+              },
+              {
+                "n": "Aviazione e marittimo verso paesi terzi",
+                "a": "25b(3)",
+                "v": 0,
+                "s": "non quantificato",
+                "f": "aumento non quantificato · l'LRF si applica",
+                "g": "ded"
+              },
+              {
+                "n": "Aste degli Stati membri, netto",
+                "a": "10(2)",
+                "v": 0,
+                "s": "testo",
+                "f": "57% della base, più i risparmi CBAM, meno i prelievi",
+                "g": "auc"
+              },
+              {
+                "n": "Assegnazione gratuita all'industria",
+                "a": "10a · 10b",
+                "v": 0,
+                "s": "testo",
+                "f": "43% della base meno 0,0 risparmiati dal fattore CBAM (0%)",
+                "g": "fa"
+              }
+            ]
+          }
+        },
+        "capSeries": [
+          {
+            "y": 2005,
+            "h": 2181,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2006,
+            "h": 2181,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2007,
+            "h": 2181,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2008,
+            "h": 2083,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2009,
+            "h": 2083,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2010,
+            "h": 2083,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2011,
+            "h": 2083,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2012,
+            "h": 2083,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2013,
+            "h": 2084.3,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 0,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2014,
+            "h": 2046,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2015,
+            "h": 2007.8,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2016,
+            "h": 1969.5,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2017,
+            "h": 1931.3,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2018,
+            "h": 1893,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2019,
+            "h": 1854.8,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2020,
+            "h": 1816.5,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 38.254,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2021,
+            "h": 1571.6,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 43.004,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2022,
+            "h": 1528.6,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 43.004,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2023,
+            "h": 1485.6,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 43.004,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2024,
+            "h": 1386.1,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 87.924,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2025,
+            "h": 1298.1,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 87.924,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2026,
+            "h": 1183.2,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 87.924,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2027,
+            "h": 1095.3,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 87.924,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2028,
+            "h": 1005.3,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 89.969,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2029,
+            "h": 915.3,
+            "c": null,
+            "p": null,
+            "f": null,
+            "sc": 89.969,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": null,
+            "tf": null
+          },
+          {
+            "y": 2030,
+            "h": 825.4,
+            "c": 825.4,
+            "p": 825.4,
+            "f": 825.4,
+            "sc": 89.969,
+            "sp": 0,
+            "sf": 0,
+            "w": 0,
+            "rem": 0,
+            "tp": 825.4,
+            "tf": 825.4
+          },
+          {
+            "y": 2031,
+            "h": null,
+            "c": 735.4,
+            "p": 759.9,
+            "f": 759.9,
+            "sc": 89.969,
+            "sp": 75.656,
+            "sf": 75.656,
+            "w": 10.2,
+            "rem": 4,
+            "tp": 763.9,
+            "tf": 763.9
+          },
+          {
+            "y": 2032,
+            "h": null,
+            "c": 645.4,
+            "p": 693.6,
+            "f": 693.6,
+            "sc": 89.969,
+            "sp": 75.656,
+            "sf": 75.656,
+            "w": 19.5,
+            "rem": 8.9,
+            "tp": 702.5,
+            "tf": 702.5
+          },
+          {
+            "y": 2033,
+            "h": null,
+            "c": 555.5,
+            "p": 626.5,
+            "f": 626.5,
+            "sc": 89.969,
+            "sp": 75.656,
+            "sf": 75.656,
+            "w": 28.1,
+            "rem": 13.8,
+            "tp": 640.3,
+            "tf": 640.3
+          },
+          {
+            "y": 2034,
+            "h": null,
+            "c": 465.5,
+            "p": 558.7,
+            "f": 558.7,
+            "sc": 89.969,
+            "sp": 75.656,
+            "sf": 75.656,
+            "w": 36,
+            "rem": 18.7,
+            "tp": 577.4,
+            "tf": 577.4
+          },
+          {
+            "y": 2035,
+            "h": null,
+            "c": 375.5,
+            "p": 481.8,
+            "f": 481.8,
+            "sc": 89.969,
+            "sp": 76.988,
+            "sf": 76.988,
+            "w": 36,
+            "rem": 23.6,
+            "tp": 505.4,
+            "tf": 505.4
+          },
+          {
+            "y": 2036,
+            "h": null,
+            "c": 285.6,
+            "p": 446.4,
+            "f": 425.6,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 28.4,
+            "tp": 474.8,
+            "tf": 454
+          },
+          {
+            "y": 2037,
+            "h": null,
+            "c": 195.6,
+            "p": 411,
+            "f": 369.4,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 33.3,
+            "tp": 444.3,
+            "tf": 402.7
+          },
+          {
+            "y": 2038,
+            "h": null,
+            "c": 105.6,
+            "p": 375.6,
+            "f": 313.2,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 38.2,
+            "tp": 413.8,
+            "tf": 351.4
+          },
+          {
+            "y": 2039,
+            "h": null,
+            "c": 15.7,
+            "p": 340.3,
+            "f": 257,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 43.1,
+            "tp": 383.4,
+            "tf": 300.1
+          },
+          {
+            "y": 2040,
+            "h": null,
+            "c": 0,
+            "p": 304.9,
+            "f": 200.9,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 48,
+            "tp": 352.9,
+            "tf": 248.9
+          },
+          {
+            "y": 2041,
+            "h": null,
+            "c": 0,
+            "p": 269.5,
+            "f": 144.7,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 269.5,
+            "tf": 144.7
+          },
+          {
+            "y": 2042,
+            "h": null,
+            "c": 0,
+            "p": 234.2,
+            "f": 88.5,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 234.2,
+            "tf": 88.5
+          },
+          {
+            "y": 2043,
+            "h": null,
+            "c": 0,
+            "p": 198.8,
+            "f": 32.3,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 198.8,
+            "tf": 32.3
+          },
+          {
+            "y": 2044,
+            "h": null,
+            "c": 0,
+            "p": 163.4,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 163.4,
+            "tf": 0
+          },
+          {
+            "y": 2045,
+            "h": null,
+            "c": 0,
+            "p": 128,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 128,
+            "tf": 0
+          },
+          {
+            "y": 2046,
+            "h": null,
+            "c": 0,
+            "p": 92.7,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 92.7,
+            "tf": 0
+          },
+          {
+            "y": 2047,
+            "h": null,
+            "c": 0,
+            "p": 57.3,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 57.3,
+            "tf": 0
+          },
+          {
+            "y": 2048,
+            "h": null,
+            "c": 0,
+            "p": 21.9,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 21.9,
+            "tf": 0
+          },
+          {
+            "y": 2049,
+            "h": null,
+            "c": 0,
+            "p": 0,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 0,
+            "tf": 0
+          },
+          {
+            "y": 2050,
+            "h": null,
+            "c": 0,
+            "p": 0,
+            "f": 0,
+            "sc": 89.969,
+            "sp": 35.373,
+            "sf": 56.18,
+            "w": 36,
+            "rem": 0,
+            "tp": 0,
+            "tf": 0
+          }
+        ],
+        "notes": {
+          "2005": "Avvio. Nessun cap europeo: la somma dei piani nazionali, fissati su stime.",
+          "2007": "Il prezzo crolla a zero: le quote di fase 1 non erano bancabili verso la fase 2.",
+          "2008": "Fase 2. Cap ~6,5% sotto il 2005, ora su emissioni verificate. Entrano NO, IS, LI.",
+          "2009": "La crisi finanziaria abbatte le emissioni: nasce il surplus strutturale.",
+          "2013": "Cap unico europeo al posto dei piani nazionali. Prima formula: −38,254 Mt/anno. Entra l'aviazione.",
+          "2014": "Back-loading: 900 Mt rinviate dalle aste 2014–2016 al 2019–2020. Non tocca il cap.",
+          "2015": "Si decide la riserva di stabilità (MSR), operativa dal 2019.",
+          "2018": "Riforma fase 4: LRF al 2,2% dal 2021, MSR raddoppiata al 24%.",
+          "2019": "La MSR entra in funzione e assorbe centinaia di Mt dalle aste.",
+          "2020": "Ultimo anno di fase 3. Brexit: il Regno Unito esce.",
+          "2021": "DISCONTINUITÀ. Determinazione nuova, non per sottrazione: base ricalcolata a 1.954,7 Mt senza il Regno Unito. Salto di ~245 Mt, quasi tutto perimetro.",
+          "2023": "Adozione di Fit for 55 (dir. 2023/959): target ETS −62% al 2030.",
+          "2024": "DISCONTINUITÀ. 1.485,576 − 87,924 (LRF) − 90 (rebasing) + 78,4 (marittimo) = 1.386,052. La base passa a 2.044,7 Mt.",
+          "2026": "DISCONTINUITÀ. Secondo rebasing: −27 Mt. In più, dal 1° gennaio il cap aumenta per i gas diversi dalla CO₂ del marittimo (art. 9): quantità non fissata nel testo, dipende dalle emissioni dell'ultimo anno disponibile. Non è nel grafico.",
+          "2027": "Il cap aumenta per le navi offshore. Anche questa quantità non è fissata nel testo e non è nel grafico.",
+          "2028": "L'LRF sale da 4,3% a 4,4%: il sottraendo passa da 87,924 a 89,969 Mt. Entro settembre 2028 la Commissione deve pubblicare la quantità dell'Unione: prima di allora il numero vero non esiste.",
+          "2030": "Traguardo −62% sul 2005. Da qui in poi le traiettorie si separano.",
+          "2031": "LRF al 3,7%. Il cap aumenta di 10,2 Mt per i rifiuti (art. 12a), di 4,0 Mt di removals (art. 9c) e di una quantità non fissata per le navi 400–5.000 GT. I 260 Mt di crediti NON sono un'aggiunta: l'art. 9b li prende dall'interno della quantità dell'Unione.",
+          "2032": "Rifiuti: +19,5 Mt.",
+          "2033": "Rifiuti: +28,1 Mt.",
+          "2034": "Rifiuti: +36 Mt, fine del phase-in. Da qui i 36 Mt sono soggetti all'LRF: la base sale a 2.080,7 Mt e il sottraendo passa da 75,656 a 76,988 (3,7%) e poi a 35,373 (1,7%).",
+          "2036": "IL BIVIO. LRF all'1,7% se i crediti internazionali sono disponibili, 2,7% in caso contrario (art. 9b(4)). I 260 Mt di crediti sono riservati dall'interno del cap, non aggiunti; se non usati vanno alla Banca per la decarbonizzazione (art. 9b(5)).",
+          "2038": "Fine del phase-out dell'assegnazione gratuita per i settori CBAM.",
+          "2040": "Il cap vigente è a zero. La proposta è a 304,9 Mt, 200,9 senza crediti.",
+          "2044": "Senza crediti la traiettoria si azzera qui.",
+          "2048": "Con i crediti la traiettoria si azzera nel 2049."
+        },
+        "linearReductionFactors": {
+          "r3": 38.254,
+          "r4": 43.004,
+          "r43": 87.924,
+          "r44": 89.969,
+          "r37": 75.656,
+          "r17": 34.761,
+          "r27": 55.208
+        }
+      }
+    }
+  ]
+}
