@@ -8,6 +8,9 @@
 
   window.AEIF_API_BASE = window.AEIF_API_BASE || API_BY_HOST[window.location.hostname] || "";
   const CACHE_PREFIX = "aeif-data-cache-v2:";
+  const FALLBACK_FILE_BY_KEY = {
+    ets_cap_2005_2050: "assets/fallback-ets-cap-2005-2050.json",
+  };
   let fallbackPayloads = null;
 
   function readCache(key) {
@@ -40,6 +43,9 @@
   }
 
   function loadFallbackPayload(key) {
+    if (FALLBACK_FILE_BY_KEY[key]) {
+      return requestJson(FALLBACK_FILE_BY_KEY[key]);
+    }
     if (!fallbackPayloads) {
       fallbackPayloads = requestJson("assets/fallback-payloads.json") || {};
     }
